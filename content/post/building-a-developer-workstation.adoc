@@ -1,0 +1,60 @@
+---
+title: "Building a Developer Workstation"
+date: 2018-10-13T19:34:34-06:00
+draft: false
+image: "img/TrinityTheMachine1280.png"
+tags: [developer workstation, Linux, build computer, build, homebrew, developer]
+---
+
+I recently got a (very nice!) new 2018 MacBook Pro (MBP)  with 32G of RAM & a 550GB SSD. It's fast & sleek, and you could hardly wish for more in a traveling developer's machine than it provides. Other than a few speedbumps I hit with migration from my old MBP (interesting to resolve but minor on balance) and upgrading MacOS to Mojave (Sentinel's fault, not Apple's), I love this machine!
+
+Recently however, I was running my full toolchain, plus Docker & a container or four, and trying to capture a screen recording. And the fans were *roaring*! Better that than to overheat, for sure, but it got me thinking about the ideal workstation for development, tossing in the occasional need for recording or doing other fairly mundane things like opening a few dozen browser tabs, running Slack (the horror!), etc. And the inevitable conclusion was that I needed more machine. :D
+
+Not wanting to spend a small fortune on this machine - and funding it myself - I got approval from my personal CFO (my wife, thank you Sweetie!) to build a machine that filled the bill. It all came together pretty nicely, and when I posted the first `free` output on Twitter, I discovered how many other devs really want a similarly configured machine. (I mean, who doesn't want more power, more memory, more SSD, more...)
+
+Anyway, here is the Bill of Materials for `trinity` (yes, we're Matrix fans...again, who isn't?):
+
+* **Case**: Thermaltake Core V21 SPCC Micro ATX, Mini ITX Cube gaming computer case chassis, small form factor
+* **Power Supply Unit (PSU)**: EVGA 700 B1, 80+ BRONZE 700W, 3 Year Warranty
+* **Motherboard (mobo)**: MSI Arsenal Gaming AMD Ryzen 1st+2nd Gen AM4 M.2 USB3 DDR4 DVI HDMI Micro-ATX (B450M Bazooka)
+* **CPU**: AMD Ryzen 5 2600 Processor with Wraith Stealth Cooler
+* **Thermal CPU paste**: ARCTIC MX-4 thermal compound paste
+* **Memory**: Corsair LPX 32G (2x16G) 3200MHz C16 DDR4 DRAM memory kit (x2, for a total of 4 and 64G RAM)
+* **Graphics card**: MSI Gaming GeForce GT 710 2GB GDRR3 64-bit HDCP Support DirectX 12 OpenGL 4.5 single fan low profile
+* **SSD**: Crucial MX500 1TB 3D NAND SATA 2.5 inch internal SSD
+
+> All of these can be found easily via my Amazon parts list: https://www.amazon.com/hz/wishlist/ls/I2ZHZ2DCETWC
+
+== More information about the hardware
+
+I can't say enough nice things about this Thermaltake case. It's accessible from both sides & top: all panels remove easily by hand with two bolts. One panel is clear plastic so you could light up the insides & show it off (hello gamers!), the other two have nearly full panel ventilation. And there are removable, magnetic mounted fine mesh screens over those vent panels to reduce dust accummulation inside your machine. It's incredibly well thought out.
+
+It also ships with a large (but whisper quiet) fan in the front to help with air circulation and cooling, with mounting positions on the case's bottom for more (and rails in the top for more too, if you place a mesh panel over them). This thing was designed from the start to keep your machine from heating up & throttling.
+
+I sized the PSU using online sizing tools, then rounded up to be sure I wouldn't tax it if (when) I add in more boards, a beefier graphics card, etc. My two subsequent criteria were reliability & sound level. This unit was said to be both reliable and very quiet, so it won out.
+
+I selected this particular motherboard & CPU because they hit the sweet spot of excellent performance and reasonable price. You can effectively spend as much you could ever want on a single chip, depending upon your tastes & budget...but I was looking for solid performance and a good value besides. The Ryzen 5 2600 came in strong, with 6 cores & 12 threads and decent numbers: GHz and GHz, which should handle containers and build cycles with aplomb. The fact that it shipped with a massive heat sink+quiet fan was icing on the cake.
+
+On thermal paste: DO NOT scrimp on heat dissipation. A small tube of quality thermal paste will be more than ample; all you need is a small amount between the CPU & heatsink/fan to help keep your rig cool and performant, reducing throttling due to the chip heating up under load. It's cheap and absolutely essential.
+
+> PRO TIP: Get the good kind that doesn't break down over time.
+
+The part I really wanted to max out was memory. This CPU & mobo can handle 64G of DDR4 RAM (4x16G), and I wouldn't have gone less. Keeping more apps+data in memory was my primary goal to reduce the work the system must do to swap and keep the fans quiet. This Crucial memory was rated extremely well, and price was (for 64G of DDR4) reasonable enough. So far, so great. :D
+
+I bought a decent graphics card for the machine's intended purpose, the MSI GeForce GT 710 with 2G of GDDR3 memory onboard. While it's possible I could fire up an occasional game on `trinity`, nearly (if not fully) 100% of its use will be as a developer workstation. IDEs, containers, local cloud environments, pipelines...and this card should be more than robust enough. The fan on it is quiet as well, which doesn't hurt its standing.
+
+Finally, the SSD is a well-rated and performant Crucial 1TB 3D NAND SATA drive. Not much to say here, it's quite zippy. :)
+
+Rounding out the odds & ends, I'm currently using an existing keyboard, mouse, & HDMI TV/monitor for user I/O and wired ethernet (port on motherboard) for connectivity. I'll likely upgrade the monitor at some point soon & possibly install a wireless card.
+
+== Software
+
+After toying with the idea of installing Pop_OS!, Debian, or ElementaryOS, I installed Ubuntu 18.04 LTS. Much of this stems from earlier forays into all three, plus Lubuntu, on a Dell XPS 14 and another older tower I have kicking about. As much as each distro has things that recommend it, I've found Ubuntu proper to have the best out-of-the-box *and* overall support for devices and software (esp dev tools) of any Linux distro. While I do love to tinker on occasion, my first, last, and most-positions-in-between priorities are to *get stuff done*. If things other than writing code & deploying it chew up more than a small fraction of my time, I need to move to a better setup. Ubuntu provides that nearly out of the box.
+
+== In conclusion...
+
+That's all for now! I'll likely post short updates on Twitter, link:https://twitter.com/mkheck[so click here & follow to stay informed].
+
+Yours in code,
+
+///ark

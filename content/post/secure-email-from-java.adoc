@@ -1,0 +1,107 @@
+---
+title: "Secure Email From Java"
+date: 2013-01-14T19:09:52-06:00
+draft: false
+image: ""
+tags: [bouncycastle, certificate, email, encrypt, ewallet, java, javamail, jks, orapki, pfx, pkcs12, s/mime, secure, sign, signed, wallet]
+---
+
+Cross-posted from link:https://blogs.oracle.com/javajungle/entry/secure_email_from_java[The Java Jungle] by Mark Heckler
+
+I’ve been working recently with a client to do some rather useful things with notifications, and one of them involved sending a secure email from within a Java program. We encountered some interesting (translation: weird!) challenges, and in overcoming them, I worked out a reasonably straightforward path through the minefield. If you’ve been thinking about secure-email-enabling your Java app but aren’t sure where to start, hopefully this will serve as a fairly quick and mostly painless primer.  🙂
+
+== The Problem
+
+Let me first say that if you only want to send a plain-text email from Java, there are ways to do that without much fuss and without any external players. If you want to sign or encrypt your emails, though, you’ll need a couple of extra components:
+
+. A digital certificate (private/public key pair issued by a recognized Certificate Authority, or “CA”)
+. A means of using the certificate to sign and/or encrypt the email
+
+he goal is to digitally sign an email to assure recipients that the sender of the mail is indeed me (or you, if you’re following along at work/home). Let’s get started!
+
+== Getting Your Tools in Order
+
+=== Getting a Certificate
+
+First, we have to have a digital certificate. If you already have one, you can skip this step…but if not, StartSSL offers free user/email certificates for personal use. Just point your browser to link:https://www.startssl.com/?app=12[the StartSSL site] and click the large button labeled “Sign-up”. You’ll need to provide some information, enter the verification code they email to the address you provide, and they do the rest...including installing your new cert and the certificate chain into your web browser.
+
+=== Freeing the Certificate from your Browser
+
+Perhaps the easiest way to use a certificate is to store it (keys, certificate chain) in a Java Keystore (jks). Extracting your shiny new certificate from your browser is a relatively easy (albeit drawn-out) process. From your browser, export your certificate, *including private key*. This will produce a .pfx file, which is a PKCS12 keystore. From Chrome, you simply:
+
+. Click on the Wrench (or Lines) icon in the upper-right corner
+. Select “Settings” from the menu
+. “Show advanced settings…” at the bottom of the page
+. Scroll down to the section labeled “HTTPS/SSL”
+. Click the "Manage certificates..." button to display your certificates.
+
+Then, from the certificates window:
+
+. Select the target certificate and click the “Export...” button
+. Click “Next” from the Export Wizard window
+. Choose “Yes, export the private key” and click “Next”
+. Under the “Personal Information Exchange – PKCS #12 (.PFX)” entry, select the options to “Include all certificates in the certification path if possible” and “Export all extended properties” (NOTE: Do NOT choose to “Delete the private key if the export is successful”. No no no!) and click “Next”
+. Enter a password (twice) and click “Next”
+. Provide a path/filename for the export and click “Next”, and finally…
+. Confirm the export options and click “Finish”.
+
+Now that we’ve liberated your cert from the browser, let’s make it usable by our (non-browser) Java program.
+
+=== Creating a Java Keystore
+
+The fastest, easiest way I’ve found to convert a .pfx file to a .jks (Java Keystore) file is with the Oracle 11g database client. The database client can be downloaded by link:http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html[following this link], selecting the “See All” link to the right of your listed operating system, and choosing the 11g client from the OS-specific download page. Once it’s downloaded and installed, you’re ready to proceed.
+
+Like the .pfx file, the Oracle wallet is a PKCS12 keystore, and the orapki utility (and other tools) included with the database client can be used to manipulate it…as long as it thinks it’s dealing with an Oracle wallet. To make that happen, simply rename the .pfx file to **ewallet.p12**. Since we aren’t dealing with the Oracle Wallet Manager, we don’t have to worry about meeting OWM’s password criteria or other niceties. Yes, that really is all there is to it!
+
+Now, to make a Java Keystore. To do that, you’ll need to open a command prompt and do the following tasks:
+
+. Create an ORACLE_HOME environment variable that points to the install location of the Oracle client
+. Run the following command, pointing to the orapki utility under %ORACLE_HOME%\bin (in Windows) or $ORACLE_HOME/bin (Mac/Linux/UNIX):
+
+----
+orapki wallet pkcs12_to_jks -wallet <wallet_directory> -pwd <wallet_password> -jksKeyStoreLoc <java_key_store_path_and_filename> -jksKeyStorepwd <jks_password>
+----
+
+You should now have a brand new Java KeyStore! You can verify its contents with the OpenSSL keytool utility:
+
+----
+keytool -list -keystore <java_key_store>
+----
+
+Now that we have our credentials in order, on to the Java side of things!
+
+== Building the Solution
+
+There are several Java libraries available that aid in signing and/or encrypting email. Of the non-commercial options I found, all use the link:http://www.bouncycastle.org/[*Bouncy Castle Crypto API *] link:http://www.bouncycastle.org/[and libraries] as their underpinnings. Bouncy Castle (BC) may have a funny name, but it’s all business with regard to encryption. At a very high level, you need to do the following things to create/send a signed email:
+
+. Provide the email “essentials”: SMTP server host & port, email addresses (sender & receiver), a subject, content, and the sending user’s password
+. Add BC as a new crypto provider
+. Retrieve the cert from your Java Keystore
+. Create and sign the email using the BC API/libraries
+. Send the email
+
+There is much more you can do of course, but these are the “must-haves”.
+
+In preparation for developing our secure email module, I created a proof of concept (BCCrypTool) by marrying a Java email program I’d written previously and some BC sample code...code reuse at its lowest level, but still good for the environment. 🙂 What you see link:https://github.com/hecklerm/BCCrypTool[here in my GitHub repo] is a bit of streamlined Java code that should be pretty easy to repurpose. Please feel free to take a copy and do just that, and if you make significant changes/improvements and are able and inclined to share them, please feel free to do that as well. Sharing is caring.  🙂
+
+A quick note on libraries. You’ll need the following to make this work:
+
+From link:http://www.oracle.com/technetwork/java/javamail/index.html[JavaMail]:
+
+* mail.jar
+
+If using Java older than SE 6, you’ll also need the link:http://www.oracle.com/technetwork/java/javase/index-jsp-136939.html[JavaBeans Activation Framework]:
+
+* activation.jar
+
+And link:http://www.bouncycastle.org/latest_releases.html[from Bouncy Castle], the following:
+
+* The BC provider library (bcprov-jdk15on-147.jar)
+* The BC S/MIME library (bcmail-jdk15on-147.jar)
+* The BC security library (bcpkix-jdk15on-147.jar)
+
+There are link:http://www.bouncycastle.org/latest_releases.html[other BC libraries available here] if you’d like to take things even further.
+
+All the best to you in your Java secure email adventures!
+
+Mark
