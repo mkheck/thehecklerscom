@@ -52,6 +52,21 @@ canonifyurls    = true
   weight = 200
 
 [[menu.main]]
+  name = "Abstracts"
+  url = "/page/abstracts"
+  weight = 180
+
+[[menu.main]]
+  name = "Contact me"
+  url = "/page/contact"
+  weight = 170
+
+[[menu.main]]
+  name = "Upcoming events"
+  url = "/page/events"
+  weight = 160
+
+[[menu.main]]
   name = "Java"
   url = "/tags/java/"
   weight = 100
