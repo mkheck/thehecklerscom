@@ -1,0 +1,63 @@
+---
+title: "Comment Ca Va"
+date: 2018-12-28T18:27:08-06:00
+draft: false
+image: "img/cat.jpg"
+tags: [code, comments, code smell, code smells, context]
+---
+
+I had been deep in code for the preceding few days (mine and others') and had achieved a few insights by poring over actual code (vs. comments and/or commentary) when this quote crossed my radar:
+
+image:/img/TorvaldsQuoteTweet.png[Torvalds Quote]
+
+Being an enthusiastic quote lover, I of course shared it on Twitter, not expecting the various interpretations it solicited. As an aside, this is what happens when you share something without a particular context: people rightfully supply their own. This is what makes art powerful and words potentially poignant...or dangerous. Context is key to clear communication, and I had omitted it entirely.
+
+The discussion that resulted was wonderful, and it made me really think about comments in general, their utility (or often their lack of, as I initially hinted), and why we developers often stake out inflexible positions regarding their use. Here is what I came up with.
+
+== Comments can be a "code smell"
+
+Let's tackle that term first. I *loathe* that term. It's a marketing term at its heart, meant to evoke an emotional response rather than logical consideration; after all, who wants smelly code? But the concept it conveys is useful: there is something about your code that may not be technically incorrect, but it is (shall we say) suboptimal. ;) Perhaps it is difficult to read and understand, difficult to maintain, uses old patterns (or no discernible patterns) for accomplishing certain tasks, etc. Whatever it is, it could use some spit and polish, some improvement in some way. Aside from it being descriptive in a very non-descriptive way (bits don't "smell", after all), it's often more than a little subjective. Code I may view as smelly may be your acceptable tradeoff for a very good reason, e.g. performance, reusability in your team/org, etc.
+
+All that said, let's focus upon areas in which most of us can reach agreement for starters.
+
+Anyone who has worked in a large, corporate environment has almost certainly seen methods of only a few lines documented with literally pages of comments describing what the method does, who wrote it initially, a modification log, etc. Few would argue that this is desirable.
+
+Taken to this extreme, codebases inflate and require inordinate amounts of time to wade through for new developers, or even developers returning to a project after any length of time away. Yes, there is a search function in your IDE, and yes, most times you can safely ignore those reams of comments. But sometimes, once in a great while, an essential bit of information is buried in there. So you find yourself having to read a small book each time you dip back into the code.
+
+I haven't yet mentioned the accompanying maintenance effort that goes into comments of that sort. If you're required by your organization to maintain that modification log, you must remember to note your changes (usually at least date, name/Id, & description) in each class and method you touch. Yes, of course a good version control system will provide an audit log. But policies are policies. ;)
+
+== Comments can literally save you and your organization
+
+Coming from the other perspective, all comments are not bad, and all comments are not code smells. Let me repeat that:
+
+> "All comments are not bad, and all comments are not code smells."
+
+If you have ever developed software in a highly-regulated industry, you almost certainly have personal examples of this you can reference. For those who haven't, please allow me to share one.
+
+Financial instruments have a very specific way of calculating/deriving values, and oftentimes government regulatory bodies strictly enforce those mechanisms. So-called creative accounting or similar endeavors can result in jail time for the individual offender(s) and punitive fines for the organization(s) who take part.
+
+Sometimes, these mandated formulas seem a bit obtuse when rendered in code. And a developer well-versed in both code and financial instruments may be able to provide a cleaner-looking shortcut to calculating these values. Unit tests we've created all pass...why not refactor that formula?
+
+For starters, have you ever discovered an unforeseen edge case? Governments and regulatory bodies aren't very understanding of this, especially when required formulas are published. No one cares how elegant your algorithm is if it costs people their life savings. Implementing the specified formula and attaching a comment indicating this (along with the published formula itself and a reference to the accompanying regulation) serves as a very clear warning to any, including yourself, who may examine the code at a later date and consider streamlining it.
+
+The closer that critical information is to the code that implements it, the better your chances are of maintaining accuracy, compliance, and auditability. It also saves a great deal of time trying to locate referenced formulas for verification, should you or another dev need to do so.
+
+== In conclusion
+
+image:/img/CommentsTweets.png[Comments]
+
+Comments can be abused by providing too much:
+
+* Too much to read, as a practical matter
+* Regurgitating what your code is doing in natural language (whyyyyy?)
+* A modification log that can and should be in your DVCS
+
+They can also be abused by providing too little:
+
+* Missing context (it's not just helpful for quotes, after all)
+* Domain details (financial formulas or regulatory requirements, with references)
+
+Failing to provide valuable comments (and *only* valuable comments) is simply shifting responsibilities onto others to figure it out on their own and smacks of elitism. That too is a code smell.
+
+Cheers,
+Mark
