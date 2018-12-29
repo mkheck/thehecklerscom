@@ -1,0 +1,109 @@
+---
+title: "Spring Boot for IoT Developers: Getting Started"
+date: 2016-02-01T16:18:32-06:00
+draft: false
+image: "/img/SpringGrass.jpg"
+tags: [API, Cloud, Cloud Foundry, Internet of Things, IoT, Pivotal, REST, Spring, Spring Boot]
+---
+
+It often surprises other devs when I suggest that Spring Boot is a perfect addition to the IoT developer’s toolbox. If you’re deep into IoT and have the luxury of another group providing all of your back-end and/or cloud platform code, that’s perfectly understandable. However, if you’re a full-stack developer, by choice or necessity, you need to know this! Grab a chair and a cup of coffee; I think you’ll find this interesting (and useful).
+
+=== Let Me Just Put This Out There
+
+Here is what most people imagine when they hear “IoT”:
+
+Internet of *_THINGS_*
+
+But this is what they should be thinking:
+
+*_INTERNET_* of Things
+
+The *things* get most of the attention, mindshare, and “buzz”. Why is that? Well…because gadgets are cool! Most of us chose to be developers because of the fun/interesting/obsessive parts, not because of the dull bits. And while there are usually fun and (ahem) less-fun components to everything, who can resist gadgetry in general?
+
+Ah, but without connectivity, without storage, without the ability to monitor, manage, and analyze those often-remote sensors and controls...what do we have? Truthfully, not much. Something interesting, but barely so; a school science project, perhaps. The real payoff (in money and intrigue) is in what happens when you *connect* those “things”. Without a versatile and reliable platform behind those devices, you just have islands of misfit toys.
+
+This is where Spring Boot really shines: helping you to create meaningful software at velocity. Software that is clean, concise, readable, maintainable...and built *_Cloud Native_*. We’ll come back to that last part over the next few installments, but for now, let’s focus upon building a basic platform to enable your IoT to *mean something*.
+
+=== Choose Your Legos(TM)
+
+Spring Boot integrates several useful capabilities into a single, coherent code framework and approach. In a nutshell, it helps a developer rapidly build stand-alone applications that incorporate and integrate with various third-party libraries that can be deployed anywhere a JAR will run. Anywhere. It’s open source, opinionated (minimal configuration, but flexible to fully accommodate edge cases), and insanely effective. Coming from a more staid environment, I found my first exposure to Spring Boot (and every one since) surprising and refreshing. If so-called enterprise software development sounds boring to you, you probably haven’t taken Boot for a test drive.
+
+And that’s it! Kidding, that’s not it. But Spring Boot does bring along several goodies that streamline the effort it takes to build robust back end applications. Remember how I said it’s “opinionated”? Let’s examine a few of its carefully-chosen opinions, step through building a simple cloud-ready application for your IoT system, and then see where that takes us. Shall we?
+
+=== On Your Mark, Get Set, Go!
+
+The *_Spring Initializr_* gets our project off to a running start. There are several ways to accomplish this, but since we’re taking the simplest path possible for this first example, let’s just point our browsers to [start.spring.io](http://start.spring.io/). Spring Boot gives you options, such as a Gradle-based build, various versions of Boot, Java/Groovy, and packaging (JAR vs. WAR), but we’ll stick to most of the defaults for our example.
+
+> *_NOTE: To see all of the choices at your disposal, simply click the “Switch to the full version.” link at the bottom of the page._*
+
+Here are the choices we’ll make for our example:
+
+- Maven Project
+- Latest non-snapshot version of Spring Boot
+- Group: org.thehecklers (feel free to use your own)
+- Artifact: iot-service
+- Dependencies: Web, JPAfootnote:[For this example, we’ll use a JPA data source, but feel free to choose a NoSQL option. Boot gives you many data source options out of the box, and of course, you can "bring your own" with a bit more effort.], H2footnote:[H2 is an in-memory database. While unsuitable for environments in which physical persistence is a requirement, it functions the same from a developer perspective and satisfies our demo requirements nicely for now.], REST Repositories
+
+Once we’ve made the above selections, simply click the Generate Project button to have the Spring Initializr generate a skeleton project, bundle it into a .zip file, and serve it up for download. Save it locally, unzip it, and open the project in your favorite IDE to get started coding.
+
+=== Building your IoT Service
+
+With just that little bit of effort, we already have the foundation in place for our IoT back end service. You can verify this by running the app and pointing your browser to link:localhost:8080[localhost:8080]. You should see the following:
+
+image:/img/SpringForIoTEmptyProject.png[]
+
+> "Large streams from little fountains flow, Tall oaks from little acorns grow."
+
+For this installment, we’ll focus on the MVP (Minimum Viable Product) needed to support our nascent IoT installation. Assuming we’ll need to track readings captured by one or more sensors, let’s define an Entity class for our Readings: 
+
+link:https://gist.github.com/hecklerm/21b0528b287ca9c4d3e2[]
+
+The annotations @Entity, @Id, and @GeneratedValue are from the Java Persistence API (JPA) standard and identify/describe the class and its Id attribute as a JPA entity and its primary key, respectively. Aside from these annotations, the Reading class is just a straightforward POJO.
+
+Next, we face the daunting task of creating the following functionality:
+
+- REST endpoint(s) via which our devices can provide (POST) readings
+- REST endpoint(s) allowing us to retrieve (GET) readings for review, reporting, and analysis
+- Mechanism(s) for storage and retrieval of readings from our chosen data store
+
+Spring makes this functionality easy to implement. Spring Data REST was one of the dependencies we included when we created this project (REST Repositories), and by simply extending a Spring Data repository interface specifying the Reading class and Id type and annotating our new interface as a RepositoryRestResource, the repository is exposed via a REST API. For now, this meets our needs nicely:
+
+link:https://gist.github.com/hecklerm/3fcb08c578abc25f73a3[]
+
+Re-running our application and refreshing our browser page (localhost:8080) confirms that our REST endpoint for readings is now active:
+
+image:/img/SpringForIoTRESTReadings.png[]
+
+> "Getting there..."
+
+Next, let’s test functionality by emulating a device pushing readings to our IoT service. I used curl, but feel free to use whatever means you prefer to POST to a REST endpoint. 
+
+link:https://gist.github.com/hecklerm/0bd3ed62d7679b0db1fd[]
+
+Then we verify using a vanilla curl GET:
+
+link:https://gist.github.com/hecklerm/f17501e84ac36ca64200[]
+
+Here we see the two readings I created in testing, returned via our GET request:
+
+link:https://gist.github.com/hecklerm/2747f11e2e6418aefb8d[]
+
+If you’ve been pair-programming with me, congratulations! You have now created your first very basic IoT service…and since we had Spring Boot build a fully self-contained "uberJAR" (bringing its own container with it), it can be deployed wherever Java is installed. Who would have thought it could be this fast (or fun)?!?
+
+=== Future Articles, Future Enhancements
+
+As we proceed, there are several topics we will expand upon, options/adjustments we will explore (WebSocket, SQL & NoSQL persistence,...), functionality we can add (security, tailored queries, visualizations,...), and of course, we’ll leverage Spring Boot’s focus upon Cloud Native Java to deploy quickly and easily to the leading open source cloud platform, Cloud Foundry. If you have comments, questions, or suggestions, please leave them below! For updates, please follow me on Twitter at link:https://twitter.com/mkheck[@mkheck].
+
+Keep coding,
+
+Mark
+
+=== Additional Information
+
+- link:http://start.spring.io/[Spring Initializr]
+- link:http://projects.spring.io/spring-boot/[Spring Boot]
+- link:http://projects.spring.io/spring-data-rest/[Spring Data REST]
+- link:https://spring.io/guides[Spring Getting Started Guides]
+- link:https://www.cloudfoundry.org/[Cloud Foundry]
+- link:https://pivotal.io/platform[Pivotal Cloud Foundry]
+- link:https://run.pivotal.io/[Pivotal Web Services (for free trial)]
