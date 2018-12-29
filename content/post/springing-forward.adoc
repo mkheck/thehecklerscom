@@ -1,0 +1,37 @@
+---
+title: "Springing Forward"
+date: 2015-11-02T17:19:04-06:00
+draft: false
+image: "/img/SpringGrass.jpg"
+tags: []
+---
+
+At JavaOne last week, several people asked me how my work at Pivotal was going, and it occurred to me: I had been so busy diving into all the new toys that I hadn’t written anything about it! This is a first step toward remedying that.  🙂
+
+At the risk of this post sounding like a short commercial, I’m deeply impressed with the consistency of vision and the depth and breadth of capabilities Pivotal offers innovative organizations and developers. The various Spring offerings solve real problems, and they solve them in ways that are “developer first”...ways that make sense not just conceptually, but also when pounding out code in an IDE (or vi/emacs, if you prefer). You hear a lot about an “opinionated” approach, and that could be chafing if there weren’t such flexibility to do it it *your way* anytime needed/desired; but the goal is always the same:
+
+*Offer a way to get things done cleanly and easily by following a prescribed (opinionated) approach...*
+
+*...but get out of the way quickly when another approach is warranted/desired.*
+
+Best of both worlds.
+
+With regard to Pivotal Cloud Foundry...I once heard it described as the “travel adapter” of cloud services, and that explanation is brilliant. In short, Pivotal Cloud Foundry (PCF):
+
+- Works with a variety of underlying infrastructures (VMware, OpenStack, Amazon, Azure, Google Cloud)
+- Runs on-premises or public
+- Provides a single, elegant API for developers, regardless of infrastructure
+- Provides a single, elegant API for developers, regardless of siting (on-premises or public cloud)
+- Provides a true Cloud Native platform: drag, drop, run
+
+If you’ve used other cloud platforms (and not yet used Pivotal Cloud Foundry), you’re probably reading and re-reading that list with some combination of skepticism and guarded envy. Don’t believe me; believe yourself: link:https://run.pivotal.io/[sign up for a free 60-day trial here] and kick the tires. No better way to see the future than to create a small Spring Boot application (or bring your own) and deploy it to PCF. You’ll wonder why other vendors make it so difficult when it can be so straightforward.
+
+In summary, I’m working on a great team in a great company with products from the future. What’s not to love? 😀 
+
+Cheers,
+
+Mark
+
+*For everyone I met and re-met (!) at JavaOne, thank you for your friendship and commitment to this great community! Looking forward to our paths crossing again, and looking forward to meeting new “old friends” soon.*
+
+*Please check back here (or link:https://twitter.com/mkheck[follow me on Twitter: @mkheck]) for periodic ponderances, quick tips, and everything in between. Keep that code flowing!*
