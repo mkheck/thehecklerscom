@@ -1,6 +1,6 @@
 ---
-title: "Comment Ca Va"
-date: 2018-12-28T18:27:08-06:00
+title: "Comment ça va?"
+date: 2017-09-24T18:27:08-06:00
 draft: false
 image: "img/cat.jpg"
 tags: [code, comments, code smell, code smells, context]

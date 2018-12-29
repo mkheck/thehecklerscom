@@ -1,5 +1,5 @@
 ---
-title: "Como Utilizar SCS en PAS"
+title: "Un curso intensivo: Como utilizar Spring Cloud Services en PAS"
 date: 2018-02-20T21:51:12-06:00
 draft: false
 image: "img/SCSonPASlogo.png"

@@ -1,6 +1,6 @@
 ---
-title: "Using Spring Boot Actuator Integrations With Pivotal Cloud Foundry 1 11"
-date: 2018-12-28T19:10:50-06:00
+title: "Using Spring Boot Actuator integrations with Pivotal Cloud Foundry 1.11"
+date: 2017-07-02T19:10:50-06:00
 draft: false
 image: "img/SpringLeaf2.png"
 tags: [instrumentation, integration, PCF, Pivotal Cloud Foundry, Spring Boot, Spring Boot Actuator]
