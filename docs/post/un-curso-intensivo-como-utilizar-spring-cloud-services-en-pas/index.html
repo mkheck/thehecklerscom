@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en-US" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Un curso intensivo: Como utilizar Spring Cloud Services en PAS &middot; </title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://thehecklers.com/favicon.ico" />
+    <link rel="canonical" href="https://thehecklers.com/post/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/" />
+
+     <meta name="description" content="This article is available in English at Getting Started with Spring Cloud Services on Pivotal Application Service.
+   Cuando se trata de crear una arquitectura " /> 
+
+     
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://thehecklers.com/img/SCSonPASlogo.png"/>
+    
+ 
+    <meta name="twitter:title" content="Un curso intensivo: Como utilizar Spring Cloud Services en PAS"/>
+    <meta name="twitter:description" content="This article is available in English at Getting Started with Spring Cloud Services on Pivotal Application Service.
+   Cuando se trata de crear una arquitectura "/>
+    <meta name="twitter:url" content="https://thehecklers.com/post/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/" />
+    <meta name="twitter:site" content="@mkheck"/>
+
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="Un curso intensivo: Como utilizar Spring Cloud Services en PAS &middot; Hecklers in Development, brewing stronger Java" />
+    <meta property="og:url" content="https://thehecklers.com/post/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/" />
+    <meta property="article:publisher" content="https://www.facebook.com/markhecklerdev" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="This article is available in English at Getting Started with Spring Cloud Services on Pivotal Application Service.
+   Cuando se trata de crear una arquitectura " />
+
+    <meta property="article:published_time" content="2018-02-20T21:51:12-06:00" />
+    <meta property="article:tag" content="Spring" /><meta property="article:tag" content="Spring Boot" /><meta property="article:tag" content="Spring Boot Actuator" /><meta property="article:tag" content="Spring Cloud" /><meta property="article:tag" content="configure" /><meta property="article:tag" content="Netflix OSS" /><meta property="article:tag" content="Eureka" /><meta property="article:tag" content="Config Server" /><meta property="article:tag" content="Hystrix" /><meta property="article:tag" content="service registry" /><meta property="article:tag" content="dashboard" /><meta property="article:tag" content="circuit breaker" /><meta property="article:tag" content="settings" />
+
+    <meta property="og:image" content="https://thehecklers.com/img/SCSonPASlogo.png"/>
+
+
+    <meta name="generator" content="Hugo 0.53" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://thehecklers.com/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="https://thehecklers.com/css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="post-template">
+  <div class="site-wrapper"> 
+
+<header class="site-header outer">
+  <div class="inner">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+
+        <ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/">Home</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/page/abstracts">Abstracts</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/page/contact">Contact me</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/page/events">Upcoming events</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/tags/java/">Java</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/tags/spring/">Spring</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/categories/">Categories</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://spring.io/">Spring Central</a>
+            </li>
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    <a class="social-link social-link-fb" href="https://www.facebook.com/markhecklerdev" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg></a>
+
+                    <a class="social-link social-link-tw" href="https://twitter.com/mkheck" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
+
+                    <a class="social-link" href="https://github.com/mkheck" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    <a class="social-link" href="https://www.linkedin.com/in/markheckler" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 50 512 512"><path d="M150.65,100.682c0,27.992-22.508,50.683-50.273,50.683c-27.765,0-50.273-22.691-50.273-50.683 C50.104,72.691,72.612,50,100.377,50C128.143,50,150.65,72.691,150.65,100.682z M143.294,187.333H58.277V462h85.017V187.333z M279.195,187.333h-81.541V462h81.541c0,0,0-101.877,0-144.181c0-38.624,17.779-61.615,51.807-61.615 c31.268,0,46.289,22.071,46.289,61.615c0,39.545,0,144.181,0,144.181h84.605c0,0,0-100.344,0-173.915 s-41.689-109.131-99.934-109.131s-82.768,45.369-82.768,45.369V187.333z" /></svg></a>
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+      <article class="post-full post"> 
+    <header class="post-full-header">
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="2018-02-20">20 February 2018</time>
+                <span class="date-divider">/</span> <a href="https://thehecklers.com/tags/spring/">#Spring</a>&nbsp;<a href="https://thehecklers.com/tags/spring-boot/">#Spring Boot</a>&nbsp;
+        </section>
+        <h1 class="post-full-title">Un curso intensivo: Como utilizar Spring Cloud Services en PAS</h1>
+    </header>
+    
+    <figure class="post-full-image" style="background-image: url(https://thehecklers.com/img/SCSonPASlogo.png)">
+    </figure>
+
+    <section class="post-full-content">
+        <div class="kg-card-markdown">
+        <div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>This article is available in English at <a href="https://content.pivotal.io/blog/getting-started-with-spring-cloud-services-on-pivotal-application-service">Getting Started with Spring Cloud Services on Pivotal Application Service</a>.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Cuando se trata de crear una arquitectura de microservicios robusta y resistente ubicada en la nube, los componentes de Spring Cloud/Netflix OSS son habilitadores conocidos y respetados. Ciertos modelos y mecanismos se han probado absolutamente esenciales para lograr alta velocidad (en desarollo) <strong>y</strong> alta disponibilidad (en producción), y Spring Cloud/Netflix OSS tiene unos de los "mejores entre los mejores".</p>
+</div>
+<div class="paragraph">
+<p>Pivotal Application Service provee componentes claves de Spring Cloud/Netflix OSS como servicios de fácil consumo en su mercado, disponible por PAS Apps Manager y la interfaz de la línea de mandos de Cloud Foundry (CF CLI en inglés). Estos componentes son particularmente útiles cuando desplegado, manejado, escalado, y segurado por PAS:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Spring Cloud Services Config Server</strong>: exteriorizar los ajustes de su sistema distribuida como se hace Spring Cloud Config</p>
+</li>
+<li>
+<p><strong>Spring Cloud Services Service Registry</strong>: provee un directorio en que todas instancias de su microservicios se puede ver una a otra como se hace Spring Cloud Netflix Eureka</p>
+</li>
+<li>
+<p><strong>Spring Cloud Services Circuit Breaker Dashboard</strong>: un monitor visual de circuitos inter-servicio que muestra estadisticas de peticiones y el estatus de circuitos (cerrado, abierto, medio abierto) como se hace Spring Cloud Netflix Hystrix Dashboard</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Por este artículo, le mostraré a Uds. como crear rápidamente estes servicios en su ambiente PAS. Unas asuncionas basicas nos ayudarán destilar este artículo a su esencia:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ya conocen Uds. los servicios de Spring Cloud/Netflix OSS que se sirven como fundaciones de estos componentes. Si no, por favor que lean esa material antes de leer este artículo. Se proveen referencias utiles en el parte inferior de esta página para que ayudarlos empezar.</p>
+</li>
+<li>
+<p>Seguridad es esencial por las sistemas en producción, y estos servicios no son excepciones. Pero por este artículo, nos concentramos especificamente y solamente en los propios servicios y de primero, como hacerlos funcionales en su ambiente de no producción.</p>
+</li>
+<li>
+<p>Por el primer punto antedicho, si ya se lo usan el Spring Cloud Config, es probable que ya tienen un repositorio de git que pueda proveer sus microservicios con los ajustes que se requieran y se esperen. Esto mismo repositorio se puede usado por el SCS Config Server si es accesible por https o ssl. Por este artículo, configuro SCS para accesar con https un repositorio de archivos de configuración en Github, pero para entender todas las opciones disponibles, por favor, consultan la documentación de SCS por los enlaces en el parte inferior de esta página.</p>
+</li>
+<li>
+<p>Ustedes están conectados a un punto final de PCF/PAS, sus administradores de nube han expuesto los servicos antedichos por el mercado, y tienes los privilegios necesarios de activarlos.</p>
+</li>
+<li>
+<p>No tanto una asunción como una declaración: yo prefiero la línea de mandos sobre las interfaces gráficas por muchas de las tareas que se pueden hacer con ambas, así que voy a usar la CF CLI por la mayoría de las tareas&#8230;&#8203;pero la interfáz de PAS Apps Manager es extremamente limpia y útil, y la usaré cuando yo piense que provea más claridad. Pero por favor, hagan lo que se funciona mejor para Uds.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Con eso, vamonos!</p>
+</div>
+<div class="sect1">
+<h2 id="_los_microservicios_parte_i">Los microservicios, parte I</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para demostrar como estes servicios se funcionan y soportan nuestro microservicios, claro que necesitemos unos microservicios. Crearemos un microservicio dominio (que provea persistencia y lógico específico de un dominio de negocio) y un microservicio de borde (que provea una API expuesta al exterior a las aplicaciones clientes).</p>
+</div>
+<div class="paragraph">
+<p>Por este artículo, he creado un servicio dominio se llama <code>coffee-service</code> y un microservicio de borde que se llama <code>edge-service</code>. El coffee-service expone un catálogo de cafés actualmente disponibles, detalles de cafés individuos, y un punto final que se llama <code>/coffees/random</code> que provee un café random por petición.</p>
+</div>
+<div class="paragraph">
+<p>El edge-service expone un punto final que se llama <code>/surpriseme</code> (sorpréndame!) para barristas usando aplicaciones clientes (web, iOS, Android) para elegir un café random por petición del cliente.</p>
+</div>
+<div class="paragraph">
+<p>Para conectar nuestras aplicaciones a SCS, tenemos que cambiar pocas cosas pequeñas.</p>
+</div>
+<div class="sect2">
+<h3 id="_coffee_service">coffee-service</h3>
+<div class="sect3">
+<h4 id="_la_clase_de_aplicación_principal">La clase de aplicación principal</h4>
+<div class="paragraph">
+<p>Necesitamos añadir la anotación <code>@EnableDiscoveryClient</code> a la clase principal de nuestra aplicación así que coffee-service se registra con y sondea el registro de servicios Eureka.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_bootstrap_properties">bootstrap.properties</h4>
+<div class="listingblock">
+<div class="content">
+<pre>spring.application.name=coffee-service</pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Por nuestro ambiente de no producción (por favor, revisan las asuncionas antedichos!), deactivamos seguridad HTTP basica y seguridad para los puntos finales de administración de Actuator (si usemos Spring Boot Actuator). Los ajustes que lo hagan son <code>security.basic.enabled</code> y <code>management.security.enabled</code>, y se configuran a falso en los ajustes de coffee-service obtenidos del SCS Config Server.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_manifest_yml">manifest.yml</h4>
+<div class="paragraph">
+<p>Creamos un archivo se llama <code>manifest.yml</code> y lo añade al directorio "root" del proyecto Spring Boot para que tengamos un método consistente y declarativo de desplegar la aplicación a PAS con el mando <code>cf push</code>. Aquí están los contenidos:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  applications:
+    - name: coffee-service
+      path: target/coffee-service-0.0.1-SNAPSHOT.jar
+      memory: 1G</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_dependencias">Dependencias</h4>
+<div class="paragraph">
+<p>Para asegurar la propia interoperación de los microservicios desplegados a PAS con los componentes de SCS, debemos tomar un poco de cuidado para sincronizar versiones de las librerías de Spring Boot, Spring Cloud, y Spring Cloud Services. <a href="https://docs.pivotal.io/spring-cloud-services/1-5/common/client-dependencies.html">Este enlace</a> provee una guía concisa de cuales versiones de eligir.</p>
+</div>
+<div class="paragraph">
+<p>Después de eligir las versiones correctas, añadir capabilidades SCS a sus microservicios es relativamente fácil. Seguí la información en la página detrás el enlace antedicho, con variaciones pequeñas. Aquí están los pasos que tomé por configuración rapida y mantenibilidad de largo plazo.</p>
+</div>
+<div class="paragraph">
+<p>En primer lugar, yo creé otro propiedad en el archivo pom.xml de coffee-service por <code>spring-cloud-services.version</code> para corresponder con lo que existe <code>spring-cloud.version</code>, usando las entradas correctas de la tabla de dependencias clientes.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/19d7e3a52c341d263f0a40d4e1f7ad18" class="bare">https://gist.github.com/mkheck/19d7e3a52c341d263f0a40d4e1f7ad18</a></p>
+</div>
+<div class="paragraph">
+<p>Segundo, añadí las librerías clientes config-client y service-registry adentro de la sección de Maven <code>&lt;dependencies&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/76492918031051858b04633a377ec7a5" class="bare">https://gist.github.com/mkheck/76492918031051858b04633a377ec7a5</a></p>
+</div>
+<div class="paragraph">
+<p>Tercero, añadí las dependencias apropiadas adentro de la sección de Maven <code>&lt;dependencyManagement&gt;</code>, refiriendo a la propiedad <code>spring-cloud-services.version</code> creado antes.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/a583063b735ab18ead3f7dfc8b766133" class="bare">https://gist.github.com/mkheck/a583063b735ab18ead3f7dfc8b766133</a></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_edge_service">edge-service</h3>
+<div class="sect3">
+<h4 id="_la_clase_de_aplicación_principal_2">La clase de aplicación principal</h4>
+<div class="paragraph">
+<p>Tengan cuidado añadir ambas anotaciones <code>@EnableCircuitBreaker</code> y <code>@EnableDiscoveryClient</code> a la declaración de la clase de aplicación principal así que edge-service se registra con y sondea el registro de servicios Eureka y soportar Hystrix cortacircuitos (en inglés, circuit breakers).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_bootstrap_properties_2">bootstrap.properties</h4>
+<div class="listingblock">
+<div class="content">
+<pre>spring.application.name=edge-service</pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Por nuestro ambiente de no producción (por favor, revisan las asuncionas antedichos!), deactivamos seguridad HTTP basica y seguridad para los puntos finales de administración de Actuator (si usemos Spring Boot Actuator). Como con coffee-service, los ajustes que lo hagan son <code>security.basic.enabled</code> y <code>management.security.enabled</code>, y se configuran a falso en los ajustes de edge-service obtenidos del SCS Config Server.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_manifest_yml_2">manifest.yml</h4>
+<div class="paragraph">
+<p>Creamos un archivo se llama <code>manifest.yml</code> y lo añade al directorio "root" del proyecto Spring Boot para que tengamos un método consistente y declarativo de desplegar la aplicación a PAS con el mando <code>cf push</code>. Aquí están los contenidos:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  applications:
+    - name: edge-service
+      path: target/edge-service-0.0.1-SNAPSHOT.jar
+      memory: 1G</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_dependencias_2">Dependencias</h4>
+<div class="paragraph">
+<p>Como con coffee-service, yo creé otro propiedad en el archivo pom.xml de edge-service por <code>spring-cloud-services.version</code> para corresponder con lo que existe <code>spring-cloud.version</code>.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/19d7e3a52c341d263f0a40d4e1f7ad18" class="bare">https://gist.github.com/mkheck/19d7e3a52c341d263f0a40d4e1f7ad18</a></p>
+</div>
+<div class="paragraph">
+<p>Segundo, añadí las librerías clientes config-client, service-registry, y circuit-breaker a la sección de Maven <code>&lt;dependencies&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/f455996432cbd09c7c8d6b343c1212bd" class="bare">https://gist.github.com/mkheck/f455996432cbd09c7c8d6b343c1212bd</a></p>
+</div>
+<div class="paragraph">
+<p>Tercero, añadí las dependencias apropiadas a la sección de Maven <code>&lt;dependencyManagement&gt;</code>, refiriendo a la propiedad <code>spring-cloud-services.version</code> creado antes.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/a583063b735ab18ead3f7dfc8b766133" class="bare">https://gist.github.com/mkheck/a583063b735ab18ead3f7dfc8b766133</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ambos_microservicios">Ambos microservicios</h4>
+<div class="paragraph">
+<p>Finalmente, construí ambos proyectos con <code>mvn clean package</code> y hice un mando <code>cf push --no-start</code> para enviar las aplicaciones a PAS. Usamos la bandera <code>--no-start</code> para subir los microservicios a la nube pero no ejecutarlos, pendiente a sus conexiones a los servicios SCS.</p>
+</div>
+<div class="paragraph">
+<p>Es todo por ahora. Próximamente, tenemos que crear los servicios SCS que planeamos usar con nuestros microservicios.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_el_mercado_marketplace">El mercado (Marketplace)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cada servicio disponible en el mercado puede tener un plan&#8230;&#8203;or muchos planes de los que se puede elegir. Estos planes se muestran en el mercado de Apps Manager cuando se elige el servicio deseado y se abre la página de información, o de la CF CLI si se manda <code>cf marketplace</code>, o simplemente <code>cf m</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="_apps_manager_marketplace_listing">Apps Manager Marketplace listing</h3>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/AppsMan_Marketplace.png" alt="Services Marketplace en Apps Manager"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cf_cli_marketplace_listing">CF CLI Marketplace listing</h3>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/CLI_Marketplace.png" alt="Services Marketplace catálogo en la CF CLI"></span></p>
+</div>
+<div class="paragraph">
+<p>Por cada servicio que se quiere activar del mercado, se necesita determinar cual plan de elegir. Por servicios con sólo un plan, es fácil: se elige <strong>el plan</strong>. :)</p>
+</div>
+<div class="paragraph">
+<p>Por adicional información sobre un servicio particular en el mercado, existe este mando útil de la CF CLI:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cf m -s &lt;NOMBRE_DE_SERVICIO&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_spring_cloud_services_config_server">Spring Cloud Services Config Server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para activar el SCS Config Server, sólo se necesita dos cosas: la CF CLI y un repositorio adecuado de archivos de configuración con ajustes para los microservicios deseados. Para conectar los dos, aquí está el mando se necesita escribir en el la CF CLI (con cambios apropiados al nombre del servicio y el uri del repositorio, claro):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cf cs p-config-server standard config-service -c '{"git": { "uri": "https://github.com/mkheck/SCSconfig", "label": "master" } }'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Examinemos esto un poco.</p>
+</div>
+<div class="paragraph">
+<p><code>cf</code> es la utilidad CF CLI</p>
+</div>
+<div class="paragraph">
+<p><code>cs</code> es el mando de "create service", or crear un servicio</p>
+</div>
+<div class="paragraph">
+<p><code>p-config-server</code> es el nombre de servicio expuesto en el mercado para el Spring Cloud Services Config Server</p>
+</div>
+<div class="paragraph">
+<p><code>standard</code> es el plan que eligimos</p>
+</div>
+<div class="paragraph">
+<p><code>config-service</code> es el nombre que asigné a la instancia de servicio que se crea. Por favor, eligen nombres que se adhieran con sus preferencias y estándares de nombrado.</p>
+</div>
+<div class="paragraph">
+<p><code>-c</code> es seguido por un objeto JSON conteniendo parámetros de <em>configuration</em>. Es este caso, nuestro objeto <code>git</code> contiene propiedades para un <code>uri</code> (representando un repositorio accesible de git, en este ejemplo, un repositorio ubicado en Github) y la <code>label</code> apropiada (aquí, "master").</p>
+</div>
+<div class="paragraph">
+<p>Una vez que hemos emitido el mando antedicho, escribiendo <code>cf s</code> en la línea de mandos se muestra una lista de nuestros servicios activos. De nota particular es el columno con el título "last operation" que se muestra el estatus de "create succeeded" para el Config Server cuando está listo.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_spring_cloud_services_service_registry">Spring Cloud Services Service Registry</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para crear y configurar el regístro de servicios SCS, simplemente ejecutar el mando siguiente en la CF CLI (con su elección de <code>NOMBRE_DE_SERVICIO</code>, claro):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cf cs p-service-registry standard eureka-service</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Para ver la consola (dashboard en inglés) del SCS Service Registry, navigamos al enlace de "dashboard" que se muestra en la salida del mando <code>cf service eureka-service</code> (o en Apps Manager, elegiendo "Manage" de la página del SCS Service Registry).</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/AppsMan_SCS_ServiceRegistryDashboard.png" alt="Service Registry Dashboard (sin servicios ya registrado)"></span></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Nuestros dos microservicios, <code>coffee-service</code> y <code>edge-service</code> no se han atado con el regístro y aún no se ejecutan en este punto, así que no se aparecen aquí.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_spring_cloud_services_circuit_breaker_dashboard">Spring Cloud Services Circuit Breaker Dashboard</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para activar la consola de Spring Cloud Netflix Hystrix como componente SCS, simplemente escriben el mando siguiente en la CF CLI, cambiando el nombre de <code>SERVICE_INSTANCE</code> como quieran:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cf cs p-circuit-breaker-dashboard standard hystrix-dashboard</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Para ver la consola SCS Circuit Breaker, navigamos al enlace de "dashboard" que se muestra en la salida del mando <code>cf service hystrix-dashboard</code> (o elegiendo "Manage" de la página SCS Circuit Breaker Dashboard en Apps Manager).</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/AppsMan_SCS_CircuitBreakerDashboard.png" alt="Circuit Breaker Dashboard (sin circuitos activos actuales)"></span></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Nuestros dos microservicios, <code>coffee-service</code> y <code>edge-service</code> todavía no están ejecutando, así que no están circuitos actuales de monitor.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_los_microservicios_parte_ii">Los microservicios, parte II</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ahora que tengamos microservicios desplegados en PAS y SCS Services se configuran para soportarlos, el paso final es hacer las conexiones necesarias.</p>
+</div>
+<div class="sect2">
+<h3 id="_cf_bs">cf bs</h3>
+<div class="paragraph">
+<p>Para que nuestros microservicios pueden usar los servicios que creemos en PAS, es necesario enlazar nuestras aplicaciones a los servicios apropiados. Es fácil hacerlo con el mando <code>cf bind-service</code> o su forma corta, <code>cf bs</code>.</p>
+</div>
+<div class="paragraph">
+<p>Como tenemos dos microservicios y algunos SCS servicios con que enlazar cada uno, es necesario escribir estos mandos:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cf bs coffee-service config-service
+cf bs coffee-service eureka-service
+cf bs edge-service config-service
+cf bs edge-service eureka-service
+cf bs edge-service hystrix-dashboard</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reiniciando_nuestros_microservicios">Reiniciando nuestros microservicios</h3>
+<div class="paragraph">
+<p>Las respuestas que recibimos cuando escribimos los mandos antedichos indicaron que se necesita "restage" ambos microservicios para que los cambios se activan, pero como solamente subimos las aplicaciones con la bandera <code>--no-start</code> y no las ejecutamos, necesitamos reiniciar (<em>restart</em>) nuestras aplicaciones para configurarlas completamente y crear el contenedor:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cf restart coffee-service
+cf restart edge-service</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nuestros microservicios ahora deberían estar ejecutando, confiando en Spring Cloud Services para el apoyo esencial por una sistema distribuida. Verifiquemos para estar cierto. :)</p>
+</div>
+<div class="paragraph">
+<p>Primero chequeemos el Service Registry.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/AppsMan_SCS_ServiceRegistryDashboardTwoServicesExpanded.png" alt="Service Registry mostrando ambos servicios"></span></p>
+</div>
+<div class="paragraph">
+<p>Podemos verificar la salud y estatus de los dos microservicios por acesando los puntos finales expuestos por Spring Boot Actuator que incluimos en ambos proyectos y exponimos con propiedades entregado a cada microservicio por el SCS Config Server. Para hacerlo, accedemos el punto final <code>/actuator</code> desde el uri de cada aplicación, como mostrado en el siguiente ejemplo con coffee-service:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/Actuator.png" alt="coffee-service actuator endpoint"></span></p>
+</div>
+<div class="paragraph">
+<p>Por supuesto, podemos navigar los puntos finales de la API de coffee-service que creemos también: <code>/coffees</code>, <code>/coffees/{id}</code>, y <code>/coffees/random</code>. Por ahora, vamos a saltar adelante para probar el punto final de edge-service <code>/surpriseme</code> que acceda el punto final de coffee-service <code>/coffees/random</code> y nos ofrece una opción rapida de probar los dos microservicios simultaneamente:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/SurpriseMeClosedCircuit.png" alt="edge-service&#8217;s /surpriseme endpoint"></span></p>
+</div>
+<div class="paragraph">
+<p>Se funciona (claro que sí)! Ahora que tenemos tráfico, deberíamos estar capaces de monitor nuestro circuito en la SCS Circuit Breaker Dashboard:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/AppsMan_SCS_CircuitBreakerDashboardActiveZoom.png" alt="Circuit Breaker Dashboard mostrando un circuito activo!"></span></p>
+</div>
+<div class="paragraph">
+<p>Hay más (por supuesto!), pero dejaremos las discusiones por actualizaciones futuros.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary">Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Los componentes de Spring Cloud/Netflix OSS proveen una fundación solida para crear una arquitectura robusta y resistente para microservicios en la nube, y Pivotal Application Services lo hace fácil de crear y configurar estes habilitadores críticos como servicios manejando por la plataforma. En este artículo, creamos unos servicios dominios y entonces los conectamos con tres habilitadores claves:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Spring Cloud Services Config Server</strong> para suministrar los ajustes de configuración a nuestros microservicios dominios</p>
+</li>
+<li>
+<p><strong>Spring Cloud Services Service Registry</strong> para servir como directorio de todas instancias de nuestros microservicios</p>
+</li>
+<li>
+<p><strong>Spring Cloud Services Circuit Breaker Dashboard</strong> para proveer capabilidades de monitorear "circuitos" entre nuestros microservicios</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Los componentes de Spring Cloud/Netflix OSS son herramientas poderosas que soporten numerosas sistemas distribuidas críticas, y están aún más poderosos cuando desplegados, manejados, escalados, y segurados por PAS.</p>
+</div>
+<div class="paragraph">
+<p>Queden atentos (y <a href="https://twitter.com/mkheck">me sigan en Twitter</a>) por actualizaciones futuros!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_enlaces_útiles_de_referencia">Enlaces útiles de referencia</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://docs.pivotal.io/spring-cloud-services/1-5/common/index.html">Hogar de Spring Cloud Services</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.pivotal.io/">Documentación de Pivotal (incluyendo PCF/PAS)</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.cloudfoundry.org/">Documentación de Cloud Foundry</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://spring.io/docs">Docs de Spring</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://projects.spring.io/spring-cloud/">Docs de Spring Cloud</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/mkheck/SCS">Repositorio principal de config y microservicios dominios</a></p>
+</div>
+</div>
+</div>
+    
+        </div>
+    </section>
+
+    <footer class="post-full-footer">
+      <section class="author-card">
+        <img class="author-profile-image" src="https://thehecklers.com/img/MarkHecklerProfilePic.jpg" alt="Author" />
+        <section class="author-card-content">
+            <h4 class="author-card-name"><a href="https://thehecklers.com/">Mark Heckler</a></h4>
+                <p>Computer scientist &amp; software developer</p>
+        </section>
+      </section>
+    </footer>
+</article>
+    
+    
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/thehecklers.com\/post\/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas\/";  
+this.page.identifier = "https:\/\/thehecklers.com\/post\/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://mkheck.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  </div>
+</main>
+
+
+<aside class="read-next outer">
+  <div class="inner">
+    <div class="read-next-feed">      
+      
+<article class="read-next-card" 
+            style="background-image: url(https://thehecklers.com/img/virtual-keyboard_dark2.jpg);" >
+    <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; Hecklers in Development, brewing stronger Java &mdash;</small>
+        
+        <h3 class="read-next-card-header-title"><a href="https://thehecklers.com/tags/spring/">#Spring</a></h3>
+    </header>
+    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+    </div>
+
+    <div class="read-next-card-content">
+      
+        <ul>
+          <li><a href="https://thehecklers.com/post/building-a-portable-self-powering-cloud-connected-iot-demo/">Building a Portable, Self-powering, Cloud-Connected IoT demo</a></li>            
+        
+          <li><a href="https://thehecklers.com/post/random-route-in-cloud-foundry/">Random Route in Cloud Foundry</a></li>            
+        
+          <li><a href="https://thehecklers.com/post/netbeans-jsf-mysql-primary-key/">Netbeans Jsf Mysql Primary Key</a></li>            
+        
+          <li><a href="https://thehecklers.com/post/microservices-the-view-from-1000-feet-or-305-meters-if-you-prefer/">Microservices: The View from 1000 Feet (or 305 Meters If You Prefer)</a></li>            
+        </ul>
+    </div>
+    <footer class="read-next-card-footer">
+      
+        <a href="https://thehecklers.com/tags/spring/">See all related posts →</a>
+    </footer>
+</article>
+
+
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://thehecklers.com/post/why-wait-for-jdk-10/">
+      <div class="post-card-image" style="background-image: url(https://thehecklers.com/img/DoItNow.jpeg)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://thehecklers.com/post/why-wait-for-jdk-10/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #Lombok 
+              #val 
+              #var 
+              #type inference 
+              #local variables  </span>
+              
+              <h2 class="post-card-title">Why Wait for Jdk 10</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Lombok is one of those libraries that plugs several small gaps in fairly basic Java functionality. It covers so many small gaps, in fact, that it&#8217;s easy to use it to provide some very useful capabilities for years while overlooking other capabilities it quietly provides just as well.
+ This happened to me recently, as I mentioned in the tweet below. Caveat: I&#8217;m for code clarity first and foremost, so I don&#8217;t recommend sacrificing readability&#8230;&#8203;but if there is a way to be more concise, i. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="https://thehecklers.com/img/MarkHecklerProfilePic.jpg" alt="Author" />
+          <span class="post-card-author"><a href="https://thehecklers.com/">Mark Heckler</a></span>
+      </footer>
+    </div>
+</article>
+      
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://thehecklers.com/post/comment-%C3%A7a-va/">
+      <div class="post-card-image" style="background-image: url(https://thehecklers.com/img/cat.jpg)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://thehecklers.com/post/comment-%C3%A7a-va/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #code 
+              #comments 
+              #code smell 
+              #code smells 
+              #context  </span>
+              
+              <h2 class="post-card-title">Comment ça va?</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>I had been deep in code for the preceding few days (mine and others') and had achieved a few insights by poring over actual code (vs. comments and/or commentary) when this quote crossed my radar:
+ 
+ Being an enthusiastic quote lover, I of course shared it on Twitter, not expecting the various interpretations it solicited. As an aside, this is what happens when you share something without a particular context: people rightfully supply their own. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="https://thehecklers.com/img/MarkHecklerProfilePic.jpg" alt="Author" />
+          <span class="post-card-author"><a href="https://thehecklers.com/">Mark Heckler</a></span>
+      </footer>
+    </div>
+</article>
+      
+    </div>
+  </div>
+</aside>
+
+<div class="floating-header">
+  <div class="floating-header-logo">
+    <a href="https://thehecklers.com/">
+      
+      <span></span>
+    </a>
+  </div>
+  <span class="floating-header-divider">&mdash;</span>
+  <div class="floating-header-title">Un curso intensivo: Como utilizar Spring Cloud Services en PAS</div>
+  <div class="floating-header-share">
+    <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/></svg>
+    </div>
+    
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=Un%20curso%20intensivo%3a%20Como%20utilizar%20Spring%20Cloud%20Services%20en%20PAS&amp;url=https%3a%2f%2fthehecklers.com%2fpost%2fun-curso-intensivo-como-utilizar-spring-cloud-services-en-pas%2f"
+          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+      </a>
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fthehecklers.com%2fpost%2fun-curso-intensivo-como-utilizar-spring-cloud-services-en-pas%2f"
+          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+      </a>
+  </div>
+
+  <progress class="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+</div>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="https://thehecklers.com/">HM</a> © 2018, 2019 <br>
+      <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
+    </section>
+    <nav class="site-footer-nav">
+        <a href="https://thehecklers.com/">Latest Posts</a>
+        <a href="https://www.facebook.com/markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://twitter.com/mkheck" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/mkheck" target="_blank" rel="noopener">Github</a>
+        <a href="https://www.linkedin.com/in/markheckler" target="_blank" rel="noopener">LinkedIn</a>
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://thehecklers.com/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+  <!-- Google Analytics -->
+  <script>
+    var _gaq=[['_setAccount','UA-102227903-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+
+
+    <script>
+
+
+
+
+
+$(document).ready(function () {
+    
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+</body></html>

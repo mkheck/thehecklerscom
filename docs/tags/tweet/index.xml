@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tweet on </title>
+    <link>https://thehecklers.com/tags/tweet/</link>
+    <description>Recent content in Tweet on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 06 Mar 2017 20:58:10 -0600</lastBuildDate>
+    
+	<atom:link href="https://thehecklers.com/tags/tweet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Create an Alexa Skill with Spring Boot &amp; Cloud Foundry</title>
+      <link>https://thehecklers.com/post/how-to-create-an-alexa-skill-with-spring-boot-cloud-foundry/</link>
+      <pubDate>Mon, 06 Mar 2017 20:58:10 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/how-to-create-an-alexa-skill-with-spring-boot-cloud-foundry/</guid>
+      <description>I’ve been working with Amazon’s Alexa &amp;amp; the Echo family of devices for the past several months and have created a couple of pretty useful and/or interesting skills. The first one I liked well enough to publish was QOTD, a Quote of the Day app that retrieves and reads a random quote per request. The second was Master Control Program, which enabled voice control of my home renewable energy system’s various inputs and controls.</description>
+    </item>
+    
+  </channel>
+</rss>

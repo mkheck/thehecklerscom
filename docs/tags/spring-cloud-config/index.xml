@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Cloud Config on </title>
+    <link>https://thehecklers.com/tags/spring-cloud-config/</link>
+    <description>Recent content in Spring Cloud Config on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 11 Jun 2018 20:53:02 -0600</lastBuildDate>
+    
+	<atom:link href="https://thehecklers.com/tags/spring-cloud-config/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Register Instances Eureka</title>
+      <link>https://thehecklers.com/post/register-instances-eureka/</link>
+      <pubDate>Mon, 11 Jun 2018 20:53:02 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/register-instances-eureka/</guid>
+      <description>When developing Spring Boot + Spring Cloud microservices, most often we devs run them locally, also running local instances of Spring Cloud Config Server and Spring Cloud Netflix Eureka to provide essential scaffolding for our microservices-in-development and to more closely replicate our test &amp;amp; production environments. Many times, we simply run a single instance of a microservice under development, which works with nearly no effort on our part: provide a desired port number for the service either via internal properties (usually in the project&amp;#8217;s application.</description>
+    </item>
+    
+  </channel>
+</rss>

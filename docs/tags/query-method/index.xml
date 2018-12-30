@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Query Method on </title>
+    <link>https://thehecklers.com/tags/query-method/</link>
+    <description>Recent content in Query Method on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 26 Jul 2016 15:46:25 -0600</lastBuildDate>
+    
+	<atom:link href="https://thehecklers.com/tags/query-method/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>T4SD (Tips 4 Spring Devs): Exposing Query Methods in Spring Data REST</title>
+      <link>https://thehecklers.com/post/t4sd-tips-4-spring-devs-exposing-query-methods-in-spring-data-rest/</link>
+      <pubDate>Tue, 26 Jul 2016 15:46:25 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/t4sd-tips-4-spring-devs-exposing-query-methods-in-spring-data-rest/</guid>
+      <description>Spring Data REST takes an opinionated approach to exposing Spring Data repositories via REST endpoints, covering the 80-90% use case with a minimum of code and fuss. But did you know that it provides a no-lifting-required mechanism for exposing query methods you define on those repositories as well?
+ Let’s say you create a method like this:
+ https://gist.github.com/hecklerm/df38b5b847e476ee35e3a6576bf31e78
+ Referencing that bit of functionality directly is simple, just append /search/&amp;lt;methodName&amp;gt; to the collection endpoint:</description>
+    </item>
+    
+  </channel>
+</rss>

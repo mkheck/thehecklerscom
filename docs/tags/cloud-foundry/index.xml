@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud Foundry on </title>
+    <link>https://thehecklers.com/tags/cloud-foundry/</link>
+    <description>Recent content in Cloud Foundry on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 06 Mar 2017 20:58:10 -0600</lastBuildDate>
+    
+	<atom:link href="https://thehecklers.com/tags/cloud-foundry/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Create an Alexa Skill with Spring Boot &amp; Cloud Foundry</title>
+      <link>https://thehecklers.com/post/how-to-create-an-alexa-skill-with-spring-boot-cloud-foundry/</link>
+      <pubDate>Mon, 06 Mar 2017 20:58:10 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/how-to-create-an-alexa-skill-with-spring-boot-cloud-foundry/</guid>
+      <description>I’ve been working with Amazon’s Alexa &amp;amp; the Echo family of devices for the past several months and have created a couple of pretty useful and/or interesting skills. The first one I liked well enough to publish was QOTD, a Quote of the Day app that retrieves and reads a random quote per request. The second was Master Control Program, which enabled voice control of my home renewable energy system’s various inputs and controls.</description>
+    </item>
+    
+    <item>
+      <title>Building a Portable, Self-powering, Cloud-Connected IoT demo</title>
+      <link>https://thehecklers.com/post/building-a-portable-self-powering-cloud-connected-iot-demo/</link>
+      <pubDate>Sun, 11 Sep 2016 00:00:21 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/building-a-portable-self-powering-cloud-connected-iot-demo/</guid>
+      <description>Or “How to build a portable self-powered, self-licking ice cream cone.” 😀
+ 
+ Several years ago, I started building what I referred to affectionately as a self-licking ice cream cone: a Renewable Energy (RE) system that powered the same IoT system that monitored it. I’ve given several talks about this system, both its hardware and its software stack, and there are so many useful (and scalable) lessons I’ve learned that I really enjoy sharing.</description>
+    </item>
+    
+    <item>
+      <title>Random Route in Cloud Foundry</title>
+      <link>https://thehecklers.com/post/random-route-in-cloud-foundry/</link>
+      <pubDate>Sat, 16 Jul 2016 15:57:04 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/random-route-in-cloud-foundry/</guid>
+      <description>I’ve only been working with Pivotal Cloud Foundry since September 2015, but I’ve learned a great deal about it since then. I also realize there is much (much much) more to learn! The world doesn’t stand still, after all, and there are many stones I’ve yet to turn.
+ Sometimes I revisit something small-but-useful that I discovered long ago that I didn’t take the time to share at the time. I intend to be better about that, beginning now.</description>
+    </item>
+    
+    <item>
+      <title>Nighthacking Interview: Jfokus</title>
+      <link>https://thehecklers.com/post/nighthacking-interview-jfokus/</link>
+      <pubDate>Fri, 12 Feb 2016 16:04:37 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/nighthacking-interview-jfokus/</guid>
+      <description>At Jfokus this week, I was honored to be interviewed by Stephen Chin of Nighthacking.com. We discussed the Renewable Energy system I built and developed using industrial Internet of Things (IoT) concepts and Domain Driven Design principles. The core of the system is Java SE Embedded on the IoT Gateway device, Spring Boot + Cloud Foundry (CF) for the backend services, and an HTML5/JavaScript frontend application also delivered via CF…all accessible from any device, anywhere in the world.</description>
+    </item>
+    
+    <item>
+      <title>Spring Boot for IoT Developers: Getting Started</title>
+      <link>https://thehecklers.com/post/spring-boot-for-iot-developers-getting-started/</link>
+      <pubDate>Mon, 01 Feb 2016 16:18:32 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/spring-boot-for-iot-developers-getting-started/</guid>
+      <description>It often surprises other devs when I suggest that Spring Boot is a perfect addition to the IoT developer’s toolbox. If you’re deep into IoT and have the luxury of another group providing all of your back-end and/or cloud platform code, that’s perfectly understandable. However, if you’re a full-stack developer, by choice or necessity, you need to know this! Grab a chair and a cup of coffee; I think you’ll find this interesting (and useful).</description>
+    </item>
+    
+  </channel>
+</rss>

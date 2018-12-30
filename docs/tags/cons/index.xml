@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cons on </title>
+    <link>https://thehecklers.com/tags/cons/</link>
+    <description>Recent content in Cons on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 12 Jan 2015 17:50:00 -0600</lastBuildDate>
+    
+	<atom:link href="https://thehecklers.com/tags/cons/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Microservices: The View from 1000 Feet (or 305 Meters If You Prefer)</title>
+      <link>https://thehecklers.com/post/microservices-the-view-from-1000-feet-or-305-meters-if-you-prefer/</link>
+      <pubDate>Mon, 12 Jan 2015 17:50:00 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/microservices-the-view-from-1000-feet-or-305-meters-if-you-prefer/</guid>
+      <description>Intro I started this post a couple months ago, and between a busy holiday season and constant revisions, I’m only now polishing and posting it. For those who knew it was in the pipeline, thank you for your patience. 🙂
+ I have another article in the works that will delve into more technical aspects of the microservices discussion; hopefully I’ll get that posted by this time next year (!). In this one, though, I’d like to stay as much as possible at the conceptual level, dipping into the details only to reference them for consideration and future discussion.</description>
+    </item>
+    
+  </channel>
+</rss>

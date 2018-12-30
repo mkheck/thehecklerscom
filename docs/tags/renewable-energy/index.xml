@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Renewable Energy on </title>
+    <link>https://thehecklers.com/tags/renewable-energy/</link>
+    <description>Recent content in Renewable Energy on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 11 Sep 2016 00:00:21 -0600</lastBuildDate>
+    
+	<atom:link href="https://thehecklers.com/tags/renewable-energy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building a Portable, Self-powering, Cloud-Connected IoT demo</title>
+      <link>https://thehecklers.com/post/building-a-portable-self-powering-cloud-connected-iot-demo/</link>
+      <pubDate>Sun, 11 Sep 2016 00:00:21 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/building-a-portable-self-powering-cloud-connected-iot-demo/</guid>
+      <description>Or “How to build a portable self-powered, self-licking ice cream cone.” 😀
+ 
+ Several years ago, I started building what I referred to affectionately as a self-licking ice cream cone: a Renewable Energy (RE) system that powered the same IoT system that monitored it. I’ve given several talks about this system, both its hardware and its software stack, and there are so many useful (and scalable) lessons I’ve learned that I really enjoy sharing.</description>
+    </item>
+    
+    <item>
+      <title>Nighthacking Interview: Jfokus</title>
+      <link>https://thehecklers.com/post/nighthacking-interview-jfokus/</link>
+      <pubDate>Fri, 12 Feb 2016 16:04:37 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/nighthacking-interview-jfokus/</guid>
+      <description>At Jfokus this week, I was honored to be interviewed by Stephen Chin of Nighthacking.com. We discussed the Renewable Energy system I built and developed using industrial Internet of Things (IoT) concepts and Domain Driven Design principles. The core of the system is Java SE Embedded on the IoT Gateway device, Spring Boot + Cloud Foundry (CF) for the backend services, and an HTML5/JavaScript frontend application also delivered via CF…all accessible from any device, anywhere in the world.</description>
+    </item>
+    
+  </channel>
+</rss>

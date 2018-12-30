@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Signed on </title>
+    <link>https://thehecklers.com/tags/signed/</link>
+    <description>Recent content in Signed on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 14 Jan 2013 19:09:52 -0600</lastBuildDate>
+    
+	<atom:link href="https://thehecklers.com/tags/signed/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Secure Email From Java</title>
+      <link>https://thehecklers.com/post/secure-email-from-java/</link>
+      <pubDate>Mon, 14 Jan 2013 19:09:52 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/secure-email-from-java/</guid>
+      <description>Cross-posted from The Java Jungle by Mark Heckler
+ I’ve been working recently with a client to do some rather useful things with notifications, and one of them involved sending a secure email from within a Java program. We encountered some interesting (translation: weird!) challenges, and in overcoming them, I worked out a reasonably straightforward path through the minefield. If you’ve been thinking about secure-email-enabling your Java app but aren’t sure where to start, hopefully this will serve as a fairly quick and mostly painless primer.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en-US" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Spring Boot for IoT Developers: Getting Started &middot; </title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://thehecklers.com/favicon.ico" />
+    <link rel="canonical" href="https://thehecklers.com/post/spring-boot-for-iot-developers-getting-started/" />
+
+     <meta name="description" content="It often surprises other devs when I suggest that Spring Boot is a perfect addition to the IoT developer’s toolbox. If you’re deep into IoT and have the luxury " /> 
+
+     
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://thehecklers.com/img/SpringGrass.jpg"/>
+    
+ 
+    <meta name="twitter:title" content="Spring Boot for IoT Developers: Getting Started"/>
+    <meta name="twitter:description" content="It often surprises other devs when I suggest that Spring Boot is a perfect addition to the IoT developer’s toolbox. If you’re deep into IoT and have the luxury "/>
+    <meta name="twitter:url" content="https://thehecklers.com/post/spring-boot-for-iot-developers-getting-started/" />
+    <meta name="twitter:site" content="@mkheck"/>
+
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="Spring Boot for IoT Developers: Getting Started &middot; Hecklers in Development, brewing stronger Java" />
+    <meta property="og:url" content="https://thehecklers.com/post/spring-boot-for-iot-developers-getting-started/" />
+    <meta property="article:publisher" content="https://www.facebook.com/markhecklerdev" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="It often surprises other devs when I suggest that Spring Boot is a perfect addition to the IoT developer’s toolbox. If you’re deep into IoT and have the luxury " />
+
+    <meta property="article:published_time" content="2016-02-01T16:18:32-06:00" />
+    <meta property="article:tag" content="API" /><meta property="article:tag" content="Cloud" /><meta property="article:tag" content="Cloud Foundry" /><meta property="article:tag" content="Internet of Things" /><meta property="article:tag" content="IoT" /><meta property="article:tag" content="Pivotal" /><meta property="article:tag" content="REST" /><meta property="article:tag" content="Spring" /><meta property="article:tag" content="Spring Boot" />
+
+    <meta property="og:image" content="https://thehecklers.com/img/SpringGrass.jpg"/>
+
+
+    <meta name="generator" content="Hugo 0.53" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://thehecklers.com/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="https://thehecklers.com/css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="post-template">
+  <div class="site-wrapper"> 
+
+<header class="site-header outer">
+  <div class="inner">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+
+        <ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/">Home</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/page/abstracts">Abstracts</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/page/contact">Contact me</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/page/events">Upcoming events</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/tags/java/">Java</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/tags/spring/">Spring</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/categories/">Categories</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://spring.io/">Spring Central</a>
+            </li>
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    <a class="social-link social-link-fb" href="https://www.facebook.com/markhecklerdev" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg></a>
+
+                    <a class="social-link social-link-tw" href="https://twitter.com/mkheck" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
+
+                    <a class="social-link" href="https://github.com/mkheck" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    <a class="social-link" href="https://www.linkedin.com/in/markheckler" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 50 512 512"><path d="M150.65,100.682c0,27.992-22.508,50.683-50.273,50.683c-27.765,0-50.273-22.691-50.273-50.683 C50.104,72.691,72.612,50,100.377,50C128.143,50,150.65,72.691,150.65,100.682z M143.294,187.333H58.277V462h85.017V187.333z M279.195,187.333h-81.541V462h81.541c0,0,0-101.877,0-144.181c0-38.624,17.779-61.615,51.807-61.615 c31.268,0,46.289,22.071,46.289,61.615c0,39.545,0,144.181,0,144.181h84.605c0,0,0-100.344,0-173.915 s-41.689-109.131-99.934-109.131s-82.768,45.369-82.768,45.369V187.333z" /></svg></a>
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+      <article class="post-full post"> 
+    <header class="post-full-header">
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="2016-02-01">1 February 2016</time>
+                <span class="date-divider">/</span> <a href="https://thehecklers.com/tags/api/">#API</a>&nbsp;<a href="https://thehecklers.com/tags/cloud/">#Cloud</a>&nbsp;
+        </section>
+        <h1 class="post-full-title">Spring Boot for IoT Developers: Getting Started</h1>
+    </header>
+    
+    <figure class="post-full-image" style="background-image: url(https://thehecklers.com/img/SpringGrass.jpg)">
+    </figure>
+
+    <section class="post-full-content">
+        <div class="kg-card-markdown">
+        <div class="paragraph">
+<p>It often surprises other devs when I suggest that Spring Boot is a perfect addition to the IoT developer’s toolbox. If you’re deep into IoT and have the luxury of another group providing all of your back-end and/or cloud platform code, that’s perfectly understandable. However, if you’re a full-stack developer, by choice or necessity, you need to know this! Grab a chair and a cup of coffee; I think you’ll find this interesting (and useful).</p>
+</div>
+<div class="sect1">
+<h2 id="_let_me_just_put_this_out_there">Let Me Just Put This Out There</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here is what most people imagine when they hear “IoT”:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Internet of <strong><em>THINGS</em></strong></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>But this is what they should be thinking:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong><em>INTERNET</em></strong> of Things</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The <strong>things</strong> get most of the attention, mindshare, and “buzz”. Why is that? Well…because gadgets are cool! Most of us chose to be developers because of the fun/interesting/obsessive parts, not because of the dull bits. And while there are usually fun and (ahem) less-fun components to everything, who can resist gadgetry in general?</p>
+</div>
+<div class="paragraph">
+<p>Ah, but without connectivity, without storage, without the ability to monitor, manage, and analyze those often-remote sensors and controls&#8230;&#8203;what do we have? Truthfully, not much. Something interesting, but barely so; a school science project, perhaps. The real payoff (in money and intrigue) is in what happens when you <strong>connect</strong> those “things”. Without a versatile and reliable platform behind those devices, you just have islands of misfit toys.</p>
+</div>
+<div class="paragraph">
+<p>This is where Spring Boot really shines: helping you to create meaningful software at velocity. Software that is clean, concise, readable, maintainable&#8230;&#8203;and built <strong><em>Cloud Native</em></strong>. We’ll come back to that last part over the next few installments, but for now, let’s focus upon building a basic platform to enable your IoT to <strong>mean something</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_choose_your_legos">Choose Your Legos&#8482;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Boot integrates several useful capabilities into a single, coherent code framework and approach. In a nutshell, it helps a developer rapidly build stand-alone applications that incorporate and integrate with various third-party libraries that can be deployed anywhere a JAR will run. Anywhere. It’s open source, opinionated (minimal configuration, but flexible to fully accommodate edge cases), and insanely effective. Coming from a more staid environment, I found my first exposure to Spring Boot (and every one since) surprising and refreshing. If so-called enterprise software development sounds boring to you, you probably haven’t taken Boot for a test drive.</p>
+</div>
+<div class="paragraph">
+<p>And that’s it! Kidding, that’s not it. But Spring Boot does bring along several goodies that streamline the effort it takes to build robust back end applications. Remember how I said it’s “opinionated”? Let’s examine a few of its carefully-chosen opinions, step through building a simple cloud-ready application for your IoT system, and then see where that takes us. Shall we?</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_on_your_mark_get_set_go">On Your Mark, Get Set, Go!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong><em>Spring Initializr</em></strong> gets our project off to a running start. There are several ways to accomplish this, but since we’re taking the simplest path possible for this first example, let’s just point our browsers to [start.spring.io](<a href="http://start.spring.io/" class="bare">http://start.spring.io/</a>). Spring Boot gives you options, such as a Gradle-based build, various versions of Boot, Java/Groovy, and packaging (JAR vs. WAR), but we’ll stick to most of the defaults for our example.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong><em>NOTE: To see all of the choices at your disposal, simply click the “Switch to the full version.” link at the bottom of the page.</em></strong></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Here are the choices we’ll make for our example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Maven Project</p>
+</li>
+<li>
+<p>Latest non-snapshot version of Spring Boot</p>
+</li>
+<li>
+<p>Group: org.thehecklers (feel free to use your own)</p>
+</li>
+<li>
+<p>Artifact: iot-service</p>
+</li>
+<li>
+<p>Dependencies: Web, JPA<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>, H2<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>, REST Repositories</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once we’ve made the above selections, simply click the Generate Project button to have the Spring Initializr generate a skeleton project, bundle it into a .zip file, and serve it up for download. Save it locally, unzip it, and open the project in your favorite IDE to get started coding.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_building_your_iot_service">Building your IoT Service</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With just that little bit of effort, we already have the foundation in place for our IoT back end service. You can verify this by running the app and pointing your browser to <a href="localhost:8080">localhost:8080</a>. You should see the following:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/SpringForIoTEmptyProject.png" alt="SpringForIoTEmptyProject"></span></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>"Large streams from little fountains flow, Tall oaks from little acorns grow."</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>For this installment, we’ll focus on the MVP (Minimum Viable Product) needed to support our nascent IoT installation. Assuming we’ll need to track readings captured by one or more sensors, let’s define an Entity class for our Readings: </p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/hecklerm/21b0528b287ca9c4d3e2" class="bare">https://gist.github.com/hecklerm/21b0528b287ca9c4d3e2</a></p>
+</div>
+<div class="paragraph">
+<p>The annotations @Entity, @Id, and @GeneratedValue are from the Java Persistence API (JPA) standard and identify/describe the class and its Id attribute as a JPA entity and its primary key, respectively. Aside from these annotations, the Reading class is just a straightforward POJO.</p>
+</div>
+<div class="paragraph">
+<p>Next, we face the daunting task of creating the following functionality:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>REST endpoint(s) via which our devices can provide (POST) readings</p>
+</li>
+<li>
+<p>REST endpoint(s) allowing us to retrieve (GET) readings for review, reporting, and analysis</p>
+</li>
+<li>
+<p>Mechanism(s) for storage and retrieval of readings from our chosen data store</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Spring makes this functionality easy to implement. Spring Data REST was one of the dependencies we included when we created this project (REST Repositories), and by simply extending a Spring Data repository interface specifying the Reading class and Id type and annotating our new interface as a RepositoryRestResource, the repository is exposed via a REST API. For now, this meets our needs nicely:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/hecklerm/3fcb08c578abc25f73a3" class="bare">https://gist.github.com/hecklerm/3fcb08c578abc25f73a3</a></p>
+</div>
+<div class="paragraph">
+<p>Re-running our application and refreshing our browser page (localhost:8080) confirms that our REST endpoint for readings is now active:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/SpringForIoTRESTReadings.png" alt="SpringForIoTRESTReadings"></span></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>"Getting there&#8230;&#8203;"</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Next, let’s test functionality by emulating a device pushing readings to our IoT service. I used curl, but feel free to use whatever means you prefer to POST to a REST endpoint. </p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/hecklerm/0bd3ed62d7679b0db1fd" class="bare">https://gist.github.com/hecklerm/0bd3ed62d7679b0db1fd</a></p>
+</div>
+<div class="paragraph">
+<p>Then we verify using a vanilla curl GET:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/hecklerm/f17501e84ac36ca64200" class="bare">https://gist.github.com/hecklerm/f17501e84ac36ca64200</a></p>
+</div>
+<div class="paragraph">
+<p>Here we see the two readings I created in testing, returned via our GET request:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/hecklerm/2747f11e2e6418aefb8d" class="bare">https://gist.github.com/hecklerm/2747f11e2e6418aefb8d</a></p>
+</div>
+<div class="paragraph">
+<p>If you’ve been pair-programming with me, congratulations! You have now created your first very basic IoT service…and since we had Spring Boot build a fully self-contained "uberJAR" (bringing its own container with it), it can be deployed wherever Java is installed. Who would have thought it could be this fast (or fun)?!?</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_future_articles_future_enhancements">Future Articles, Future Enhancements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As we proceed, there are several topics we will expand upon, options/adjustments we will explore (WebSocket, SQL &amp; NoSQL persistence,&#8230;&#8203;), functionality we can add (security, tailored queries, visualizations,&#8230;&#8203;), and of course, we’ll leverage Spring Boot’s focus upon Cloud Native Java to deploy quickly and easily to the leading open source cloud platform, Cloud Foundry. If you have comments, questions, or suggestions, please leave them below! For updates, please follow me on Twitter at <a href="https://twitter.com/mkheck">@mkheck</a>.</p>
+</div>
+<div class="paragraph">
+<p>Keep coding,</p>
+</div>
+<div class="paragraph">
+<p>Mark</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_information">Additional Information</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://start.spring.io/">Spring Initializr</a></p>
+</li>
+<li>
+<p><a href="http://projects.spring.io/spring-boot/">Spring Boot</a></p>
+</li>
+<li>
+<p><a href="http://projects.spring.io/spring-data-rest/">Spring Data REST</a></p>
+</li>
+<li>
+<p><a href="https://spring.io/guides">Spring Getting Started Guides</a></p>
+</li>
+<li>
+<p><a href="https://www.cloudfoundry.org/">Cloud Foundry</a></p>
+</li>
+<li>
+<p><a href="https://pivotal.io/platform">Pivotal Cloud Foundry</a></p>
+</li>
+<li>
+<p><a href="https://run.pivotal.io/">Pivotal Web Services (for free trial)</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. For this example, we’ll use a JPA data source, but feel free to choose a NoSQL option. Boot gives you many data source options out of the box, and of course, you can "bring your own" with a bit more effort.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. H2 is an in-memory database. While unsuitable for environments in which physical persistence is a requirement, it functions the same from a developer perspective and satisfies our demo requirements nicely for now.
+</div>
+</div>
+    
+        </div>
+    </section>
+
+    <footer class="post-full-footer">
+      <section class="author-card">
+        <img class="author-profile-image" src="https://thehecklers.com/img/MarkHecklerProfilePic.jpg" alt="Author" />
+        <section class="author-card-content">
+            <h4 class="author-card-name"><a href="https://thehecklers.com/">Mark Heckler</a></h4>
+                <p>Computer scientist &amp; software developer</p>
+        </section>
+      </section>
+    </footer>
+</article>
+    
+    
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/thehecklers.com\/post\/spring-boot-for-iot-developers-getting-started\/";  
+this.page.identifier = "https:\/\/thehecklers.com\/post\/spring-boot-for-iot-developers-getting-started\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://mkheck.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  </div>
+</main>
+
+
+<aside class="read-next outer">
+  <div class="inner">
+    <div class="read-next-feed">      
+      
+<article class="read-next-card" 
+            style="background-image: url(https://thehecklers.com/img/virtual-keyboard_dark2.jpg);" >
+    <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; Hecklers in Development, brewing stronger Java &mdash;</small>
+        
+        <h3 class="read-next-card-header-title"><a href="https://thehecklers.com/tags/api/">#API</a></h3>
+    </header>
+    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+    </div>
+
+    <div class="read-next-card-content">
+      
+        <ul>
+          <li><a href="https://thehecklers.com/post/how-to-create-an-alexa-skill-with-spring-boot-cloud-foundry/">How to Create an Alexa Skill with Spring Boot &amp; Cloud Foundry</a></li>            
+        
+          <li><a href="https://thehecklers.com/post/secure-email-from-java/">Secure Email From Java</a></li>            
+        
+          <li><a href="https://thehecklers.com/post/t4sd-tips-4-spring-devs-request-header-filtering-in-requestmapping/">T4SD (Tips 4 Spring Devs): Request header filtering in @RequestMapping</a></li>            
+        
+          <li><a href="https://thehecklers.com/post/t4sd-tips-4-spring-devs-exposing-query-methods-in-spring-data-rest/">T4SD (Tips 4 Spring Devs): Exposing Query Methods in Spring Data REST</a></li>            
+        </ul>
+    </div>
+    <footer class="read-next-card-footer">
+      
+        <a href="https://thehecklers.com/tags/api/">See all related posts →</a>
+    </footer>
+</article>
+
+
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://thehecklers.com/post/nighthacking-interview-jfokus/">
+      <div class="post-card-image" style="background-image: url(https://thehecklers.com/img/MatrixFallingLetters.jpg)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://thehecklers.com/post/nighthacking-interview-jfokus/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #Cloud 
+              #Cloud Foundry 
+              #Embedded 
+              #IoT 
+              #java 
+              #RE 
+              #renewable energy 
+              #Spring Boot  </span>
+              
+              <h2 class="post-card-title">Nighthacking Interview: Jfokus</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>At Jfokus this week, I was honored to be interviewed by Stephen Chin of Nighthacking.com. We discussed the Renewable Energy system I built and developed using industrial Internet of Things (IoT) concepts and Domain Driven Design principles. The core of the system is Java SE Embedded on the IoT Gateway device, Spring Boot + Cloud Foundry (CF) for the backend services, and an HTML5/JavaScript frontend application also delivered via CF…all accessible from any device, anywhere in the world. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="https://thehecklers.com/img/MarkHecklerProfilePic.jpg" alt="Author" />
+          <span class="post-card-author"><a href="https://thehecklers.com/">Mark Heckler</a></span>
+      </footer>
+    </div>
+</article>
+      
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://thehecklers.com/post/springing-forward/">
+      <div class="post-card-image" style="background-image: url(https://thehecklers.com/img/SpringGrass.jpg)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://thehecklers.com/post/springing-forward/">
+          <header class="post-card-header">
+              
+              <h2 class="post-card-title">Springing Forward</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>At JavaOne last week, several people asked me how my work at Pivotal was going, and it occurred to me: I had been so busy diving into all the new toys that I hadn’t written anything about it! This is a first step toward remedying that. 🙂
+ At the risk of this post sounding like a short commercial, I’m deeply impressed with the consistency of vision and the depth and breadth of capabilities Pivotal offers innovative organizations and developers. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="https://thehecklers.com/img/MarkHecklerProfilePic.jpg" alt="Author" />
+          <span class="post-card-author"><a href="https://thehecklers.com/">Mark Heckler</a></span>
+      </footer>
+    </div>
+</article>
+      
+    </div>
+  </div>
+</aside>
+
+<div class="floating-header">
+  <div class="floating-header-logo">
+    <a href="https://thehecklers.com/">
+      
+      <span></span>
+    </a>
+  </div>
+  <span class="floating-header-divider">&mdash;</span>
+  <div class="floating-header-title">Spring Boot for IoT Developers: Getting Started</div>
+  <div class="floating-header-share">
+    <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/></svg>
+    </div>
+    
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=Spring%20Boot%20for%20IoT%20Developers%3a%20Getting%20Started&amp;url=https%3a%2f%2fthehecklers.com%2fpost%2fspring-boot-for-iot-developers-getting-started%2f"
+          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+      </a>
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fthehecklers.com%2fpost%2fspring-boot-for-iot-developers-getting-started%2f"
+          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+      </a>
+  </div>
+
+  <progress class="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+</div>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="https://thehecklers.com/">HM</a> © 2018, 2019 <br>
+      <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
+    </section>
+    <nav class="site-footer-nav">
+        <a href="https://thehecklers.com/">Latest Posts</a>
+        <a href="https://www.facebook.com/markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://twitter.com/mkheck" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/mkheck" target="_blank" rel="noopener">Github</a>
+        <a href="https://www.linkedin.com/in/markheckler" target="_blank" rel="noopener">LinkedIn</a>
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://thehecklers.com/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+  <!-- Google Analytics -->
+  <script>
+    var _gaq=[['_setAccount','UA-102227903-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+
+
+    <script>
+
+
+
+
+
+$(document).ready(function () {
+    
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+</body></html>

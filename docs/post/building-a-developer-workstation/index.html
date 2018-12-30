@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en-US" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Building a Developer Workstation &middot; </title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://thehecklers.com/favicon.ico" />
+    <link rel="canonical" href="https://thehecklers.com/post/building-a-developer-workstation/" />
+
+     <meta name="description" content="I recently got a (very nice!) new 2018 MacBook Pro (MBP) with 32G of RAM &amp;amp; a 550GB SSD. It&amp;#8217;s fast &amp;amp; sleek, and you could hardly wish for more in a" /> 
+
+     
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://thehecklers.com/img/TrinityTheMachine1280.png"/>
+    
+ 
+    <meta name="twitter:title" content="Building a Developer Workstation"/>
+    <meta name="twitter:description" content="I recently got a (very nice!) new 2018 MacBook Pro (MBP) with 32G of RAM &amp;amp; a 550GB SSD. It&amp;#8217;s fast &amp;amp; sleek, and you could hardly wish for more in a"/>
+    <meta name="twitter:url" content="https://thehecklers.com/post/building-a-developer-workstation/" />
+    <meta name="twitter:site" content="@mkheck"/>
+
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="Building a Developer Workstation &middot; Hecklers in Development, brewing stronger Java" />
+    <meta property="og:url" content="https://thehecklers.com/post/building-a-developer-workstation/" />
+    <meta property="article:publisher" content="https://www.facebook.com/markhecklerdev" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="I recently got a (very nice!) new 2018 MacBook Pro (MBP) with 32G of RAM &amp;amp; a 550GB SSD. It&amp;#8217;s fast &amp;amp; sleek, and you could hardly wish for more in a" />
+
+    <meta property="article:published_time" content="2018-10-13T19:34:34-06:00" />
+    <meta property="article:tag" content="developer workstation" /><meta property="article:tag" content="Linux" /><meta property="article:tag" content="build computer" /><meta property="article:tag" content="build" /><meta property="article:tag" content="homebrew" /><meta property="article:tag" content="developer" />
+
+    <meta property="og:image" content="https://thehecklers.com/img/TrinityTheMachine1280.png"/>
+
+
+    <meta name="generator" content="Hugo 0.53" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://thehecklers.com/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="https://thehecklers.com/css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="post-template">
+  <div class="site-wrapper"> 
+
+<header class="site-header outer">
+  <div class="inner">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+
+        <ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/">Home</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/page/abstracts">Abstracts</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/page/contact">Contact me</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/page/events">Upcoming events</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/tags/java/">Java</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/tags/spring/">Spring</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/categories/">Categories</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://spring.io/">Spring Central</a>
+            </li>
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    <a class="social-link social-link-fb" href="https://www.facebook.com/markhecklerdev" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg></a>
+
+                    <a class="social-link social-link-tw" href="https://twitter.com/mkheck" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
+
+                    <a class="social-link" href="https://github.com/mkheck" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    <a class="social-link" href="https://www.linkedin.com/in/markheckler" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 50 512 512"><path d="M150.65,100.682c0,27.992-22.508,50.683-50.273,50.683c-27.765,0-50.273-22.691-50.273-50.683 C50.104,72.691,72.612,50,100.377,50C128.143,50,150.65,72.691,150.65,100.682z M143.294,187.333H58.277V462h85.017V187.333z M279.195,187.333h-81.541V462h81.541c0,0,0-101.877,0-144.181c0-38.624,17.779-61.615,51.807-61.615 c31.268,0,46.289,22.071,46.289,61.615c0,39.545,0,144.181,0,144.181h84.605c0,0,0-100.344,0-173.915 s-41.689-109.131-99.934-109.131s-82.768,45.369-82.768,45.369V187.333z" /></svg></a>
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+      <article class="post-full post"> 
+    <header class="post-full-header">
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="2018-10-13">13 October 2018</time>
+                <span class="date-divider">/</span> <a href="https://thehecklers.com/tags/developer-workstation/">#developer workstation</a>&nbsp;<a href="https://thehecklers.com/tags/linux/">#Linux</a>&nbsp;
+        </section>
+        <h1 class="post-full-title">Building a Developer Workstation</h1>
+    </header>
+    
+    <figure class="post-full-image" style="background-image: url(https://thehecklers.com/img/TrinityTheMachine1280.png)">
+    </figure>
+
+    <section class="post-full-content">
+        <div class="kg-card-markdown">
+        <div class="paragraph">
+<p>I recently got a (very nice!) new 2018 MacBook Pro (MBP)  with 32G of RAM &amp; a 550GB SSD. It&#8217;s fast &amp; sleek, and you could hardly wish for more in a traveling developer&#8217;s machine than it provides. Other than a few speedbumps I hit with migration from my old MBP (interesting to resolve but minor on balance) and upgrading MacOS to Mojave (Sentinel&#8217;s fault, not Apple&#8217;s), I love this machine!</p>
+</div>
+<div class="paragraph">
+<p>Recently however, I was running my full toolchain, plus Docker &amp; a container or four, and trying to capture a screen recording. And the fans were <strong>roaring</strong>! Better that than to overheat, for sure, but it got me thinking about the ideal workstation for development, tossing in the occasional need for recording or doing other fairly mundane things like opening a few dozen browser tabs, running Slack (the horror!), etc. And the inevitable conclusion was that I needed more machine. :D</p>
+</div>
+<div class="paragraph">
+<p>Not wanting to spend a small fortune on this machine - and funding it myself - I got approval from my personal CFO (my wife, thank you Sweetie!) to build a machine that filled the bill. It all came together pretty nicely, and when I posted the first <code>free</code> output on Twitter, I discovered how many other devs really want a similarly configured machine. (I mean, who doesn&#8217;t want more power, more memory, more SSD, more&#8230;&#8203;)</p>
+</div>
+<div class="paragraph">
+<p>Anyway, here is the Bill of Materials for <code>trinity</code> (yes, we&#8217;re Matrix fans&#8230;&#8203;again, who isn&#8217;t?):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Case</strong>: Thermaltake Core V21 SPCC Micro ATX, Mini ITX Cube gaming computer case chassis, small form factor</p>
+</li>
+<li>
+<p><strong>Power Supply Unit (PSU)</strong>: EVGA 700 B1, 80+ BRONZE 700W, 3 Year Warranty</p>
+</li>
+<li>
+<p><strong>Motherboard (mobo)</strong>: MSI Arsenal Gaming AMD Ryzen 1st+2nd Gen AM4 M.2 USB3 DDR4 DVI HDMI Micro-ATX (B450M Bazooka)</p>
+</li>
+<li>
+<p><strong>CPU</strong>: AMD Ryzen 5 2600 Processor with Wraith Stealth Cooler</p>
+</li>
+<li>
+<p><strong>Thermal CPU paste</strong>: ARCTIC MX-4 thermal compound paste</p>
+</li>
+<li>
+<p><strong>Memory</strong>: Corsair LPX 32G (2x16G) 3200MHz C16 DDR4 DRAM memory kit (x2, for a total of 4 and 64G RAM)</p>
+</li>
+<li>
+<p><strong>Graphics card</strong>: MSI Gaming GeForce GT 710 2GB GDRR3 64-bit HDCP Support DirectX 12 OpenGL 4.5 single fan low profile</p>
+</li>
+<li>
+<p><strong>SSD</strong>: Crucial MX500 1TB 3D NAND SATA 2.5 inch internal SSD</p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>All of these can be found easily via my Amazon parts list: <a href="https://www.amazon.com/hz/wishlist/ls/I2ZHZ2DCETWC" class="bare">https://www.amazon.com/hz/wishlist/ls/I2ZHZ2DCETWC</a></p>
+</div>
+</blockquote>
+</div>
+<div class="sect1">
+<h2 id="_more_information_about_the_hardware">More information about the hardware</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I can&#8217;t say enough nice things about this Thermaltake case. It&#8217;s accessible from both sides &amp; top: all panels remove easily by hand with two bolts. One panel is clear plastic so you could light up the insides &amp; show it off (hello gamers!), the other two have nearly full panel ventilation. And there are removable, magnetic mounted fine mesh screens over those vent panels to reduce dust accummulation inside your machine. It&#8217;s incredibly well thought out.</p>
+</div>
+<div class="paragraph">
+<p>It also ships with a large (but whisper quiet) fan in the front to help with air circulation and cooling, with mounting positions on the case&#8217;s bottom for more (and rails in the top for more too, if you place a mesh panel over them). This thing was designed from the start to keep your machine from heating up &amp; throttling.</p>
+</div>
+<div class="paragraph">
+<p>I sized the PSU using online sizing tools, then rounded up to be sure I wouldn&#8217;t tax it if (when) I add in more boards, a beefier graphics card, etc. My two subsequent criteria were reliability &amp; sound level. This unit was said to be both reliable and very quiet, so it won out.</p>
+</div>
+<div class="paragraph">
+<p>I selected this particular motherboard &amp; CPU because they hit the sweet spot of excellent performance and reasonable price. You can effectively spend as much you could ever want on a single chip, depending upon your tastes &amp; budget&#8230;&#8203;but I was looking for solid performance and a good value besides. The Ryzen 5 2600 came in strong, with 6 cores &amp; 12 threads and decent numbers: GHz and GHz, which should handle containers and build cycles with aplomb. The fact that it shipped with a massive heat sink+quiet fan was icing on the cake.</p>
+</div>
+<div class="paragraph">
+<p>On thermal paste: DO NOT scrimp on heat dissipation. A small tube of quality thermal paste will be more than ample; all you need is a small amount between the CPU &amp; heatsink/fan to help keep your rig cool and performant, reducing throttling due to the chip heating up under load. It&#8217;s cheap and absolutely essential.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>PRO TIP: Get the good kind that doesn&#8217;t break down over time.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The part I really wanted to max out was memory. This CPU &amp; mobo can handle 64G of DDR4 RAM (4x16G), and I wouldn&#8217;t have gone less. Keeping more apps+data in memory was my primary goal to reduce the work the system must do to swap and keep the fans quiet. This Crucial memory was rated extremely well, and price was (for 64G of DDR4) reasonable enough. So far, so great. :D</p>
+</div>
+<div class="paragraph">
+<p>I bought a decent graphics card for the machine&#8217;s intended purpose, the MSI GeForce GT 710 with 2G of GDDR3 memory onboard. While it&#8217;s possible I could fire up an occasional game on <code>trinity</code>, nearly (if not fully) 100% of its use will be as a developer workstation. IDEs, containers, local cloud environments, pipelines&#8230;&#8203;and this card should be more than robust enough. The fan on it is quiet as well, which doesn&#8217;t hurt its standing.</p>
+</div>
+<div class="paragraph">
+<p>Finally, the SSD is a well-rated and performant Crucial 1TB 3D NAND SATA drive. Not much to say here, it&#8217;s quite zippy. :)</p>
+</div>
+<div class="paragraph">
+<p>Rounding out the odds &amp; ends, I&#8217;m currently using an existing keyboard, mouse, &amp; HDMI TV/monitor for user I/O and wired ethernet (port on motherboard) for connectivity. I&#8217;ll likely upgrade the monitor at some point soon &amp; possibly install a wireless card.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_software">Software</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After toying with the idea of installing Pop_OS!, Debian, or ElementaryOS, I installed Ubuntu 18.04 LTS. Much of this stems from earlier forays into all three, plus Lubuntu, on a Dell XPS 14 and another older tower I have kicking about. As much as each distro has things that recommend it, I&#8217;ve found Ubuntu proper to have the best out-of-the-box <strong>and</strong> overall support for devices and software (esp dev tools) of any Linux distro. While I do love to tinker on occasion, my first, last, and most-positions-in-between priorities are to <strong>get stuff done</strong>. If things other than writing code &amp; deploying it chew up more than a small fraction of my time, I need to move to a better setup. Ubuntu provides that nearly out of the box.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_in_conclusion">In conclusion&#8230;&#8203;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>That&#8217;s all for now! I&#8217;ll likely post short updates on Twitter, <a href="https://twitter.com/mkheck">so click here &amp; follow to stay informed</a>.</p>
+</div>
+<div class="paragraph">
+<p>Yours in code,</p>
+</div>
+<div class="paragraph">
+<p>///ark</p>
+</div>
+</div>
+</div>
+    
+        </div>
+    </section>
+
+    <footer class="post-full-footer">
+      <section class="author-card">
+        <img class="author-profile-image" src="https://thehecklers.com/img/MarkHecklerProfilePic.jpg" alt="Author" />
+        <section class="author-card-content">
+            <h4 class="author-card-name"><a href="https://thehecklers.com/">Mark Heckler</a></h4>
+                <p>Computer scientist &amp; software developer</p>
+        </section>
+      </section>
+    </footer>
+</article>
+    
+    
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/thehecklers.com\/post\/building-a-developer-workstation\/";  
+this.page.identifier = "https:\/\/thehecklers.com\/post\/building-a-developer-workstation\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://mkheck.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  </div>
+</main>
+
+
+<aside class="read-next outer">
+  <div class="inner">
+    <div class="read-next-feed">      
+      
+<article class="read-next-card" 
+            style="background-image: url(https://thehecklers.com/img/virtual-keyboard_dark2.jpg);" >
+    <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; Hecklers in Development, brewing stronger Java &mdash;</small>
+        
+        <h3 class="read-next-card-header-title"><a href="https://thehecklers.com/tags/developer-workstation/">#developer workstation</a></h3>
+    </header>
+    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+    </div>
+
+    <div class="read-next-card-content">
+      
+        <ul>
+          <li><a href="https://thehecklers.com/post/springing-forward/">Springing Forward</a></li>            
+        
+          <li><a href="https://thehecklers.com/post/t4sd-tips-4-spring-devs-request-header-filtering-in-requestmapping/">T4SD (Tips 4 Spring Devs): Request header filtering in @RequestMapping</a></li>            
+        
+                      
+        
+          <li><a href="https://thehecklers.com/post/netbeans-jsf-mysql-primary-key/">Netbeans Jsf Mysql Primary Key</a></li>            
+        
+          <li><a href="https://thehecklers.com/post/comment-%C3%A7a-va/">Comment ça va?</a></li>            
+        </ul>
+    </div>
+    <footer class="read-next-card-footer">
+      
+        <a href="https://thehecklers.com/tags/developer-workstation/">See all related posts →</a>
+    </footer>
+</article>
+
+
+      
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://thehecklers.com/post/register-instances-eureka/">
+      <div class="post-card-image" style="background-image: url(https://thehecklers.com/img/Spring-Logos-CLOUD-HOR.png)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://thehecklers.com/post/register-instances-eureka/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #Spring 
+              #Spring Boot 
+              #Spring Cloud 
+              #Netflix OSS 
+              #Eureka 
+              #java 
+              #Spring Cloud Netflix 
+              #Spring Cloud Config  </span>
+              
+              <h2 class="post-card-title">Register Instances Eureka</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>When developing Spring Boot + Spring Cloud microservices, most often we devs run them locally, also running local instances of Spring Cloud Config Server and Spring Cloud Netflix Eureka to provide essential scaffolding for our microservices-in-development and to more closely replicate our test &amp; production environments. Many times, we simply run a single instance of a microservice under development, which works with nearly no effort on our part: provide a desired port number for the service either via internal properties (usually in the project&#8217;s application. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="https://thehecklers.com/img/MarkHecklerProfilePic.jpg" alt="Author" />
+          <span class="post-card-author"><a href="https://thehecklers.com/">Mark Heckler</a></span>
+      </footer>
+    </div>
+</article>
+      
+    </div>
+  </div>
+</aside>
+
+<div class="floating-header">
+  <div class="floating-header-logo">
+    <a href="https://thehecklers.com/">
+      
+      <span></span>
+    </a>
+  </div>
+  <span class="floating-header-divider">&mdash;</span>
+  <div class="floating-header-title">Building a Developer Workstation</div>
+  <div class="floating-header-share">
+    <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/></svg>
+    </div>
+    
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=Building%20a%20Developer%20Workstation&amp;url=https%3a%2f%2fthehecklers.com%2fpost%2fbuilding-a-developer-workstation%2f"
+          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+      </a>
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fthehecklers.com%2fpost%2fbuilding-a-developer-workstation%2f"
+          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+      </a>
+  </div>
+
+  <progress class="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+</div>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="https://thehecklers.com/">HM</a> © 2018, 2019 <br>
+      <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
+    </section>
+    <nav class="site-footer-nav">
+        <a href="https://thehecklers.com/">Latest Posts</a>
+        <a href="https://www.facebook.com/markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://twitter.com/mkheck" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/mkheck" target="_blank" rel="noopener">Github</a>
+        <a href="https://www.linkedin.com/in/markheckler" target="_blank" rel="noopener">LinkedIn</a>
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://thehecklers.com/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+  <!-- Google Analytics -->
+  <script>
+    var _gaq=[['_setAccount','UA-102227903-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+
+
+    <script>
+
+
+
+
+
+$(document).ready(function () {
+    
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+</body></html>

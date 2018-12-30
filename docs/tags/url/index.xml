@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Url on </title>
+    <link>https://thehecklers.com/tags/url/</link>
+    <description>Recent content in Url on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 16 Jul 2016 15:57:04 -0600</lastBuildDate>
+    
+	<atom:link href="https://thehecklers.com/tags/url/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Random Route in Cloud Foundry</title>
+      <link>https://thehecklers.com/post/random-route-in-cloud-foundry/</link>
+      <pubDate>Sat, 16 Jul 2016 15:57:04 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/random-route-in-cloud-foundry/</guid>
+      <description>I’ve only been working with Pivotal Cloud Foundry since September 2015, but I’ve learned a great deal about it since then. I also realize there is much (much much) more to learn! The world doesn’t stand still, after all, and there are many stones I’ve yet to turn.
+ Sometimes I revisit something small-but-useful that I discovered long ago that I didn’t take the time to share at the time. I intend to be better about that, beginning now.</description>
+    </item>
+    
+  </channel>
+</rss>

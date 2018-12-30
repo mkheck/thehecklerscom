@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rest on </title>
+    <link>https://thehecklers.com/tags/rest/</link>
+    <description>Recent content in Rest on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 20 Jun 2017 20:27:09 -0600</lastBuildDate>
+    
+	<atom:link href="https://thehecklers.com/tags/rest/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>T4SD (Tips 4 Spring Devs): How to get Spring Boot REST endpoints to speak XML</title>
+      <link>https://thehecklers.com/post/t4sd-tips-4-spring-devs-how-to-get-spring-boot-rest-endpoints-to-speak-xml/</link>
+      <pubDate>Tue, 20 Jun 2017 20:27:09 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/t4sd-tips-4-spring-devs-how-to-get-spring-boot-rest-endpoints-to-speak-xml/</guid>
+      <description>Many of us use JSON almost exclusively now, which is generally a good thing. But what happens when you need to “speak XML” with your Spring Boot REST endpoints?
+ XML support in Spring Boot’s REST endpoints is not enabled by default, but adding it isn’t difficult at all. Simply add the following dependency to your POM (or similar entry to your Gradle build file, if that’s the way you roll) and rebuild:</description>
+    </item>
+    
+    <item>
+      <title>T4SD (Tips 4 Spring Devs): Exposing Query Methods in Spring Data REST</title>
+      <link>https://thehecklers.com/post/t4sd-tips-4-spring-devs-exposing-query-methods-in-spring-data-rest/</link>
+      <pubDate>Tue, 26 Jul 2016 15:46:25 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/t4sd-tips-4-spring-devs-exposing-query-methods-in-spring-data-rest/</guid>
+      <description>Spring Data REST takes an opinionated approach to exposing Spring Data repositories via REST endpoints, covering the 80-90% use case with a minimum of code and fuss. But did you know that it provides a no-lifting-required mechanism for exposing query methods you define on those repositories as well?
+ Let’s say you create a method like this:
+ https://gist.github.com/hecklerm/df38b5b847e476ee35e3a6576bf31e78
+ Referencing that bit of functionality directly is simple, just append /search/&amp;lt;methodName&amp;gt; to the collection endpoint:</description>
+    </item>
+    
+    <item>
+      <title>Spring Boot for IoT Developers: Getting Started</title>
+      <link>https://thehecklers.com/post/spring-boot-for-iot-developers-getting-started/</link>
+      <pubDate>Mon, 01 Feb 2016 16:18:32 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/spring-boot-for-iot-developers-getting-started/</guid>
+      <description>It often surprises other devs when I suggest that Spring Boot is a perfect addition to the IoT developer’s toolbox. If you’re deep into IoT and have the luxury of another group providing all of your back-end and/or cloud platform code, that’s perfectly understandable. However, if you’re a full-stack developer, by choice or necessity, you need to know this! Grab a chair and a cup of coffee; I think you’ll find this interesting (and useful).</description>
+    </item>
+    
+  </channel>
+</rss>

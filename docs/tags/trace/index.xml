@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Trace on </title>
+    <link>https://thehecklers.com/tags/trace/</link>
+    <description>Recent content in Trace on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 27 Jun 2017 19:55:02 -0600</lastBuildDate>
+    
+	<atom:link href="https://thehecklers.com/tags/trace/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting up &amp; running quickly with Spring Cloud Sleuth</title>
+      <link>https://thehecklers.com/post/getting-up-running-quickly-with-spring-cloud-sleuth/</link>
+      <pubDate>Tue, 27 Jun 2017 19:55:02 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/getting-up-running-quickly-with-spring-cloud-sleuth/</guid>
+      <description>As you begin to divide conglomerate functionality into discrete, decoupled microservices, you introduce a number of opportunities and challenges into your system(s). The opportunities are often well-known, including (and especially!) development velocity, fidelity/fit (functionality matches requirements), scalability, and a host of other “ilities”.
+ Challenges also exist of course, including the question of how to gain visibility into end-to-end interactions involving multiple microservices across process and network boundaries. Spring Cloud Sleuth provides a lightweight, configurable, and easy way to begin capturing trace information within your distributed system.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pivotal on </title>
+    <link>https://thehecklers.com/tags/pivotal/</link>
+    <description>Recent content in Pivotal on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 01 Feb 2016 16:18:32 -0600</lastBuildDate>
+    
+	<atom:link href="https://thehecklers.com/tags/pivotal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spring Boot for IoT Developers: Getting Started</title>
+      <link>https://thehecklers.com/post/spring-boot-for-iot-developers-getting-started/</link>
+      <pubDate>Mon, 01 Feb 2016 16:18:32 -0600</pubDate>
+      
+      <guid>https://thehecklers.com/post/spring-boot-for-iot-developers-getting-started/</guid>
+      <description>It often surprises other devs when I suggest that Spring Boot is a perfect addition to the IoT developer’s toolbox. If you’re deep into IoT and have the luxury of another group providing all of your back-end and/or cloud platform code, that’s perfectly understandable. However, if you’re a full-stack developer, by choice or necessity, you need to know this! Grab a chair and a cup of coffee; I think you’ll find this interesting (and useful).</description>
+    </item>
+    
+  </channel>
+</rss>

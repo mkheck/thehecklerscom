@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en-US" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Microservices: The View from 1000 Feet (or 305 Meters If You Prefer) &middot; </title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://thehecklers.com/favicon.ico" />
+    <link rel="canonical" href="https://thehecklers.com/post/microservices-the-view-from-1000-feet-or-305-meters-if-you-prefer/" />
+
+     <meta name="description" content="Intro I started this post a couple months ago, and between a busy holiday season and constant revisions, I’m only now polishing and posting it. For those who kn" /> 
+
+     
+    
+    <meta name="twitter:card" content="summary"/>
+    
+ 
+    <meta name="twitter:title" content="Microservices: The View from 1000 Feet (or 305 Meters If You Prefer)"/>
+    <meta name="twitter:description" content="Intro I started this post a couple months ago, and between a busy holiday season and constant revisions, I’m only now polishing and posting it. For those who kn"/>
+    <meta name="twitter:url" content="https://thehecklers.com/post/microservices-the-view-from-1000-feet-or-305-meters-if-you-prefer/" />
+    <meta name="twitter:site" content="@mkheck"/>
+
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="Microservices: The View from 1000 Feet (or 305 Meters If You Prefer) &middot; Hecklers in Development, brewing stronger Java" />
+    <meta property="og:url" content="https://thehecklers.com/post/microservices-the-view-from-1000-feet-or-305-meters-if-you-prefer/" />
+    <meta property="article:publisher" content="https://www.facebook.com/markhecklerdev" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Intro I started this post a couple months ago, and between a busy holiday season and constant revisions, I’m only now polishing and posting it. For those who kn" />
+
+    <meta property="article:published_time" content="2015-01-12T17:50:00-06:00" />
+    <meta property="article:tag" content="architecture" /><meta property="article:tag" content="cons" /><meta property="article:tag" content="JavaEE" /><meta property="article:tag" content=".NET" /><meta property="article:tag" content="microservice" /><meta property="article:tag" content="monolithic" /><meta property="article:tag" content="pros" /><meta property="article:tag" content="server" /><meta property="article:tag" content="strengths" /><meta property="article:tag" content="weaknesses" />
+
+    <meta property="og:image" content="https://thehecklers.com/img/virtual-keyboard_dark2.jpg"/>
+
+    <meta name="generator" content="Hugo 0.53" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://thehecklers.com/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="https://thehecklers.com/css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="post-template">
+  <div class="site-wrapper"> 
+
+<header class="site-header outer">
+  <div class="inner">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+
+        <ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/">Home</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/page/abstracts">Abstracts</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/page/contact">Contact me</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/page/events">Upcoming events</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/tags/java/">Java</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/tags/spring/">Spring</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://thehecklers.com/categories/">Categories</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://spring.io/">Spring Central</a>
+            </li>
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    <a class="social-link social-link-fb" href="https://www.facebook.com/markhecklerdev" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg></a>
+
+                    <a class="social-link social-link-tw" href="https://twitter.com/mkheck" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
+
+                    <a class="social-link" href="https://github.com/mkheck" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    <a class="social-link" href="https://www.linkedin.com/in/markheckler" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 50 512 512"><path d="M150.65,100.682c0,27.992-22.508,50.683-50.273,50.683c-27.765,0-50.273-22.691-50.273-50.683 C50.104,72.691,72.612,50,100.377,50C128.143,50,150.65,72.691,150.65,100.682z M143.294,187.333H58.277V462h85.017V187.333z M279.195,187.333h-81.541V462h81.541c0,0,0-101.877,0-144.181c0-38.624,17.779-61.615,51.807-61.615 c31.268,0,46.289,22.071,46.289,61.615c0,39.545,0,144.181,0,144.181h84.605c0,0,0-100.344,0-173.915 s-41.689-109.131-99.934-109.131s-82.768,45.369-82.768,45.369V187.333z" /></svg></a>
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+      <article class="post-full post"> 
+    <header class="post-full-header">
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="2015-01-12">12 January 2015</time>
+                <span class="date-divider">/</span> <a href="https://thehecklers.com/tags/architecture/">#architecture</a>&nbsp;<a href="https://thehecklers.com/tags/cons/">#cons</a>&nbsp;
+        </section>
+        <h1 class="post-full-title">Microservices: The View from 1000 Feet (or 305 Meters If You Prefer)</h1>
+    </header>
+    
+    <figure class="post-full-image" style="background-image: url(https://thehecklers.com/defimg/4.jpg)">
+    </figure>
+
+    <section class="post-full-content">
+        <div class="kg-card-markdown">
+        <div class="sect1">
+<h2 id="_intro">Intro</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I started this post a couple months ago, and between a busy holiday season and constant revisions, I’m only now polishing and posting it. For those who knew it was in the pipeline, thank you for your patience. 🙂</p>
+</div>
+<div class="paragraph">
+<p>I have another article in the works that will delve into more technical aspects of the microservices discussion; hopefully I’ll get that posted by this time next year (!). In this one, though, I’d like to stay as much as possible at the conceptual level, dipping into the details only to reference them for consideration and future discussion. No guarantees, but that’s the plan. 🙂</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_discussion">Discussion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>First, a good-natured poke at our discipline in general&#8230;&#8203;</p>
+</div>
+<hr>
+<div class="paragraph">
+<div class="title">The Holy Grail of Software Development</div>
+<p><span class="image"><img src="https://thehecklers.com/img/swissknife-300x221.png" alt="The Holy Grail of Software Development"></span></p>
+</div>
+<hr>
+<div class="paragraph">
+<p>Regardless of the new architecture, technique, methodology, framework, language/feature, etc., we (as developers) often fall prey to the temptation to make it a “one size fits all” solution. Regardless of the problem at hand, we break out our new toy, er, <strong>tool</strong> and apply it vigorously, without the benefit of objective consideration of suitability to the task at hand. To paraphrase two Abrahams (Kaplan and Maslow) the way I’ve always heard it:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>“To the man with a hammer, everything looks like a nail.”</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This doesn’t have anything to do with microservices directly&#8230;&#8203;only with the fawning attitude for the concept that seems to be prevalent at the moment. 🙂</p>
+</div>
+<div class="paragraph">
+<p>Along those same lines, I’d like to issue a couple of disclaimers here. I work for Oracle, so my experiences and worldview may differ from yours. That said, I like to think of myself as a fairly fact-based being; while I have been wrong many times and shall be again (many times), I do my best to analyze and come to conclusions based upon objective measures and reasoned assessments. Really, I do.</p>
+</div>
+<div class="paragraph">
+<p>Secondly, it is incredibly difficult to make statements about microservices or anything else within the dev sphere that are 100% accurate and/or conclusive. I’ve tried to avoid blanket generalizations, but frankly, it’s nearly impossible to discuss anything without making some sweeping statements that one assumes/hopes will be understood as they were intended. If something below puzzles you or doesn’t sound right, please drop me a line and ask.</p>
+</div>
+<div class="paragraph">
+<p>And finally, the views expressed in this post are mine and don’t represent those of Oracle. Or maybe anyone else. They’re just mine. 🙂</p>
+</div>
+<div class="paragraph">
+<p>Now, back to microservices!</p>
+</div>
+<div class="paragraph">
+<p>As with any tool applied indiscriminately to all problems, fit is often imperfect. Let’s take a closer look at what microservices are, what they’re up against, and their particular strengths and weaknesses.</p>
+</div>
+<div class="sect2">
+<h3 id="_definitions">Definitions</h3>
+<div class="sect3">
+<h4 id="_microservices">Microservices</h4>
+<div class="quoteblock">
+<blockquote>
+"&#8230;&#8203;the microservice architectural style…is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies."
+</blockquote>
+<div class="attribution">
+&#8212; Martin Fowler
+</div>
+</div>
+<div class="paragraph">
+<p>Let’s dissect this a bit.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+"&#8230;&#8203;the microservice architectural style…is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API."
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is a good start. Without going overboard trying to explain something that is fairly straightforward, we’re talking about breaking down a large, complex application into small(ish – we’ll get to that a bit later) services that are more granular. Doing so should enable us to focus upon a more specific outcome for each portion of the overall functionality, which should result in better component manageability and quality.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+"These services are built around business capabilities and independently deployable by fully automated deployment machinery."
+</blockquote>
+</div>
+<div class="paragraph">
+<p>With all respect to Mr. Fowler, this bit of text is not specific to microservices. Capability-driven development approaches are used in many different contexts, and automated deployment is even less useful as a differentiator. For this discussion, we’ll ignore this bit of text entirely.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+"There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies."
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Unlike the previous statement, this is a very useful description of microservices that, while not entirely unique to them, lays out two key tenets:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Microservices are decentralized. They could be hosted anywhere.</p>
+</li>
+<li>
+<p>Microservices are heterogeneous. They can be written in the developers’ language of choice and deployed on their platform of choice, as long as the “connections” are properly made.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_alternatives">The “Alternative(s)”</h4>
+<div class="paragraph">
+<p>Everything else, of course. 🙂</p>
+</div>
+<div class="paragraph">
+<p>The microservices concept primarily addresses the server side of the equation; the client component is a player only insofar as it is involved in the delivery of the application’s functionality. In the strictest sense, microservices focus upon the delivery of capabilities via (micro)services provided by server(s).</p>
+</div>
+<div class="paragraph">
+<p>Keeping that same specific focus, the alternative is really the “monolithic” application, typically delivered as a single unit containing all functionality for the entire set of targeted use cases. Some means of delivering so-called monolithic applications include (but are not limited to) Java EE, .NET, or any other server-side environment that provides functionality to the user via an application server or an affiliated cluster of app servers.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pros_of_a_microservices_architecture">Pros of a Microservices Architecture</h3>
+<div class="sect3">
+<h4 id="_manageability">Manageability</h4>
+<div class="paragraph">
+<p>Firstly, anyone who has struggled under the weight of a large server-based application can immediately see the appeal of microservices. Monolithic apps can get “too big”, becoming unwieldy to develop and maintain. With so much complexity in a single code base, it becomes difficult to test, debug, etc. without the law of unintended consequences wreaking havoc in novel ways.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_extensibility">Extensibility</h4>
+<div class="paragraph">
+<p>With a microservices architecture, functionality can be “farmed out” and provided by others, often developers/teams who don’t even work for your organization. While this isn’t unique to microservices, the architecture certainly facilitates it; creating and documenting the interfaces within the core app to support various connection points makes developing and integrating external functionality far easier for those outside the core application’s dev team than any monolithic app could be.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_locationscalability">Location/Scalability</h4>
+<div class="paragraph">
+<p>This also allows hosted functionality to be geographically dispersed more readily than typical alternatives, deploying microservices wherever it makes sense to do so (using any criteria). If a development partner on one side of the world decided to provide a microservice that integrates with a core application hosted on the other, this could be done easily by complying with published interface standards and requirements. Adding an external functionality provider is far less disruptive to the core app if it was designed with that end in mind, and that is the core principle of a microservice architecture (see above).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_granularity">Granularity</h4>
+<div class="paragraph">
+<p>Creating an application with microservices in mind also can result in a leaner core application. It’s an imperfect analogy, but composition vs. inheritance applies here. If your architecture embraces the creation of a core set of functionality with numerous extension points, your core app potentially can be more focused and functionally cohesive…as can each microservice.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cons_of_a_microservices_architecture">Cons of a Microservices Architecture</h3>
+<div class="paragraph">
+<p>Any architectural decision has its downside, and a microservices architecture creates new challenges while it’s solving old ones. Here are a few potential hurdles that microservices face.</p>
+</div>
+<div class="sect3">
+<h4 id="_control">Control</h4>
+<div class="paragraph">
+<p>If you thought debugging and testing a monolithic application was a challenge – with all code directly accessible and modifiable (to varying extents) from the comfort of your IDE – you’re probably cringing at the thought of your pending inability to sink your hands into the entire codebase to fix bugs that surface or (more) easily test and diagnose aberrant behavior that is reported in <strong>your app</strong>. End-users will not know (and won’t care) that something breaks due to a partner’s error in implementing an interface, failure to completely debug an edge case, or even an innovative misuse of the app by said user. <strong>Your app is broken, =fail.</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_consistency">Consistency</h4>
+<div class="paragraph">
+<p>If portions of your application’s functionality are provided by other groups or organizations, maintaining consistency becomes more difficult. User interfaces, error handling, text phrasing…these are just a few examples of areas where small differences can make a huge impact on the overall user experience.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_overhead">Overhead</h4>
+<div class="paragraph">
+<p>Say what you will about about monolithic apps, but infrastructure and interfaces are costs that are borne once for the entire (monolithic) application…to say nothing of transactions. When portions of your app’s functionality are provided via microservices hosted on various external platforms, connection security and authentication/authorization must be factored into the most insignificant internal interactions. It’s only a bit of an exaggeration to say that with a microservices architecture, there are no local interfaces. And for those who think “microservices” means “tiny services”, there is no limit to the size/scope of a so-called microservice. Factoring in the overhead, they can involve more code than you might expect, somewhat negating some of the advantages of “leanness” you may have been anticipating.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_fragility">Fragility</h4>
+<div class="paragraph">
+<p>With multiple infrastructures and databases potentially hosted on various platforms in far-flung places, a microservices-based application certainly offers more breakpoints. At best, this introduces latency concerns; at worst, fragility. If any key bits of functionality are delivered via an (external) microservice, the unavailability of that microservice breaks your app. This is less of a concern if the group supporting the failed service is just down the hallway; but if the other organization is in a different building, city, or country, small breakages can quickly result in painful outages and even lost customers. See the note about <strong>Control</strong> above.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_in_conclusion_for_now">In Conclusion (For Now)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A microservices architecture offers another viable approach, another option to deliver more functionality to end-users…but it is not a silver bullet.</p>
+</div>
+<div class="paragraph">
+<p>A microservices architecture can provide greater flexibility and code quality by capability at the possible expense of (overall) application availability and control. It’s a great tool, used wisely and in the right circumstances…but as with any great tool, it doesn’t remove the responsibility to think prior to (and while) employing it.</p>
+</div>
+<div class="paragraph">
+<p>Now, go develop something. 🙂</p>
+</div>
+<div class="paragraph">
+<p>Cheers,<br>
+Mark</p>
+</div>
+</div>
+</div>
+    
+        </div>
+    </section>
+
+    <footer class="post-full-footer">
+      <section class="author-card">
+        <img class="author-profile-image" src="https://thehecklers.com/img/MarkHecklerProfilePic.jpg" alt="Author" />
+        <section class="author-card-content">
+            <h4 class="author-card-name"><a href="https://thehecklers.com/">Mark Heckler</a></h4>
+                <p>Computer scientist &amp; software developer</p>
+        </section>
+      </section>
+    </footer>
+</article>
+    
+    
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/thehecklers.com\/post\/microservices-the-view-from-1000-feet-or-305-meters-if-you-prefer\/";  
+this.page.identifier = "https:\/\/thehecklers.com\/post\/microservices-the-view-from-1000-feet-or-305-meters-if-you-prefer\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://mkheck.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  </div>
+</main>
+
+
+<aside class="read-next outer">
+  <div class="inner">
+    <div class="read-next-feed">      
+      
+<article class="read-next-card" 
+            style="background-image: url(https://thehecklers.com/img/virtual-keyboard_dark2.jpg);" >
+    <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; Hecklers in Development, brewing stronger Java &mdash;</small>
+        
+        <h3 class="read-next-card-header-title"><a href="https://thehecklers.com/tags/architecture/">#architecture</a></h3>
+    </header>
+    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+    </div>
+
+    <div class="read-next-card-content">
+      
+        <ul>
+          <li><a href="https://thehecklers.com/post/a-pivotal-decision/">A Pivotal Decision</a></li>            
+        
+          <li><a href="https://thehecklers.com/post/springing-forward/">Springing Forward</a></li>            
+        
+          <li><a href="https://thehecklers.com/post/random-route-in-cloud-foundry/">Random Route in Cloud Foundry</a></li>            
+        
+          <li><a href="https://thehecklers.com/post/nighthacking-interview-jfokus/">Nighthacking Interview: Jfokus</a></li>            
+        </ul>
+    </div>
+    <footer class="read-next-card-footer">
+      
+        <a href="https://thehecklers.com/tags/architecture/">See all related posts →</a>
+    </footer>
+</article>
+
+
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://thehecklers.com/post/the-secret-sauce-how-to-connect-your-raspberry-pi-to-a-hidden-ssid/">
+      <div class="post-card-image" style="background-image: url(https://thehecklers.com/defimg/2.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://thehecklers.com/post/the-secret-sauce-how-to-connect-your-raspberry-pi-to-a-hidden-ssid/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #hidden 
+              #interfaces 
+              #Raspberry Pi 
+              #SSID 
+              #wifi 
+              #wpa_supplicant  </span>
+              
+              <h2 class="post-card-title">The Secret Sauce: How to Connect Your Raspberry Pi to a Hidden SSID</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>When I got my first Raspberry Pi Model B (not long after they first became available – remember when they only had 256M?!?), I wanted to configure it to use a wifi adapter. Even with approved, compliant adapters, this wasn’t for the faint of heart; many steps, scripts, and secret incantations were required to get everything to connect, even in the best of circumstances.
+ Fast-forward to today, when wifi adapter drivers are included in the base Raspbian build. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="https://thehecklers.com/img/MarkHecklerProfilePic.jpg" alt="Author" />
+          <span class="post-card-author"><a href="https://thehecklers.com/">Mark Heckler</a></span>
+      </footer>
+    </div>
+</article>
+      
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://thehecklers.com/post/secure-email-from-java/">
+      <div class="post-card-image" style="background-image: url(https://thehecklers.com/defimg/1.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://thehecklers.com/post/secure-email-from-java/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #bouncycastle 
+              #certificate 
+              #email 
+              #encrypt 
+              #ewallet 
+              #java 
+              #javamail 
+              #jks 
+              #orapki 
+              #pfx 
+              #pkcs12 
+              #s/mime 
+              #secure 
+              #sign 
+              #signed 
+              #wallet  </span>
+              
+              <h2 class="post-card-title">Secure Email From Java</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Cross-posted from The Java Jungle by Mark Heckler
+ I’ve been working recently with a client to do some rather useful things with notifications, and one of them involved sending a secure email from within a Java program. We encountered some interesting (translation: weird!) challenges, and in overcoming them, I worked out a reasonably straightforward path through the minefield. If you’ve been thinking about secure-email-enabling your Java app but aren’t sure where to start, hopefully this will serve as a fairly quick and mostly painless primer. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="https://thehecklers.com/img/MarkHecklerProfilePic.jpg" alt="Author" />
+          <span class="post-card-author"><a href="https://thehecklers.com/">Mark Heckler</a></span>
+      </footer>
+    </div>
+</article>
+      
+    </div>
+  </div>
+</aside>
+
+<div class="floating-header">
+  <div class="floating-header-logo">
+    <a href="https://thehecklers.com/">
+      
+      <span></span>
+    </a>
+  </div>
+  <span class="floating-header-divider">&mdash;</span>
+  <div class="floating-header-title">Microservices: The View from 1000 Feet (or 305 Meters If You Prefer)</div>
+  <div class="floating-header-share">
+    <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/></svg>
+    </div>
+    
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=Microservices%3a%20The%20View%20from%201000%20Feet%20%28or%20305%20Meters%20If%20You%20Prefer%29&amp;url=https%3a%2f%2fthehecklers.com%2fpost%2fmicroservices-the-view-from-1000-feet-or-305-meters-if-you-prefer%2f"
+          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+      </a>
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fthehecklers.com%2fpost%2fmicroservices-the-view-from-1000-feet-or-305-meters-if-you-prefer%2f"
+          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+      </a>
+  </div>
+
+  <progress class="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+</div>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="https://thehecklers.com/">HM</a> © 2018, 2019 <br>
+      <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
+    </section>
+    <nav class="site-footer-nav">
+        <a href="https://thehecklers.com/">Latest Posts</a>
+        <a href="https://www.facebook.com/markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://twitter.com/mkheck" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/mkheck" target="_blank" rel="noopener">Github</a>
+        <a href="https://www.linkedin.com/in/markheckler" target="_blank" rel="noopener">LinkedIn</a>
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://thehecklers.com/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+  <!-- Google Analytics -->
+  <script>
+    var _gaq=[['_setAccount','UA-102227903-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+
+
+    <script>
+
+
+
+
+
+$(document).ready(function () {
+    
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+</body></html>
