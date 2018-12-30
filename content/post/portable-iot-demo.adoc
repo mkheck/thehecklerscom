@@ -18,7 +18,7 @@ It has been a lot of ~~work~~ fun!
 
 There is much to tell, but we’ll stick to the high points for this post. More to follow.
 
-=== Hardware List and Related Observations
+== Hardware List and Related Observations
 
 For the portable configuration, here is the hardware I used:
 
@@ -43,7 +43,7 @@ This configuration closely follows my permanent installation at my house, albeit
 
 One nice feature of this portable rig: as configured, it produces far more energy than it consumes, even with a fan providing the “wind” and venue lighting providing the “sun”. Power won’t be a problem.
 
-=== Software and Related Observations
+== Software and Related Observations
 
 The software stack for the demo system is nearly identical to that of the production system, with minor changes being made to accommodate the minor differences in attached sensors and physical devices.
 
@@ -53,11 +53,11 @@ For the IoT gateway, I used Linux and Java SE Embedded to create a secure and st
 
 IoT systems are great! But without a way to communicate with, control, and harvest meaningful data from those systems, their usefulness is severely constrained. To unleash the full value of an IoT system, you need the cloud. I used Java SE, Spring Boot, and Spring Cloud OSS to do the heavy lifting with an HTML5/JS user interface, all running on link:https://pivotal.io/platform[Pivotal Cloud Foundry]. I’m still tweaking and expanding it (in my copious spare time 😉), but it’s effectively feature-complete...and with only minor differences (to accommodate the sensor/device differences) between the permanent and demo systems.
 
-=== And...action!
+== And...action!
 
 video::ia9Rh8vQczU[youtube]
 
-=== More to Come
+== More to Come
 
 Come see me at JavaOne! This will be up and running in the MakerZone all week, so stop by to see it and chat with the crew there. If you have any questions, comments, or feedback of any kind, please link:https://twitter.com/mkheck[ping me on Twitter at @mkheck] or leave a comment below. Hope to see you there!
 

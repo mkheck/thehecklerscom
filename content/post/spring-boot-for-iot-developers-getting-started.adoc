@@ -8,15 +8,15 @@ tags: [API, Cloud, Cloud Foundry, Internet of Things, IoT, Pivotal, REST, Spring
 
 It often surprises other devs when I suggest that Spring Boot is a perfect addition to the IoT developer’s toolbox. If you’re deep into IoT and have the luxury of another group providing all of your back-end and/or cloud platform code, that’s perfectly understandable. However, if you’re a full-stack developer, by choice or necessity, you need to know this! Grab a chair and a cup of coffee; I think you’ll find this interesting (and useful).
 
-=== Let Me Just Put This Out There
+== Let Me Just Put This Out There
 
 Here is what most people imagine when they hear “IoT”:
 
-Internet of *_THINGS_*
+> Internet of *_THINGS_*
 
 But this is what they should be thinking:
 
-*_INTERNET_* of Things
+> *_INTERNET_* of Things
 
 The *things* get most of the attention, mindshare, and “buzz”. Why is that? Well…because gadgets are cool! Most of us chose to be developers because of the fun/interesting/obsessive parts, not because of the dull bits. And while there are usually fun and (ahem) less-fun components to everything, who can resist gadgetry in general?
 
@@ -24,13 +24,13 @@ Ah, but without connectivity, without storage, without the ability to monitor, m
 
 This is where Spring Boot really shines: helping you to create meaningful software at velocity. Software that is clean, concise, readable, maintainable...and built *_Cloud Native_*. We’ll come back to that last part over the next few installments, but for now, let’s focus upon building a basic platform to enable your IoT to *mean something*.
 
-=== Choose Your Legos(TM)
+== Choose Your Legos(TM)
 
 Spring Boot integrates several useful capabilities into a single, coherent code framework and approach. In a nutshell, it helps a developer rapidly build stand-alone applications that incorporate and integrate with various third-party libraries that can be deployed anywhere a JAR will run. Anywhere. It’s open source, opinionated (minimal configuration, but flexible to fully accommodate edge cases), and insanely effective. Coming from a more staid environment, I found my first exposure to Spring Boot (and every one since) surprising and refreshing. If so-called enterprise software development sounds boring to you, you probably haven’t taken Boot for a test drive.
 
 And that’s it! Kidding, that’s not it. But Spring Boot does bring along several goodies that streamline the effort it takes to build robust back end applications. Remember how I said it’s “opinionated”? Let’s examine a few of its carefully-chosen opinions, step through building a simple cloud-ready application for your IoT system, and then see where that takes us. Shall we?
 
-=== On Your Mark, Get Set, Go!
+== On Your Mark, Get Set, Go!
 
 The *_Spring Initializr_* gets our project off to a running start. There are several ways to accomplish this, but since we’re taking the simplest path possible for this first example, let’s just point our browsers to [start.spring.io](http://start.spring.io/). Spring Boot gives you options, such as a Gradle-based build, various versions of Boot, Java/Groovy, and packaging (JAR vs. WAR), but we’ll stick to most of the defaults for our example.
 
@@ -46,7 +46,7 @@ Here are the choices we’ll make for our example:
 
 Once we’ve made the above selections, simply click the Generate Project button to have the Spring Initializr generate a skeleton project, bundle it into a .zip file, and serve it up for download. Save it locally, unzip it, and open the project in your favorite IDE to get started coding.
 
-=== Building your IoT Service
+== Building your IoT Service
 
 With just that little bit of effort, we already have the foundation in place for our IoT back end service. You can verify this by running the app and pointing your browser to link:localhost:8080[localhost:8080]. You should see the following:
 
@@ -90,7 +90,7 @@ link:https://gist.github.com/hecklerm/2747f11e2e6418aefb8d[]
 
 If you’ve been pair-programming with me, congratulations! You have now created your first very basic IoT service…and since we had Spring Boot build a fully self-contained "uberJAR" (bringing its own container with it), it can be deployed wherever Java is installed. Who would have thought it could be this fast (or fun)?!?
 
-=== Future Articles, Future Enhancements
+== Future Articles, Future Enhancements
 
 As we proceed, there are several topics we will expand upon, options/adjustments we will explore (WebSocket, SQL & NoSQL persistence,...), functionality we can add (security, tailored queries, visualizations,...), and of course, we’ll leverage Spring Boot’s focus upon Cloud Native Java to deploy quickly and easily to the leading open source cloud platform, Cloud Foundry. If you have comments, questions, or suggestions, please leave them below! For updates, please follow me on Twitter at link:https://twitter.com/mkheck[@mkheck].
 
@@ -98,7 +98,7 @@ Keep coding,
 
 Mark
 
-=== Additional Information
+== Additional Information
 
 - link:http://start.spring.io/[Spring Initializr]
 - link:http://projects.spring.io/spring-boot/[Spring Boot]
