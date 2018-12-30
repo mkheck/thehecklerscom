@@ -1,0 +1,122 @@
+---
+title: "Microservices: The View from 1000 Feet (or 305 Meters If You Prefer)"
+date: 2015-01-12T17:50:00-06:00
+draft: false
+tags: [architecture, cons, JavaEE, .NET, microservice, monolithic, pros, server, strengths, weaknesses]
+---
+
+== Intro
+
+I started this post a couple months ago, and between a busy holiday season and constant revisions, I’m only now polishing and posting it. For those who knew it was in the pipeline, thank you for your patience. 🙂
+
+I have another article in the works that will delve into more technical aspects of the microservices discussion; hopefully I’ll get that posted by this time next year (!). In this one, though, I’d like to stay as much as possible at the conceptual level, dipping into the details only to reference them for consideration and future discussion. No guarantees, but that’s the plan. 🙂
+
+== Discussion
+
+First, a good-natured poke at our discipline in general...
+
+'''
+.The Holy Grail of Software Development
+image:/img/swissknife-300x221.png[The Holy Grail of Software Development]
+
+'''
+
+Regardless of the new architecture, technique, methodology, framework, language/feature, etc., we (as developers) often fall prey to the temptation to make it a “one size fits all” solution. Regardless of the problem at hand, we break out our new toy, er, *tool* and apply it vigorously, without the benefit of objective consideration of suitability to the task at hand. To paraphrase two Abrahams (Kaplan and Maslow) the way I’ve always heard it:
+
+> “To the man with a hammer, everything looks like a nail.”
+
+This doesn’t have anything to do with microservices directly...only with the fawning attitude for the concept that seems to be prevalent at the moment. 🙂
+
+Along those same lines, I’d like to issue a couple of disclaimers here. I work for Oracle, so my experiences and worldview may differ from yours. That said, I like to think of myself as a fairly fact-based being; while I have been wrong many times and shall be again (many times), I do my best to analyze and come to conclusions based upon objective measures and reasoned assessments. Really, I do.
+
+Secondly, it is incredibly difficult to make statements about microservices or anything else within the dev sphere that are 100% accurate and/or conclusive. I’ve tried to avoid blanket generalizations, but frankly, it’s nearly impossible to discuss anything without making some sweeping statements that one assumes/hopes will be understood as they were intended. If something below puzzles you or doesn’t sound right, please drop me a line and ask.
+
+And finally, the views expressed in this post are mine and don’t represent those of Oracle. Or maybe anyone else. They’re just mine. 🙂
+
+Now, back to microservices!
+
+As with any tool applied indiscriminately to all problems, fit is often imperfect. Let’s take a closer look at what microservices are, what they’re up against, and their particular strengths and weaknesses.
+
+=== Definitions
+
+==== Microservices
+
+[quote, Martin Fowler]
+"...the microservice architectural style…is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies."
+
+Let’s dissect this a bit.
+
+[quote]
+"...the microservice architectural style…is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API."
+
+This is a good start. Without going overboard trying to explain something that is fairly straightforward, we’re talking about breaking down a large, complex application into small(ish – we’ll get to that a bit later) services that are more granular. Doing so should enable us to focus upon a more specific outcome for each portion of the overall functionality, which should result in better component manageability and quality.
+
+[quote]
+"These services are built around business capabilities and independently deployable by fully automated deployment machinery."
+
+With all respect to Mr. Fowler, this bit of text is not specific to microservices. Capability-driven development approaches are used in many different contexts, and automated deployment is even less useful as a differentiator. For this discussion, we’ll ignore this bit of text entirely.
+
+[quote]
+"There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies."
+
+Unlike the previous statement, this is a very useful description of microservices that, while not entirely unique to them, lays out two key tenets:
+
+- Microservices are decentralized. They could be hosted anywhere.
+- Microservices are heterogeneous. They can be written in the developers’ language of choice and deployed on their platform of choice, as long as the “connections” are properly made.
+
+==== The “Alternative(s)”
+
+Everything else, of course. 🙂
+
+The microservices concept primarily addresses the server side of the equation; the client component is a player only insofar as it is involved in the delivery of the application’s functionality. In the strictest sense, microservices focus upon the delivery of capabilities via (micro)services provided by server(s).
+
+Keeping that same specific focus, the alternative is really the “monolithic” application, typically delivered as a single unit containing all functionality for the entire set of targeted use cases. Some means of delivering so-called monolithic applications include (but are not limited to) Java EE, .NET, or any other server-side environment that provides functionality to the user via an application server or an affiliated cluster of app servers.
+
+=== Pros of a Microservices Architecture
+
+==== Manageability
+
+Firstly, anyone who has struggled under the weight of a large server-based application can immediately see the appeal of microservices. Monolithic apps can get “too big”, becoming unwieldy to develop and maintain. With so much complexity in a single code base, it becomes difficult to test, debug, etc. without the law of unintended consequences wreaking havoc in novel ways.
+
+==== Extensibility
+
+With a microservices architecture, functionality can be “farmed out” and provided by others, often developers/teams who don’t even work for your organization. While this isn’t unique to microservices, the architecture certainly facilitates it; creating and documenting the interfaces within the core app to support various connection points makes developing and integrating external functionality far easier for those outside the core application’s dev team than any monolithic app could be.
+
+==== Location/Scalability
+
+This also allows hosted functionality to be geographically dispersed more readily than typical alternatives, deploying microservices wherever it makes sense to do so (using any criteria). If a development partner on one side of the world decided to provide a microservice that integrates with a core application hosted on the other, this could be done easily by complying with published interface standards and requirements. Adding an external functionality provider is far less disruptive to the core app if it was designed with that end in mind, and that is the core principle of a microservice architecture (see above).
+
+==== Granularity
+
+Creating an application with microservices in mind also can result in a leaner core application. It’s an imperfect analogy, but composition vs. inheritance applies here. If your architecture embraces the creation of a core set of functionality with numerous extension points, your core app potentially can be more focused and functionally cohesive…as can each microservice.
+
+=== Cons of a Microservices Architecture
+
+Any architectural decision has its downside, and a microservices architecture creates new challenges while it’s solving old ones. Here are a few potential hurdles that microservices face.
+
+==== Control
+
+If you thought debugging and testing a monolithic application was a challenge – with all code directly accessible and modifiable (to varying extents) from the comfort of your IDE – you’re probably cringing at the thought of your pending inability to sink your hands into the entire codebase to fix bugs that surface or (more) easily test and diagnose aberrant behavior that is reported in *your app*. End-users will not know (and won’t care) that something breaks due to a partner’s error in implementing an interface, failure to completely debug an edge case, or even an innovative misuse of the app by said user. *Your app is broken, =fail.*
+
+==== Consistency
+
+If portions of your application’s functionality are provided by other groups or organizations, maintaining consistency becomes more difficult. User interfaces, error handling, text phrasing…these are just a few examples of areas where small differences can make a huge impact on the overall user experience.
+
+==== Overhead
+
+Say what you will about about monolithic apps, but infrastructure and interfaces are costs that are borne once for the entire (monolithic) application…to say nothing of transactions. When portions of your app’s functionality are provided via microservices hosted on various external platforms, connection security and authentication/authorization must be factored into the most insignificant internal interactions. It’s only a bit of an exaggeration to say that with a microservices architecture, there are no local interfaces. And for those who think “microservices” means “tiny services”, there is no limit to the size/scope of a so-called microservice. Factoring in the overhead, they can involve more code than you might expect, somewhat negating some of the advantages of “leanness” you may have been anticipating.
+
+==== Fragility
+
+With multiple infrastructures and databases potentially hosted on various platforms in far-flung places, a microservices-based application certainly offers more breakpoints. At best, this introduces latency concerns; at worst, fragility. If any key bits of functionality are delivered via an (external) microservice, the unavailability of that microservice breaks your app. This is less of a concern if the group supporting the failed service is just down the hallway; but if the other organization is in a different building, city, or country, small breakages can quickly result in painful outages and even lost customers. See the note about *Control* above.
+
+== In Conclusion (For Now)
+
+A microservices architecture offers another viable approach, another option to deliver more functionality to end-users…but it is not a silver bullet.
+
+A microservices architecture can provide greater flexibility and code quality by capability at the possible expense of (overall) application availability and control. It’s a great tool, used wisely and in the right circumstances…but as with any great tool, it doesn’t remove the responsibility to think prior to (and while) employing it.
+
+Now, go develop something. 🙂
+
+Cheers, +
+Mark
