@@ -10,8 +10,9 @@ At link:http://www.jfokus.se/jfokus/[Jfokus] this week, I was honored to be inte
 
 Anyway, here is the video. Hope you enjoy it!
 
-video::Nz-WfKG2ny8[youtube]
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Nz-WfKG2ny8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+++++
 
-Keep coding,
-
+Keep coding, +
 Mark

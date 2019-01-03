@@ -55,12 +55,13 @@ IoT systems are great! But without a way to communicate with, control, and harve
 
 == And...action!
 
-video::ia9Rh8vQczU[youtube]
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ia9Rh8vQczU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+++++
 
 == More to Come
 
 Come see me at JavaOne! This will be up and running in the MakerZone all week, so stop by to see it and chat with the crew there. If you have any questions, comments, or feedback of any kind, please link:https://twitter.com/mkheck[ping me on Twitter at @mkheck] or leave a comment below. Hope to see you there!
 
-Keep coding,  
-
+Keep coding, +
 Mark
