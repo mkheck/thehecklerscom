@@ -12,7 +12,9 @@ Sometimes I revisit something small-but-useful that I discovered long ago that 
 
 Anyway, many times when deploying an application to Cloud Foundry, you will want to generate a unique URL to avoid “collisions”, i.e. attempting to reuse an in-use URL. In the past, you would insert a `${random-word}` Expression Language, er, expression to do this, but at some point, the preferred approach changed. To accomplish this now, simply add `**random-route: true**` to your application’s *manifest.yml* file. It should look something like this:
 
-link:https://gist.github.com/hecklerm/59087746ba6ee9b718fdbeaa7a6e9cc3[]
+++++
+<script src="https://gist.github.com/mkheck/59087746ba6ee9b718fdbeaa7a6e9cc3.js"></script>
+++++
 
 This directs Cloud Foundry to generate a couple of words randomly and append them to your application name with hyphens, resulting in a URL that looks something like *https://example-app**-saprophagous-unkindliness**.cfapps.io*.
 
