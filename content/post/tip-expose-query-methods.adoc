@@ -10,7 +10,9 @@ Spring Data REST takes an opinionated approach to exposing Spring Data reposito
 
 Let’s say you create a method like this:
 
-link:https://gist.github.com/hecklerm/df38b5b847e476ee35e3a6576bf31e78[]
+++++
+<script src="https://gist.github.com/mkheck/df38b5b847e476ee35e3a6576bf31e78.js"></script>
+++++
 
 Referencing that bit of functionality directly is simple, just append /search/<methodName> to the collection endpoint:
 
