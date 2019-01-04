@@ -82,7 +82,7 @@ There are several Java libraries available that aid in signing and/or encrypting
 
 There is much more you can do of course, but these are the “must-haves”.
 
-In preparation for developing our secure email module, I created a proof of concept (BCCrypTool) by marrying a Java email program I’d written previously and some BC sample code...code reuse at its lowest level, but still good for the environment. 🙂 What you see link:https://github.com/hecklerm/BCCrypTool[here in my GitHub repo] is a bit of streamlined Java code that should be pretty easy to repurpose. Please feel free to take a copy and do just that, and if you make significant changes/improvements and are able and inclined to share them, please feel free to do that as well. Sharing is caring.  🙂
+In preparation for developing our secure email module, I created a proof of concept (BCCrypTool) by marrying a Java email program I’d written previously and some BC sample code...code reuse at its lowest level, but still good for the environment. 🙂 What you see link:https://github.com/mkheck/BCCrypTool[here in my GitHub repo] is a bit of streamlined Java code that should be pretty easy to repurpose. Please feel free to take a copy and do just that, and if you make significant changes/improvements and are able and inclined to share them, please feel free to do that as well. Sharing is caring.  🙂
 
 A quick note on libraries. You’ll need the following to make this work:
 
