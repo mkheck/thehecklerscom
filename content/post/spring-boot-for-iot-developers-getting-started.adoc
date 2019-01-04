@@ -56,7 +56,9 @@ image:/img/SpringForIoTEmptyProject.png[]
 
 For this installment, we’ll focus on the MVP (Minimum Viable Product) needed to support our nascent IoT installation. Assuming we’ll need to track readings captured by one or more sensors, let’s define an Entity class for our Readings: 
 
-link:https://gist.github.com/hecklerm/21b0528b287ca9c4d3e2[]
+++++
+<script src="https://gist.github.com/mkheck/21b0528b287ca9c4d3e2.js"></script>
+++++
 
 The annotations @Entity, @Id, and @GeneratedValue are from the Java Persistence API (JPA) standard and identify/describe the class and its Id attribute as a JPA entity and its primary key, respectively. Aside from these annotations, the Reading class is just a straightforward POJO.
 
@@ -68,7 +70,9 @@ Next, we face the daunting task of creating the following functionality:
 
 Spring makes this functionality easy to implement. Spring Data REST was one of the dependencies we included when we created this project (REST Repositories), and by simply extending a Spring Data repository interface specifying the Reading class and Id type and annotating our new interface as a RepositoryRestResource, the repository is exposed via a REST API. For now, this meets our needs nicely:
 
-link:https://gist.github.com/hecklerm/3fcb08c578abc25f73a3[]
+++++
+<script src="https://gist.github.com/mkheck/3fcb08c578abc25f73a3.js"></script>
+++++
 
 Re-running our application and refreshing our browser page (localhost:8080) confirms that our REST endpoint for readings is now active:
 
@@ -78,15 +82,21 @@ image:/img/SpringForIoTRESTReadings.png[]
 
 Next, let’s test functionality by emulating a device pushing readings to our IoT service. I used curl, but feel free to use whatever means you prefer to POST to a REST endpoint. 
 
-link:https://gist.github.com/hecklerm/0bd3ed62d7679b0db1fd[]
+++++
+<script src="https://gist.github.com/mkheck/0bd3ed62d7679b0db1fd.js"></script>
+++++
 
 Then we verify using a vanilla curl GET:
 
-link:https://gist.github.com/hecklerm/f17501e84ac36ca64200[]
+++++
+<script src="https://gist.github.com/mkheck/f17501e84ac36ca64200.js"></script>
+++++
 
 Here we see the two readings I created in testing, returned via our GET request:
 
-link:https://gist.github.com/hecklerm/2747f11e2e6418aefb8d[]
+++++
+<script src="https://gist.github.com/mkheck/2747f11e2e6418aefb8d.js"></script>
+++++
 
 If you’ve been pair-programming with me, congratulations! You have now created your first very basic IoT service…and since we had Spring Boot build a fully self-contained "uberJAR" (bringing its own container with it), it can be deployed wherever Java is installed. Who would have thought it could be this fast (or fun)?!?
 
