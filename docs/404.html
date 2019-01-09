@@ -81,49 +81,8 @@
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://thehecklers.com/post/t4sd-tips-4-spring-devs-how-to-get-spring-boot-rest-endpoints-to-speak-xml/">
-      <div class="post-card-image" style="background-image: url(https://thehecklers.com/img/SpringGrass.jpg)"></div>
-    </a>
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="https://thehecklers.com/post/t4sd-tips-4-spring-devs-how-to-get-spring-boot-rest-endpoints-to-speak-xml/">
-          <header class="post-card-header">
-              <span class="post-card-tags">
-              #dataformat 
-              #endpoint 
-              #Jackson 
-              #jackson-dataformat-xml 
-              #JSON 
-              #REST 
-              #Spring 
-              #Spring Boot 
-              #T4SD 
-              #Tips 4 Spring Devs 
-              #XML  </span>
-              
-              <h2 class="post-card-title">T4SD (Tips 4 Spring Devs): How to get Spring Boot REST endpoints to speak XML</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p>Many of us use JSON almost exclusively now, which is generally a good thing. But what happens when you need to “speak XML” with your Spring Boot REST endpoints?
- XML support in Spring Boot’s REST endpoints is not enabled by default, but adding it isn’t difficult at all. Simply add the following dependency to your POM (or similar entry to your Gradle build file, if that’s the way you roll) and rebuild: ...  </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-          <img class="author-profile-image" src="https://thehecklers.com/img/MarkHecklerProfilePic.jpg" alt="Author" />
-          <span class="post-card-author"><a href="https://thehecklers.com/">Mark Heckler</a></span>
-      </footer>
-    </div>
-</article>
- 
-
-<article class="post-card post"> 
-    
     <a class="post-card-image-link" href="https://thehecklers.com/post/microservices-the-view-from-1000-feet-or-305-meters-if-you-prefer/">
-      <div class="post-card-image" style="background-image: url(https://thehecklers.com/defimg/6.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(https://thehecklers.com/defimg/2.jpg)"></div>
     </a>    
     
 
@@ -162,29 +121,65 @@
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://thehecklers.com/post/register-instances-eureka/">
-      <div class="post-card-image" style="background-image: url(https://thehecklers.com/img/Spring-Logos-CLOUD-HOR.png)"></div>
+    <a class="post-card-image-link" href="https://thehecklers.com/post/a-pivotal-decision/">
+      <div class="post-card-image" style="background-image: url(https://thehecklers.com/defimg/2.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://thehecklers.com/post/a-pivotal-decision/">
+          <header class="post-card-header">
+              
+              <h2 class="post-card-title">A Pivotal Decision</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>pivotal:
+  Of, relating to, or serving as a pivot.
+  Being of vital or central importance; crucial.
+     As has been widely reported, last week I was among those at Oracle who were “let go” – a sanitized expression that is meant to diminish the indescribable impact of being fired due to circumstances far outside one’s knowledge or ability to influence. Details aren’t important, but suffice it to say that my teammates and I were&#8230;&#8203;surprised. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="https://thehecklers.com/img/MarkHecklerProfilePic.jpg" alt="Author" />
+          <span class="post-card-author"><a href="https://thehecklers.com/">Mark Heckler</a></span>
+      </footer>
+    </div>
+</article>
+ 
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://thehecklers.com/post/getting-up-running-quickly-with-spring-cloud-sleuth/">
+      <div class="post-card-image" style="background-image: url(https://thehecklers.com/img/magnifyingglass.jpg)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://thehecklers.com/post/register-instances-eureka/">
+      <a class="post-card-content-link" href="https://thehecklers.com/post/getting-up-running-quickly-with-spring-cloud-sleuth/">
           <header class="post-card-header">
               <span class="post-card-tags">
+              #Dapper 
+              #java 
+              #Sleuth 
+              #span 
               #Spring 
               #Spring Boot 
               #Spring Cloud 
-              #Netflix OSS 
-              #Eureka 
-              #java 
-              #Spring Cloud Netflix 
-              #Spring Cloud Config  </span>
+              #Spring Cloud Sleuth 
+              #Spring Framework 
+              #trace 
+              #tracing 
+              #Zipkin  </span>
               
-              <h2 class="post-card-title">Register Instances Eureka</h2>
+              <h2 class="post-card-title">Getting up &amp; running quickly with Spring Cloud Sleuth</h2>
           </header>
           <section class="post-card-excerpt">
               
-                <p>When developing Spring Boot + Spring Cloud microservices, most often we devs run them locally, also running local instances of Spring Cloud Config Server and Spring Cloud Netflix Eureka to provide essential scaffolding for our microservices-in-development and to more closely replicate our test &amp; production environments. Many times, we simply run a single instance of a microservice under development, which works with nearly no effort on our part: provide a desired port number for the service either via internal properties (usually in the project&#8217;s application. ...  </p>
+                <p>As you begin to divide conglomerate functionality into discrete, decoupled microservices, you introduce a number of opportunities and challenges into your system(s). The opportunities are often well-known, including (and especially!) development velocity, fidelity/fit (functionality matches requirements), scalability, and a host of other “ilities”.
+ Challenges also exist of course, including the question of how to gain visibility into end-to-end interactions involving multiple microservices across process and network boundaries. Spring Cloud Sleuth provides a lightweight, configurable, and easy way to begin capturing trace information within your distributed system. ...  </p>
               
           </section>
       </a>
