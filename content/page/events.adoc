@@ -8,10 +8,42 @@ tags: []
 
 Here are the next few events where I'll be speaking. If you're in the area, please do try to attend! And if you do, please do say "hi", I'd love to meet you. 😃
 
-== Spring Tour Charlotte
+[%header,cols=1*]
+|===
+|Events
 
-January 28-29 +
-Charlotte Marriott City Center +
-100 W Trade St +
-Charlotte, NC 28202 +
+| *Spring Tour Charlotte* +
+Charlotte, NC  USA +
+January 28-29, 2019 +
 https://springonetour.io/2019/charlotte
+
+| *Spring Tour Charlotte* +
+Charlotte, NC  USA +
+January 28-29, 2019 +
+https://springonetour.io/2019/charlotte
+
+| *Jfokus* +
+Stockholm, Sweden +
+Feb 4-6, 2019 +
+http://www.jfokus.se/
+
+| *Spring Tour St. Louis* +
+St. Louis, MO  USA +
+February 12-13, 2019 +
+https://springonetour.io/2019/st-louis
+
+| *Spring Tour Washington, DC* +
+Washington, DC  USA +
+February 19-20, 2019 +
+https://springonetour.io/2019/washington-dc
+
+| *Java Day Lviv* +
+Lviv, Ukraine +
+Feb 23, 2019 +
+https://www.javaday.org.ua/
+
+| *Spring Tour Columbus*
+Columbus, OH  USA +
+February 27-28, 2019 +
+https://springonetour.io/2019/columbus
+|===
