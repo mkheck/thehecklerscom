@@ -1,0 +1,30 @@
+---
+title: "Three Things About Me"
+date: 2019-06-01T12:52:04+03:00
+draft: false
+image: "img/MinionWaving.png"
+tags: [bio, about me, developer]
+---
+
+I was contacted recently for a Java magazine profile. I was incredibly honored to be asked, as you might imagine! But it got me thinking...interviews and conversations are short, and to be frank, I think we could all understand and empathize with each other better if we'd just share a little more of ourselves. All of us. And since I wouldn't expect of anyone else what I wouldn't be willing to do, I figured it only fair to start the ball rolling. :)
+
+You may know me to a greater or lesser extent already. If so, you probably know that I've been a software developer for some years now, am completely eaten up with both code and coffee, and spend the vast majority of my time both flying and tweeting link:https://twitter.com/mkheck[here, 'round the clock & globe]! But here are three things you may _not_ know about me:
+
+
+. Just after graduating college with my first two degrees (Mathematics & Spanish Language studies), I was in cryptography in the US Marine Corps. I did one tour there, separating from the Marines with a permanent, service-connected disability.
+. I have a Masters in Business Administration (MBA). I thought it would help me better understand the business side of our industry and quite honestly, I quickly geeked out on the discipline of classes in finance! You might be surprised to discover that the same logical processes we developers enjoy applying daily to our problem domain(s) find parallels in financial discovery & analysis.
+. Speaking of past lives (!), I also used to play trumpet, and reasonably well I suppose. I even played in a community orchestra for some time and took it quite seriously, owning at one point the following instruments:
+.. Bb trumpet
+.. C trumpet
+.. Bb cornet
+.. Piccolo trumpet
+
+Having not played in awhile, I've sold the last two to someone who can continue to put them to steady use. :)
+
+Anyway...
+
+We all have a story to tell, things to share that make us more complete human beings. What's _your_ story?
+
+Best,
+
+Mark
