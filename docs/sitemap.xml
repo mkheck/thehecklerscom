@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://thehecklers.com/post/three-things-about-me/</loc>
+    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thehecklers.com/page/events/</loc>
     <lastmod>2018-12-27T21:48:24-06:00</lastmod>
   </url>
@@ -134,13 +139,19 @@
   
   <url>
     <loc>https://thehecklers.com/</loc>
-    <lastmod>2018-12-27T21:48:24-06:00</lastmod>
+    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://thehecklers.com/tags/.net/</loc>
     <lastmod>2015-01-12T17:50:00-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/about-me/</loc>
+    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -177,6 +188,12 @@
   <url>
     <loc>https://thehecklers.com/tags/auto_increment/</loc>
     <lastmod>2012-04-13T17:43:28-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/bio/</loc>
+    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -301,7 +318,7 @@
   
   <url>
     <loc>https://thehecklers.com/tags/developer/</loc>
-    <lastmod>2018-10-13T19:34:34-06:00</lastmod>
+    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -589,7 +606,7 @@
   
   <url>
     <loc>https://thehecklers.com/post/</loc>
-    <lastmod>2018-10-13T19:34:34-06:00</lastmod>
+    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
     <priority>0</priority>
   </url>
   
