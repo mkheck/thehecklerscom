@@ -67,3 +67,7 @@ publishDir      = "docs"
   url = "/page/events"
   weight = 160
 
+[[menu.main]]
+  name = "Aviation"
+  url = "/page/aviation"
+  weight = 150
