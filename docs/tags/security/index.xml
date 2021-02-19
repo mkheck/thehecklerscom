@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Security on </title>
+    <title>security on </title>
     <link>https://thehecklers.com/tags/security/</link>
-    <description>Recent content in Security on </description>
+    <description>Recent content in security on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 05 Jun 2017 20:46:17 -0600</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>T4SD (Tips 4 Spring Devs): Spring Boot Actuator /actuator endpoint</title>
-      <link>https://thehecklers.com/post/t4sd-tips-4-spring-devs-spring-boot-actuator-actuator-endpoint/</link>
+      <link>https://thehecklers.com/post/t4sd-tips-4-spring-devs-spring-boot-actuator-/actuator-endpoint/</link>
       <pubDate>Mon, 05 Jun 2017 20:46:17 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/t4sd-tips-4-spring-devs-spring-boot-actuator-actuator-endpoint/</guid>
+      <guid>https://thehecklers.com/post/t4sd-tips-4-spring-devs-spring-boot-actuator-/actuator-endpoint/</guid>
       <description>Just a quick tip for the Spring fans out there&amp;#8230;&amp;#8203;
  If you’ve decided to try out Spring Boot Actuator – and if you haven’t you really should! – you may have run into one of two interesting hitches that are easily resolved:
   You are unable to access any of the various Actuator endpoints (/beans, /env, et al)

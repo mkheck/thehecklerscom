@@ -11,7 +11,7 @@ publishDir      = "docs"
 [params]
   title       = "Hecklers in Development, brewing stronger Java"
   subtitle    = "Converting coffee to code, one cup at a time (but in rapid succession)"
-  copyright   = "© 2018, 2019"
+  copyright   = "© 2018-2021"
 
   cover       = "img/virtual-keyboard_dark2.jpg"
   description = "Converting coffee to code, one cup at a time (but in rapid succession)"

@@ -1,10 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://thehecklers.com/</loc>
+    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/about-me/</loc>
+    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/bio/</loc>
+    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/developer/</loc>
+    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/post/</loc>
+    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/</loc>
+    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thehecklers.com/post/three-things-about-me/</loc>
     <lastmod>2019-06-01T12:52:04+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/page/</loc>
+    <lastmod>2018-12-27T21:48:24-06:00</lastmod>
   </url>
   
   <url>
@@ -28,8 +63,48 @@
   </url>
   
   <url>
+    <loc>https://thehecklers.com/tags/build/</loc>
+    <lastmod>2018-10-13T19:34:34-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/build-computer/</loc>
+    <lastmod>2018-10-13T19:34:34-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thehecklers.com/post/building-a-developer-workstation/</loc>
     <lastmod>2018-10-13T19:34:34-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/developer-workstation/</loc>
+    <lastmod>2018-10-13T19:34:34-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/homebrew/</loc>
+    <lastmod>2018-10-13T19:34:34-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/linux/</loc>
+    <lastmod>2018-10-13T19:34:34-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/eureka/</loc>
+    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/java/</loc>
+    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/netflix-oss/</loc>
+    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
   </url>
   
   <url>
@@ -38,8 +113,98 @@
   </url>
   
   <url>
+    <loc>https://thehecklers.com/tags/spring/</loc>
+    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/spring-boot/</loc>
+    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/spring-cloud/</loc>
+    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/spring-cloud-config/</loc>
+    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/spring-cloud-netflix/</loc>
+    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/local-variables/</loc>
+    <lastmod>2018-04-19T21:10:04-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/lombok/</loc>
+    <lastmod>2018-04-19T21:10:04-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/type-inference/</loc>
+    <lastmod>2018-04-19T21:10:04-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/val/</loc>
+    <lastmod>2018-04-19T21:10:04-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/var/</loc>
+    <lastmod>2018-04-19T21:10:04-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thehecklers.com/post/why-wait-for-jdk-10/</loc>
     <lastmod>2018-04-19T21:10:04-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/circuit-breaker/</loc>
+    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/config-server/</loc>
+    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/configure/</loc>
+    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/dashboard/</loc>
+    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/hystrix/</loc>
+    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/service-registry/</loc>
+    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/settings/</loc>
+    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/spring-boot-actuator/</loc>
+    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
   </url>
   
   <url>
@@ -48,8 +213,53 @@
   </url>
   
   <url>
+    <loc>https://thehecklers.com/tags/code/</loc>
+    <lastmod>2017-09-24T18:27:08-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/code-smell/</loc>
+    <lastmod>2017-09-24T18:27:08-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/code-smells/</loc>
+    <lastmod>2017-09-24T18:27:08-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thehecklers.com/post/comment-%C3%A7a-va/</loc>
     <lastmod>2017-09-24T18:27:08-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/comments/</loc>
+    <lastmod>2017-09-24T18:27:08-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/context/</loc>
+    <lastmod>2017-09-24T18:27:08-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/instrumentation/</loc>
+    <lastmod>2017-07-02T19:10:50-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/integration/</loc>
+    <lastmod>2017-07-02T19:10:50-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/pcf/</loc>
+    <lastmod>2017-07-02T19:10:50-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/pivotal-cloud-foundry/</loc>
+    <lastmod>2017-07-02T19:10:50-06:00</lastmod>
   </url>
   
   <url>
@@ -58,8 +268,83 @@
   </url>
   
   <url>
+    <loc>https://thehecklers.com/tags/dapper/</loc>
+    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thehecklers.com/post/getting-up-running-quickly-with-spring-cloud-sleuth/</loc>
     <lastmod>2017-06-27T19:55:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/sleuth/</loc>
+    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/span/</loc>
+    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/spring-cloud-sleuth/</loc>
+    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/spring-framework/</loc>
+    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/trace/</loc>
+    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/tracing/</loc>
+    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/zipkin/</loc>
+    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/dataformat/</loc>
+    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/endpoint/</loc>
+    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/jackson/</loc>
+    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/jackson-dataformat-xml/</loc>
+    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/json/</loc>
+    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/rest/</loc>
+    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/t4sd/</loc>
+    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
   </url>
   
   <url>
@@ -68,13 +353,93 @@
   </url>
   
   <url>
+    <loc>https://thehecklers.com/tags/tips-4-spring-devs/</loc>
+    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/xml/</loc>
+    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/content-type/</loc>
+    <lastmod>2017-06-08T20:37:31-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/filtering/</loc>
+    <lastmod>2017-06-08T20:37:31-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/getmapping/</loc>
+    <lastmod>2017-06-08T20:37:31-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/request-header/</loc>
+    <lastmod>2017-06-08T20:37:31-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/request-header-filtering/</loc>
+    <lastmod>2017-06-08T20:37:31-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/requestmapping/</loc>
+    <lastmod>2017-06-08T20:37:31-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thehecklers.com/post/t4sd-tips-4-spring-devs-request-header-filtering-in-requestmapping/</loc>
     <lastmod>2017-06-08T20:37:31-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://thehecklers.com/post/t4sd-tips-4-spring-devs-spring-boot-actuator-actuator-endpoint/</loc>
+    <loc>https://thehecklers.com/tags/actuator/</loc>
     <lastmod>2017-06-05T20:46:17-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/hateoas/</loc>
+    <lastmod>2017-06-05T20:46:17-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/management.security.enabled/</loc>
+    <lastmod>2017-06-05T20:46:17-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/security/</loc>
+    <lastmod>2017-06-05T20:46:17-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/spring-security/</loc>
+    <lastmod>2017-06-05T20:46:17-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/post/t4sd-tips-4-spring-devs-spring-boot-actuator-/actuator-endpoint/</loc>
+    <lastmod>2017-06-05T20:46:17-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/alexa/</loc>
+    <lastmod>2017-03-06T20:58:10-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/cloud/</loc>
+    <lastmod>2017-03-06T20:58:10-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/cloud-foundry/</loc>
+    <lastmod>2017-03-06T20:58:10-06:00</lastmod>
   </url>
   
   <url>
@@ -83,8 +448,83 @@
   </url>
   
   <url>
+    <loc>https://thehecklers.com/tags/random-tweet/</loc>
+    <lastmod>2017-03-06T20:58:10-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/tweet/</loc>
+    <lastmod>2017-03-06T20:58:10-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/twitter/</loc>
+    <lastmod>2017-03-06T20:58:10-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/voice/</loc>
+    <lastmod>2017-03-06T20:58:10-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/arduino/</loc>
+    <lastmod>2016-09-11T00:00:21-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thehecklers.com/post/building-a-portable-self-powering-cloud-connected-iot-demo/</loc>
     <lastmod>2016-09-11T00:00:21-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/internet-of-things/</loc>
+    <lastmod>2016-09-11T00:00:21-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/iot/</loc>
+    <lastmod>2016-09-11T00:00:21-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/raspberry-pi/</loc>
+    <lastmod>2016-09-11T00:00:21-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/re/</loc>
+    <lastmod>2016-09-11T00:00:21-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/renewable-energy/</loc>
+    <lastmod>2016-09-11T00:00:21-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/self-powered/</loc>
+    <lastmod>2016-09-11T00:00:21-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/query-method/</loc>
+    <lastmod>2016-07-26T15:46:25-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/quick-tip/</loc>
+    <lastmod>2016-07-26T15:46:25-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/spring-data/</loc>
+    <lastmod>2016-07-26T15:46:25-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/spring-data-rest/</loc>
+    <lastmod>2016-07-26T15:46:25-06:00</lastmod>
   </url>
   
   <url>
@@ -93,13 +533,58 @@
   </url>
   
   <url>
+    <loc>https://thehecklers.com/tags/manifest/</loc>
+    <lastmod>2016-07-16T15:57:04-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/manifest.yml/</loc>
+    <lastmod>2016-07-16T15:57:04-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/random/</loc>
+    <lastmod>2016-07-16T15:57:04-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thehecklers.com/post/random-route-in-cloud-foundry/</loc>
     <lastmod>2016-07-16T15:57:04-06:00</lastmod>
   </url>
   
   <url>
+    <loc>https://thehecklers.com/tags/random-url/</loc>
+    <lastmod>2016-07-16T15:57:04-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/random-route/</loc>
+    <lastmod>2016-07-16T15:57:04-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/url/</loc>
+    <lastmod>2016-07-16T15:57:04-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/embedded/</loc>
+    <lastmod>2016-02-12T16:04:37-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thehecklers.com/post/nighthacking-interview-jfokus/</loc>
     <lastmod>2016-02-12T16:04:37-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/api/</loc>
+    <lastmod>2016-02-01T16:18:32-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/pivotal/</loc>
+    <lastmod>2016-02-01T16:18:32-06:00</lastmod>
   </url>
   
   <url>
@@ -118,8 +603,58 @@
   </url>
   
   <url>
+    <loc>https://thehecklers.com/tags/hidden/</loc>
+    <lastmod>2015-02-27T17:29:35-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/interfaces/</loc>
+    <lastmod>2015-02-27T17:29:35-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/ssid/</loc>
+    <lastmod>2015-02-27T17:29:35-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thehecklers.com/post/the-secret-sauce-how-to-connect-your-raspberry-pi-to-a-hidden-ssid/</loc>
     <lastmod>2015-02-27T17:29:35-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/wifi/</loc>
+    <lastmod>2015-02-27T17:29:35-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/wpa_supplicant/</loc>
+    <lastmod>2015-02-27T17:29:35-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/.net/</loc>
+    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/architecture/</loc>
+    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/cons/</loc>
+    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/javaee/</loc>
+    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/microservice/</loc>
+    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
   </url>
   
   <url>
@@ -128,8 +663,143 @@
   </url>
   
   <url>
+    <loc>https://thehecklers.com/tags/monolithic/</loc>
+    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/pros/</loc>
+    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/server/</loc>
+    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/strengths/</loc>
+    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/weaknesses/</loc>
+    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/bouncycastle/</loc>
+    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/certificate/</loc>
+    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/email/</loc>
+    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/encrypt/</loc>
+    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/ewallet/</loc>
+    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/javamail/</loc>
+    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/jks/</loc>
+    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/orapki/</loc>
+    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/pfx/</loc>
+    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/pkcs12/</loc>
+    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/s/mime/</loc>
+    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/secure/</loc>
+    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thehecklers.com/post/secure-email-from-java/</loc>
     <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/sign/</loc>
+    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/signed/</loc>
+    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/wallet/</loc>
+    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/auto_increment/</loc>
+    <lastmod>2012-04-13T17:43:28-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/identity/</loc>
+    <lastmod>2012-04-13T17:43:28-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/javaserverfaces/</loc>
+    <lastmod>2012-04-13T17:43:28-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/jsf/</loc>
+    <lastmod>2012-04-13T17:43:28-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/key/</loc>
+    <lastmod>2012-04-13T17:43:28-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/mysql/</loc>
+    <lastmod>2012-04-13T17:43:28-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehecklers.com/tags/netbeans/</loc>
+    <lastmod>2012-04-13T17:43:28-06:00</lastmod>
   </url>
   
   <url>
@@ -138,818 +808,12 @@
   </url>
   
   <url>
-    <loc>https://thehecklers.com/</loc>
-    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/.net/</loc>
-    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/about-me/</loc>
-    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/actuator/</loc>
-    <lastmod>2017-06-05T20:46:17-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/alexa/</loc>
-    <lastmod>2017-03-06T20:58:10-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/api/</loc>
-    <lastmod>2016-02-01T16:18:32-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/architecture/</loc>
-    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/arduino/</loc>
-    <lastmod>2016-09-11T00:00:21-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/auto_increment/</loc>
+    <loc>https://thehecklers.com/tags/primary/</loc>
     <lastmod>2012-04-13T17:43:28-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/bio/</loc>
-    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/bouncycastle/</loc>
-    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/build/</loc>
-    <lastmod>2018-10-13T19:34:34-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/build-computer/</loc>
-    <lastmod>2018-10-13T19:34:34-06:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://thehecklers.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/certificate/</loc>
-    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/circuit-breaker/</loc>
-    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/cloud/</loc>
-    <lastmod>2017-03-06T20:58:10-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/cloud-foundry/</loc>
-    <lastmod>2017-03-06T20:58:10-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/code/</loc>
-    <lastmod>2017-09-24T18:27:08-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/code-smell/</loc>
-    <lastmod>2017-09-24T18:27:08-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/code-smells/</loc>
-    <lastmod>2017-09-24T18:27:08-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/comments/</loc>
-    <lastmod>2017-09-24T18:27:08-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/config-server/</loc>
-    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/configure/</loc>
-    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/cons/</loc>
-    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/content-type/</loc>
-    <lastmod>2017-06-08T20:37:31-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/context/</loc>
-    <lastmod>2017-09-24T18:27:08-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/dapper/</loc>
-    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/dashboard/</loc>
-    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/dataformat/</loc>
-    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/developer/</loc>
-    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/developer-workstation/</loc>
-    <lastmod>2018-10-13T19:34:34-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/email/</loc>
-    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/embedded/</loc>
-    <lastmod>2016-02-12T16:04:37-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/encrypt/</loc>
-    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/endpoint/</loc>
-    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/eureka/</loc>
-    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/ewallet/</loc>
-    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/filtering/</loc>
-    <lastmod>2017-06-08T20:37:31-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/getmapping/</loc>
-    <lastmod>2017-06-08T20:37:31-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/hateoas/</loc>
-    <lastmod>2017-06-05T20:46:17-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/hidden/</loc>
-    <lastmod>2015-02-27T17:29:35-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/homebrew/</loc>
-    <lastmod>2018-10-13T19:34:34-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/hystrix/</loc>
-    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/identity/</loc>
-    <lastmod>2012-04-13T17:43:28-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/instrumentation/</loc>
-    <lastmod>2017-07-02T19:10:50-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/integration/</loc>
-    <lastmod>2017-07-02T19:10:50-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/interfaces/</loc>
-    <lastmod>2015-02-27T17:29:35-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/internet-of-things/</loc>
-    <lastmod>2016-09-11T00:00:21-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/iot/</loc>
-    <lastmod>2016-09-11T00:00:21-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/jackson/</loc>
-    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/jackson-dataformat-xml/</loc>
-    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/java/</loc>
-    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/javaee/</loc>
-    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/javamail/</loc>
-    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/javaserverfaces/</loc>
-    <lastmod>2012-04-13T17:43:28-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/jks/</loc>
-    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/jsf/</loc>
-    <lastmod>2012-04-13T17:43:28-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/json/</loc>
-    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/key/</loc>
-    <lastmod>2012-04-13T17:43:28-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/linux/</loc>
-    <lastmod>2018-10-13T19:34:34-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/local-variables/</loc>
-    <lastmod>2018-04-19T21:10:04-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/lombok/</loc>
-    <lastmod>2018-04-19T21:10:04-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/management.security.enabled/</loc>
-    <lastmod>2017-06-05T20:46:17-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/manifest/</loc>
-    <lastmod>2016-07-16T15:57:04-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/manifest.yml/</loc>
-    <lastmod>2016-07-16T15:57:04-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/microservice/</loc>
-    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/monolithic/</loc>
-    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/mysql/</loc>
-    <lastmod>2012-04-13T17:43:28-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/netbeans/</loc>
-    <lastmod>2012-04-13T17:43:28-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/netflix-oss/</loc>
-    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/orapki/</loc>
-    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/page/</loc>
-    <lastmod>2018-12-27T21:48:24-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/pcf/</loc>
-    <lastmod>2017-07-02T19:10:50-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/pfx/</loc>
-    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/pivotal/</loc>
-    <lastmod>2016-02-01T16:18:32-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/pivotal-cloud-foundry/</loc>
-    <lastmod>2017-07-02T19:10:50-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/pkcs12/</loc>
-    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/post/</loc>
-    <lastmod>2019-06-01T12:52:04+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/primary/</loc>
-    <lastmod>2012-04-13T17:43:28-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/pros/</loc>
-    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/query-method/</loc>
-    <lastmod>2016-07-26T15:46:25-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/quick-tip/</loc>
-    <lastmod>2016-07-26T15:46:25-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/random/</loc>
-    <lastmod>2016-07-16T15:57:04-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/random-route/</loc>
-    <lastmod>2016-07-16T15:57:04-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/random-tweet/</loc>
-    <lastmod>2017-03-06T20:58:10-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/random-url/</loc>
-    <lastmod>2016-07-16T15:57:04-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/raspberry-pi/</loc>
-    <lastmod>2016-09-11T00:00:21-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/re/</loc>
-    <lastmod>2016-09-11T00:00:21-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/renewable-energy/</loc>
-    <lastmod>2016-09-11T00:00:21-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/request-header/</loc>
-    <lastmod>2017-06-08T20:37:31-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/request-header-filtering/</loc>
-    <lastmod>2017-06-08T20:37:31-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/requestmapping/</loc>
-    <lastmod>2017-06-08T20:37:31-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/rest/</loc>
-    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/s-mime/</loc>
-    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/secure/</loc>
-    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/security/</loc>
-    <lastmod>2017-06-05T20:46:17-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/self-powered/</loc>
-    <lastmod>2016-09-11T00:00:21-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/server/</loc>
-    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/service-registry/</loc>
-    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/settings/</loc>
-    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/sign/</loc>
-    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/signed/</loc>
-    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/sleuth/</loc>
-    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/span/</loc>
-    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/spring/</loc>
-    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/spring-boot/</loc>
-    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/spring-boot-actuator/</loc>
-    <lastmod>2018-02-20T21:51:12-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/spring-cloud/</loc>
-    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/spring-cloud-config/</loc>
-    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/spring-cloud-netflix/</loc>
-    <lastmod>2018-06-11T20:53:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/spring-cloud-sleuth/</loc>
-    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/spring-data/</loc>
-    <lastmod>2016-07-26T15:46:25-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/spring-data-rest/</loc>
-    <lastmod>2016-07-26T15:46:25-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/spring-framework/</loc>
-    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/spring-security/</loc>
-    <lastmod>2017-06-05T20:46:17-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/ssid/</loc>
-    <lastmod>2015-02-27T17:29:35-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/strengths/</loc>
-    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/t4sd/</loc>
-    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/</loc>
-    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/tips-4-spring-devs/</loc>
-    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/trace/</loc>
-    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/tracing/</loc>
-    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/tweet/</loc>
-    <lastmod>2017-03-06T20:58:10-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/twitter/</loc>
-    <lastmod>2017-03-06T20:58:10-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/type-inference/</loc>
-    <lastmod>2018-04-19T21:10:04-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/url/</loc>
-    <lastmod>2016-07-16T15:57:04-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/val/</loc>
-    <lastmod>2018-04-19T21:10:04-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/var/</loc>
-    <lastmod>2018-04-19T21:10:04-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/voice/</loc>
-    <lastmod>2017-03-06T20:58:10-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/wallet/</loc>
-    <lastmod>2013-01-14T19:09:52-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/weaknesses/</loc>
-    <lastmod>2015-01-12T17:50:00-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/wifi/</loc>
-    <lastmod>2015-02-27T17:29:35-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/wpa_supplicant/</loc>
-    <lastmod>2015-02-27T17:29:35-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/xml/</loc>
-    <lastmod>2017-06-20T20:27:09-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://thehecklers.com/tags/zipkin/</loc>
-    <lastmod>2017-06-27T19:55:02-06:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

@@ -34,7 +34,7 @@
 
     <meta property="og:image" content="https://thehecklers.com/img/virtual-keyboard_dark2.jpg"/>
 
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.59.1" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://thehecklers.com/built/screen.css" /> 
@@ -156,31 +156,33 @@
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://thehecklers.com/post/t4sd-tips-4-spring-devs-exposing-query-methods-in-spring-data-rest/">
+    <a class="post-card-image-link" href="https://thehecklers.com/post/t4sd-tips-4-spring-devs-request-header-filtering-in-requestmapping/">
       <div class="post-card-image" style="background-image: url(https://thehecklers.com/img/SpringGrass.jpg)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://thehecklers.com/post/t4sd-tips-4-spring-devs-exposing-query-methods-in-spring-data-rest/">
+      <a class="post-card-content-link" href="https://thehecklers.com/post/t4sd-tips-4-spring-devs-request-header-filtering-in-requestmapping/">
           <header class="post-card-header">
               <span class="post-card-tags">
-              #query method 
-              #quick tip 
-              #REST 
+              #content type 
+              #filtering 
+              #GetMapping 
+              #java 
+              #request header 
+              #request header filtering 
+              #RequestMapping 
               #Spring 
-              #Spring Data 
-              #Spring Data REST 
+              #Spring Boot 
               #T4SD 
               #Tips 4 Spring Devs  </span>
               
-              <h2 class="post-card-title">T4SD (Tips 4 Spring Devs): Exposing Query Methods in Spring Data REST</h2>
+              <h2 class="post-card-title">T4SD (Tips 4 Spring Devs): Request header filtering in @RequestMapping</h2>
           </header>
           <section class="post-card-excerpt">
               
-                <p>Spring Data REST takes an opinionated approach to exposing Spring Data repositories via REST endpoints, covering the 80-90% use case with a minimum of code and fuss. But did you know that it provides a no-lifting-required mechanism for exposing query methods you define on those repositories as well?
- Let’s say you create a method like this:
-  Referencing that bit of functionality directly is simple, just append /search/&lt;methodName&gt; to the collection endpoint: ...  </p>
+                <p>Just a quick tip for the Spring fans out there&#8230;&#8203;
+ I was leading a workshop yesterday and this question arose: Is it possible to filter requests by header content using Spring’s various request mapping (@RequestMapping, @GetMapping, @PostMapping, et al) annotations? Not only is it possible, it’s easy, and the implementation is concise &amp; clean! Let’s take a look.  The code Here is a simple example that filters based upon the content-type of the header: ...  </p>
               
           </section>
       </a>
@@ -195,30 +197,28 @@
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://thehecklers.com/post/spring-boot-for-iot-developers-getting-started/">
-      <div class="post-card-image" style="background-image: url(https://thehecklers.com/img/SpringGrass.jpg)"></div>
+    <a class="post-card-image-link" href="https://thehecklers.com/post/comment-%C3%A7a-va/">
+      <div class="post-card-image" style="background-image: url(https://thehecklers.com/img/cat.jpg)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://thehecklers.com/post/spring-boot-for-iot-developers-getting-started/">
+      <a class="post-card-content-link" href="https://thehecklers.com/post/comment-%C3%A7a-va/">
           <header class="post-card-header">
               <span class="post-card-tags">
-              #API 
-              #Cloud 
-              #Cloud Foundry 
-              #Internet of Things 
-              #IoT 
-              #Pivotal 
-              #REST 
-              #Spring 
-              #Spring Boot  </span>
+              #code 
+              #comments 
+              #code smell 
+              #code smells 
+              #context  </span>
               
-              <h2 class="post-card-title">Spring Boot for IoT Developers: Getting Started</h2>
+              <h2 class="post-card-title">Comment ça va?</h2>
           </header>
           <section class="post-card-excerpt">
               
-                <p>It often surprises other devs when I suggest that Spring Boot is a perfect addition to the IoT developer’s toolbox. If you’re deep into IoT and have the luxury of another group providing all of your back-end and/or cloud platform code, that’s perfectly understandable. However, if you’re a full-stack developer, by choice or necessity, you need to know this! Grab a chair and a cup of coffee; I think you’ll find this interesting (and useful). ...  </p>
+                <p>I had been deep in code for the preceding few days (mine and others') and had achieved a few insights by poring over actual code (vs. comments and/or commentary) when this quote crossed my radar:
+ 
+ Being an enthusiastic quote lover, I of course shared it on Twitter, not expecting the various interpretations it solicited. As an aside, this is what happens when you share something without a particular context: people rightfully supply their own. ...  </p>
               
           </section>
       </a>
@@ -239,7 +239,7 @@
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="https://thehecklers.com/">HM</a> © 2018, 2019 <br>
+      <a href="https://thehecklers.com/">HM</a> © 2018-2021 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Spring Data Rest on </title>
+    <title>Spring Data REST on </title>
     <link>https://thehecklers.com/tags/spring-data-rest/</link>
-    <description>Recent content in Spring Data Rest on </description>
+    <description>Recent content in Spring Data REST on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 26 Jul 2016 15:46:25 -0600</lastBuildDate>
