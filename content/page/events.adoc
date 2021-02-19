@@ -6,44 +6,24 @@ image: ""
 tags: []
 ---
 
-Here are the next few events where I'll be speaking. If you're in the area, please do try to attend! And if you do, please do say "hi", I'd love to meet you. 😃
+Here are the next few events where I'll be speaking. If you're in the area (online for the foreseeable future), please do try to attend! And if you do, please do say "hi", I'd love to meet you. 😃
 
 [%header,cols=1*]
 |===
 |Events
 
-| *Spring Tour Charlotte* +
-Charlotte, NC  USA +
-January 28-29, 2019 +
-https://springonetour.io/2019/charlotte
+| *Spring Tour March 2021* +
+Online +
+March 10, 2021 +
+https://tanzu.vmware.com/developer/tv/springone-tour/0014/
 
-| *Spring Tour Charlotte* +
-Charlotte, NC  USA +
-January 28-29, 2019 +
-https://springonetour.io/2019/charlotte
+| *JProfessionals: safe edition* +
+Online +
+March 11, 2021 +
+_link pending_
 
-| *Jfokus* +
-Stockholm, Sweden +
-Feb 4-6, 2019 +
-http://www.jfokus.se/
-
-| *Spring Tour St. Louis* +
-St. Louis, MO  USA +
-February 12-13, 2019 +
-https://springonetour.io/2019/st-louis
-
-| *Spring Tour Washington, DC* +
-Washington, DC  USA +
-February 19-20, 2019 +
-https://springonetour.io/2019/washington-dc
-
-| *Java Day Lviv* +
-Lviv, Ukraine +
-Feb 23, 2019 +
-https://www.javaday.org.ua/
-
-| *Spring Tour Columbus*
-Columbus, OH  USA +
-February 27-28, 2019 +
-https://springonetour.io/2019/columbus
+| *GIDS* +
+Online +
+April 26-29, 2021 +
+https://wurreka.com/ict/virtual-conference/gids-2021/
 |===
