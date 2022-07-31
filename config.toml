@@ -1,11 +1,12 @@
-baseURL = 'https://thehecklers.com/'
+baseURL = "https://thehecklers.com/"
+baseurl      = "/"
 languageCode = 'en-US'
 title = 'Hecklers in Development'
 theme = "hugo-casper3"
 
 disqusShortname = "thehecklers-com"
 paginate        = 6
-#SectionPagesMenu = "main"
+#SectionpageMenu = "main"
 canonifyurls    = true
 publishDir      = "docs"
 
@@ -14,9 +15,9 @@ publishDir      = "docs"
   subtitle      = "Converting coffee to code, one cup at a time (but in rapid succession)"
   copyright     = "© 2018-2022"
 
-  #feature_image = "/images/MHBetweenTwoCloudLayersWSun.jpg"
-  feature_image = "/images/virtual-keyboard_dark2.jpg"
-  cover         = "/images/virtual-keyboard_dark2.jpg"
+  #feature_image = "/img/MHBetweenTwoCloudLayersWSun.jpg"
+  feature_image = "/img/virtual-keyboard_dark2.jpg"
+  cover         = "/img/virtual-keyboard_dark2.jpg"
   description   = "Converting coffee to code, one cup at a time (but in rapid succession)"
   RSSLink = ""
 
@@ -32,17 +33,17 @@ publishDir      = "docs"
   showSupport = true
 
   author = "Mark Heckler"
-  authorAvatar = "/images/MarkHecklerProfilePic.jpg"
+  authorAvatar = "/img/MarkHecklerProfilePic.jpg"
   authorLocation = "St. Louis, Redmond, the sky"
   authorWebsite = "https://thehecklers.com"
   authorDescription = "Computer scientist, software developer, licensed pilot"
 
   pageNotFoundTitle = "404 - Page not found"
 
-  mainSections = ['posts', 'docs']
+  mainSections = ['post', 'docs']
 
 [permalinks]
-  post = "/posts/:slug/"
+  post = "/post/:slug/"
 
 [[menu.main]]
   name = "Home"
@@ -51,17 +52,17 @@ publishDir      = "docs"
 
 [[menu.main]]
   name = "Abstracts"
-  url = "/pages/abstracts"
+  url = "/page/abstracts"
   weight = 180
 
 [[menu.main]]
   name = "Contact"
-  url = "/pages/contact"
+  url = "/page/contact"
   weight = 170
 
 [[menu.main]]
   name = "About"
-  url = "/pages/about"
+  url = "/page/about"
   weight = 160
 
 [security]

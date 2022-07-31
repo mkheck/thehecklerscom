@@ -1,8 +1,7 @@
 ---
-title: "Contact me"
-date: 2018-12-27T21:39:38-06:00
+title: "Contact"
+date: 2022-07-28T13:37:01-05:00
 draft: false
-image: ""
 tags: []
 ---
 
@@ -12,6 +11,6 @@ If you'd like to get in touch, please reach out to me via Twitter DM or at one (
 * link:mailto:mark@thehecklers.com[mark@thehecklers.com]
 * link:mailto:mark.heckler@gmail.com[mark.heckler@gmail.com]
 
-To email securely using PGP/GPG, please link:/page/publickeys[visit this page for our public keys].
+To email securely using PGP/GPG, please link:/pages/publickeys[visit this page for my public keys].
 
 Looking forward to hearing from you!
