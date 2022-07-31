@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Arduino on </title>
+    <title>Arduino on Hecklers in Development</title>
     <link>https://thehecklers.com/tags/arduino/</link>
-    <description>Recent content in Arduino on </description>
+    <description>Recent content in Arduino on Hecklers in Development</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 11 Sep 2016 00:00:21 -0600</lastBuildDate>
-    
-	<atom:link href="https://thehecklers.com/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 11 Sep 2016 00:00:21 -0600</lastBuildDate><atom:link href="https://thehecklers.com/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building a Portable, Self-powering, Cloud-Connected IoT demo</title>
-      <link>https://thehecklers.com/post/building-a-portable-self-powering-cloud-connected-iot-demo/</link>
+      <link>https://thehecklers.com/posts/building-a-portable-self-powering-cloud-connected-iot-demo/</link>
       <pubDate>Sun, 11 Sep 2016 00:00:21 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/building-a-portable-self-powering-cloud-connected-iot-demo/</guid>
+      <guid>https://thehecklers.com/posts/building-a-portable-self-powering-cloud-connected-iot-demo/</guid>
       <description>Or “How to build a portable self-powered, self-licking ice cream cone.” 😀
- 
- Several years ago, I started building what I referred to affectionately as a self-licking ice cream cone: a Renewable Energy (RE) system that powered the same IoT system that monitored it. I’ve given several talks about this system, both its hardware and its software stack, and there are so many useful (and scalable) lessons I’ve learned that I really enjoy sharing.</description>
+Several years ago, I started building what I referred to affectionately as a self-licking ice cream cone: a Renewable Energy (RE) system that powered the same IoT system that monitored it. I’ve given several talks about this system, both its hardware and its software stack, and there are so many useful (and scalable) lessons I’ve learned that I really enjoy sharing.</description>
     </item>
     
   </channel>

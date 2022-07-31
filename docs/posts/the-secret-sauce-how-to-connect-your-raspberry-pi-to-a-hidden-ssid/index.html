@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+    <title>The Secret Sauce: How to Connect Your Raspberry Pi to a Hidden SSID · Hecklers in Development</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" href="https://thehecklers.com/style.main.min.c34e6915a95f1027dad7b48e5d1ff6e2bbf58b4e72c69d7ec6ac8e7352e961dc.css" />
+
+</head>
+<body class=" post-template ">
+
+    <div class="site-wrapper">
+
+<header class="site-header"><div class="outer site-nav-main">
+    <div class="inner"><nav class="site-nav">
+    <div class="site-nav-left">
+        
+            <a class="site-nav-logo" href="https://thehecklers.com/">Hecklers in Development</a>
+        
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/about">About</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/contact">Contact</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/abstracts">Abstracts</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="https://thehecklers.com/tags/hidden">hidden</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">The Secret Sauce: How to Connect Your Raspberry Pi to a Hidden SSID</h1>
+
+                
+
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Mark Heckler</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Mark Heckler</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2015-52-02">27 February 2015</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 2 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            
+            <figure class="post-full-image">
+                <img src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="The Secret Sauce: How to Connect Your Raspberry Pi to a Hidden SSID" />
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <div class="paragraph">
+<p>When I got my first Raspberry Pi Model B (not long after they first became available – remember when they only had 256M?!?), I wanted to configure it to use a wifi adapter. Even with approved, compliant adapters, this wasn’t for the faint of heart; many steps, scripts, and secret incantations were required to get everything to connect, even in the best of circumstances.</p>
+</div>
+<div class="paragraph">
+<p>Fast-forward to today, when wifi adapter drivers are included in the base Raspbian build. It’s relatively simple to connect to wifi networks <strong>that broadcast their SSIDs</strong>. Ah, but what about those with hidden SSIDs? Not so much.</p>
+</div>
+<div class="paragraph">
+<p>Many sites have documented ways to get around this. The problem is that I’ve tried several of them without success, so I always return to my original settings – and they still work just as well as the day I put them together. So to save myself (and hopefully you, if you’re reading this post!) a great deal of time in the future, here is the shortest path I’ve found to configuring your Raspbian-running Pi to connect to a wifi network that doesn’t broadcast its SSID.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/raspberry-pi-wireless.jpg" alt="raspberry-pi-wireless"/></span></p>
+</div>
+<div class="sect1">
+<h2 id="_the_secret_sauce_er_steps">The Secret Sauce, er, <strong><em>Steps</em></strong></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Log into your Pi (default user ID: <strong>pi</strong>, default password: <strong>raspberry</strong>).</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_edit_the_network_interfaces_file">Edit the network interfaces file</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>cd /etc/network</code></p>
+</li>
+<li>
+<p><code>sudo cp interfaces interfaces.orig</code> (this makes a backup copy of your interfaces file)</p>
+</li>
+<li>
+<p><code>sudo vi interfaces</code> (feel free to use a different editor if vi isn’t your cup of tea)</p>
+</li>
+<li>
+<p>Edit your interfaces file to look like this:</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/ea9a5b480c90c175dce9" class="bare">https://gist.github.com/mkheck/ea9a5b480c90c175dce9</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Save the interfaces file.
+ </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_edit_wpa_supplicant">Edit wpa_supplicant</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>cd /etc/wpa_supplicant</code></p>
+</li>
+<li>
+<p><code>sudo cp wpa_supplicant.conf wpa_supplicant.conf.orig</code></p>
+</li>
+<li>
+<p><code>sudo vi wpa_supplicant.conf</code></p>
+</li>
+<li>
+<p>Edit your wpa_supplicant file to look like this:</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/00eba66a8fc0cf4f2e26" class="bare">https://gist.github.com/mkheck/00eba66a8fc0cf4f2e26</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Save the wpa_supplicant.conf file.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If you have another network entry in this file (e.g. for a guest network), be sure to place this line in its entry to prevent its use:
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/f7ff20712bc4ccc99e35" class="bare">https://gist.github.com/mkheck/f7ff20712bc4ccc99e35</a></p>
+</div>
+<div class="paragraph">
+<p>===</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_test">Test</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sudo reboot</code></p>
+</li>
+<li>
+<p>Login once prompted.</p>
+</li>
+<li>
+<p><code>ifconfig -a</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If it’s working properly, your wlan0 adapter will show a valid IP address, a number of bytes and packets received and sent (RX and TX), and several other useful bits of information.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_thats_all_folks">That’s all, folks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I’ve used this with three different wifi adapters, and it’s worked every time. Hopefully, it will work for you as well.</p>
+</div>
+<div class="paragraph">
+<p>If you found this useful (or not, clear or confusing, etc.), please let me know. Good luck, and enjoy your Pi!</p>
+</div>
+<div class="paragraph">
+<p>Keep coding,</p>
+</div>
+<div class="paragraph">
+<p>Mark</p>
+</div>
+</div>
+</div>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+    
+    <article class="read-next-card">
+        <header class="read-next-card-header">
+            <h3><span>More in</span> <a href="https://thehecklers.com/tags/hidden">hidden</a></h3>
+        </header>
+        <div class="read-next-card-content">
+            <ul>
+                
+                <li>
+                    <h4><a href="https://thehecklers.com/posts/the-secret-sauce-how-to-connect-your-raspberry-pi-to-a-hidden-ssid/">The Secret Sauce: How to Connect Your Raspberry Pi to a Hidden SSID</a></h4>
+                    <div class="read-next-card-meta">
+                            <p><time datetime="2015-52-02">02 Feb 2015</time> 
+                                
+                            </p>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+    </article>
+<article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/microservices-the-view-from-1000-feet-or-305-meters-if-you-prefer/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Microservices: The View from 1000 Feet (or 305 Meters If You Prefer)"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/microservices-the-view-from-1000-feet-or-305-meters-if-you-prefer/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">architecture</div>
+                    
+
+                    <h2 class="post-card-title">Microservices: The View from 1000 Feet (or 305 Meters If You Prefer)</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>Intro I started this post a couple months ago, and between a busy holiday season and constant revisions, I’m only now polishing and posting it. For those who knew it was in the pipeline, thank you for your patience. 🙂
+I have another article in the works that will delve into more technical aspects of the microservices discussion; hopefully I’ll get that posted by this time next year (!). In this one, though, I’d like to stay as much as possible at the conceptual level, dipping into the details only to reference them for consideration and future discussion.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2015-51-01">12 January 2015</time>
+                            <span class="bull">&bull;</span> 8 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+
+            <article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/a-pivotal-decision/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="A Pivotal Decision"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/a-pivotal-decision/">
+    
+                <header class="post-card-header">
+                    
+
+                    <h2 class="post-card-title">A Pivotal Decision</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>pivotal:
+Of, relating to, or serving as a pivot.
+Being of vital or central importance; crucial.
+As has been widely reported, last week I was among those at Oracle who were “let go” – a sanitized expression that is meant to diminish the indescribable impact of being fired due to circumstances far outside one’s knowledge or ability to influence. Details aren’t important, but suffice it to say that my teammates and I were…​surprised.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2015-59-09">10 September 2015</time>
+                            <span class="bull">&bull;</span> 2 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+        </div>
+    </div>
+</aside>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://thehecklers.com/">Hecklers in Development</a> &copy; 2015</section>
+                <nav class="site-footer-nav">
+                    <a href="https://thehecklers.com/">Latest Posts</a>
+                    <a href="markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Twitter</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Github</a>
+                    <a href="markheckler" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://jonathanjanssens.com" target="_blank" rel="noopener" style="opacity: 0.5;">Hugo Casper3</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jackson on </title>
+    <title>Jackson on Hecklers in Development</title>
     <link>https://thehecklers.com/tags/jackson/</link>
-    <description>Recent content in Jackson on </description>
+    <description>Recent content in Jackson on Hecklers in Development</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 20 Jun 2017 20:27:09 -0600</lastBuildDate>
-    
-	<atom:link href="https://thehecklers.com/tags/jackson/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 20 Jun 2017 20:27:09 -0600</lastBuildDate><atom:link href="https://thehecklers.com/tags/jackson/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>T4SD (Tips 4 Spring Devs): How to get Spring Boot REST endpoints to speak XML</title>
-      <link>https://thehecklers.com/post/t4sd-tips-4-spring-devs-how-to-get-spring-boot-rest-endpoints-to-speak-xml/</link>
+      <link>https://thehecklers.com/posts/t4sd-tips-4-spring-devs-how-to-get-spring-boot-rest-endpoints-to-speak-xml/</link>
       <pubDate>Tue, 20 Jun 2017 20:27:09 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/t4sd-tips-4-spring-devs-how-to-get-spring-boot-rest-endpoints-to-speak-xml/</guid>
+      <guid>https://thehecklers.com/posts/t4sd-tips-4-spring-devs-how-to-get-spring-boot-rest-endpoints-to-speak-xml/</guid>
       <description>Many of us use JSON almost exclusively now, which is generally a good thing. But what happens when you need to “speak XML” with your Spring Boot REST endpoints?
- XML support in Spring Boot’s REST endpoints is not enabled by default, but adding it isn’t difficult at all. Simply add the following dependency to your POM (or similar entry to your Gradle build file, if that’s the way you roll) and rebuild:</description>
+XML support in Spring Boot’s REST endpoints is not enabled by default, but adding it isn’t difficult at all. Simply add the following dependency to your POM (or similar entry to your Gradle build file, if that’s the way you roll) and rebuild:</description>
     </item>
     
   </channel>

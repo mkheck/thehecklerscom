@@ -1,7 +1,8 @@
-baseURL = "https://thehecklers.com/"
-baseurl         = "/"
-theme           = "casper-two"
-languageCode    = "en-US"
+baseURL = 'https://thehecklers.com/'
+languageCode = 'en-US'
+title = 'Hecklers in Development'
+theme = "hugo-casper3"
+
 disqusShortname = "thehecklers-com"
 paginate        = 6
 #SectionPagesMenu = "main"
@@ -9,24 +10,21 @@ canonifyurls    = true
 publishDir      = "docs"
 
 [params]
-  title       = "Hecklers in Development, brewing stronger Java"
-  subtitle    = "Converting coffee to code, one cup at a time (but in rapid succession)"
-  copyright   = "© 2018-2021"
+  title         = "Hecklers in Development: Brewing stronger Java"
+  subtitle      = "Converting coffee to code, one cup at a time (but in rapid succession)"
+  copyright     = "© 2018-2022"
 
-  cover       = "img/virtual-keyboard_dark2.jpg"
-  description = "Converting coffee to code, one cup at a time (but in rapid succession)"
-  metaDescription = ""
-  googleAnalytics = "UA-102227903-1"
-  customCSS = []
+  #feature_image = "/images/MHBetweenTwoCloudLayersWSun.jpg"
+  feature_image = "/images/virtual-keyboard_dark2.jpg"
+  cover         = "/images/virtual-keyboard_dark2.jpg"
+  description   = "Converting coffee to code, one cup at a time (but in rapid succession)"
   RSSLink = ""
 
-  twitterName = "mkheck"
-  fbName = "markhecklerdev"
-  githubName = "mkheck"
-  linkedinName = "markheckler"
-  mediumName = ""
+  twitter = "mkheck"
+  facebook = "markhecklerdev"
+  github = "mkheck"
+  linkedin = "markheckler"
 
-  logo = ""
   orgName = "HM"
   orgWebsite = "https://www.thehecklers.com"
   orgDescription = "Connecting code to demonstrable business value"
@@ -34,40 +32,47 @@ publishDir      = "docs"
   showSupport = true
 
   author = "Mark Heckler"
-  authorAvatar = "img/MarkHecklerProfilePic.jpg"
-  authorLocation = "St. Louis, San Francisco, Hell's Kitchen, Gallifrey"
+  authorAvatar = "/images/MarkHecklerProfilePic.jpg"
+  authorLocation = "St. Louis, Redmond, the sky"
   authorWebsite = "https://thehecklers.com"
-  authorDescription = "Computer scientist & software developer"
+  authorDescription = "Computer scientist, software developer, licensed pilot"
 
   pageNotFoundTitle = "404 - Page not found"
 
-  #casper or caspertwo
-  singleViewStyle = "casper"
+  mainSections = ['posts', 'docs']
 
 [permalinks]
-  post = "/post/:slug/"
+  post = "/posts/:slug/"
 
 [[menu.main]]
   name = "Home"
   url = "/"
-  weight = 200
+  weight = 150
 
 [[menu.main]]
   name = "Abstracts"
-  url = "/page/abstracts"
+  url = "/pages/abstracts"
   weight = 180
 
 [[menu.main]]
   name = "Contact"
-  url = "/page/contact"
+  url = "/pages/contact"
   weight = 170
 
 [[menu.main]]
-  name = "Events"
-  url = "/page/events"
+  name = "About"
+  url = "/pages/about"
   weight = 160
 
-[[menu.main]]
-  name = "Aviation"
-  url = "/page/aviation"
-  weight = 150
+[security]
+  enableInlineShortcodes = false
+  [security.exec]
+    allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^asciidoctor$']
+    osEnv = ['(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM)$']
+
+  [security.funcs]
+    getenv = ['^HUGO_']
+
+  [security.http]
+    methods = ['(?i)GET|POST']
+    urls = ['.*']

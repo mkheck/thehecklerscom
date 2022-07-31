@@ -1,0 +1,19 @@
+---
+title: "Starting Anew"
+date: 2022-07-27T19:42:51-05:00
+draft: false
+feature_image: "/images/MHBetweenTwoCloudLayersWSun.jpg"
+tags: []
+---
+
+It was time.
+
+Coming out of a global pandemic, it felt like a fresh start was long overdue. I'd invested a lot of time in other channels, to the detriment of this one. No more!
+
+Welcome back.
+
+I've no idea how frequently I'll pop in here to share content of various kinds (Java development, aviation, etc.), as I'm still pushing (hopefully) useful material via a variety of other outlets as well. But I'll be here, and I apprecate you being here too.
+
+Best to you, to all of us, in our journey.
+
+Cheers!

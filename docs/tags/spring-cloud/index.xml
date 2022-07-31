@@ -1,43 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Spring Cloud on </title>
+    <title>Spring Cloud on Hecklers in Development</title>
     <link>https://thehecklers.com/tags/spring-cloud/</link>
-    <description>Recent content in Spring Cloud on </description>
+    <description>Recent content in Spring Cloud on Hecklers in Development</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 11 Jun 2018 20:53:02 -0600</lastBuildDate>
-    
-	<atom:link href="https://thehecklers.com/tags/spring-cloud/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 11 Jun 2018 20:53:02 -0600</lastBuildDate><atom:link href="https://thehecklers.com/tags/spring-cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Register Instances Eureka</title>
-      <link>https://thehecklers.com/post/register-instances-eureka/</link>
+      <link>https://thehecklers.com/posts/register-instances-eureka/</link>
       <pubDate>Mon, 11 Jun 2018 20:53:02 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/register-instances-eureka/</guid>
-      <description>When developing Spring Boot + Spring Cloud microservices, most often we devs run them locally, also running local instances of Spring Cloud Config Server and Spring Cloud Netflix Eureka to provide essential scaffolding for our microservices-in-development and to more closely replicate our test &amp;amp; production environments. Many times, we simply run a single instance of a microservice under development, which works with nearly no effort on our part: provide a desired port number for the service either via internal properties (usually in the project&amp;#8217;s application.</description>
+      <guid>https://thehecklers.com/posts/register-instances-eureka/</guid>
+      <description>When developing Spring Boot + Spring Cloud microservices, most often we devs run them locally, also running local instances of Spring Cloud Config Server and Spring Cloud Netflix Eureka to provide essential scaffolding for our microservices-in-development and to more closely replicate our test &amp;amp; production environments. Many times, we simply run a single instance of a microservice under development, which works with nearly no effort on our part: provide a desired port number for the service either via internal properties (usually in the project’s application.</description>
     </item>
     
     <item>
       <title>Un curso intensivo: Como utilizar Spring Cloud Services en PAS</title>
-      <link>https://thehecklers.com/post/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/</link>
+      <link>https://thehecklers.com/posts/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/</link>
       <pubDate>Tue, 20 Feb 2018 21:51:12 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/</guid>
+      <guid>https://thehecklers.com/posts/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/</guid>
       <description>This article is available in English at Getting Started with Spring Cloud Services on Pivotal Application Service.
-   Cuando se trata de crear una arquitectura de microservicios robusta y resistente ubicada en la nube, los componentes de Spring Cloud/Netflix OSS son habilitadores conocidos y respetados. Ciertos modelos y mecanismos se han probado absolutamente esenciales para lograr alta velocidad (en desarollo) y alta disponibilidad (en producción), y Spring Cloud/Netflix OSS tiene unos de los &#34;</description>
+Cuando se trata de crear una arquitectura de microservicios robusta y resistente ubicada en la nube, los componentes de Spring Cloud/Netflix OSS son habilitadores conocidos y respetados. Ciertos modelos y mecanismos se han probado absolutamente esenciales para lograr alta velocidad (en desarollo) y alta disponibilidad (en producción), y Spring Cloud/Netflix OSS tiene unos de los &amp;#34;mejores entre los mejores&amp;#34;.</description>
     </item>
     
     <item>
       <title>Getting up &amp; running quickly with Spring Cloud Sleuth</title>
-      <link>https://thehecklers.com/post/getting-up-running-quickly-with-spring-cloud-sleuth/</link>
+      <link>https://thehecklers.com/posts/getting-up-running-quickly-with-spring-cloud-sleuth/</link>
       <pubDate>Tue, 27 Jun 2017 19:55:02 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/getting-up-running-quickly-with-spring-cloud-sleuth/</guid>
+      <guid>https://thehecklers.com/posts/getting-up-running-quickly-with-spring-cloud-sleuth/</guid>
       <description>As you begin to divide conglomerate functionality into discrete, decoupled microservices, you introduce a number of opportunities and challenges into your system(s). The opportunities are often well-known, including (and especially!) development velocity, fidelity/fit (functionality matches requirements), scalability, and a host of other “ilities”.
- Challenges also exist of course, including the question of how to gain visibility into end-to-end interactions involving multiple microservices across process and network boundaries. Spring Cloud Sleuth provides a lightweight, configurable, and easy way to begin capturing trace information within your distributed system.</description>
+Challenges also exist of course, including the question of how to gain visibility into end-to-end interactions involving multiple microservices across process and network boundaries. Spring Cloud Sleuth provides a lightweight, configurable, and easy way to begin capturing trace information within your distributed system.</description>
     </item>
     
   </channel>

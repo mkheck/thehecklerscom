@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+    <title>Why Wait for Jdk 10 · Hecklers in Development</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" href="https://thehecklers.com/style.main.min.c34e6915a95f1027dad7b48e5d1ff6e2bbf58b4e72c69d7ec6ac8e7352e961dc.css" />
+
+</head>
+<body class=" post-template ">
+
+    <div class="site-wrapper">
+
+<header class="site-header"><div class="outer site-nav-main">
+    <div class="inner"><nav class="site-nav">
+    <div class="site-nav-left">
+        
+            <a class="site-nav-logo" href="https://thehecklers.com/">Hecklers in Development</a>
+        
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/about">About</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/contact">Contact</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/abstracts">Abstracts</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="https://thehecklers.com/tags/lombok">Lombok</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">Why Wait for Jdk 10</h1>
+
+                
+
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Mark Heckler</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Mark Heckler</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2018-94-04">19 April 2018</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 2 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            
+            <figure class="post-full-image">
+                <img src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Why Wait for Jdk 10" />
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <div class="paragraph">
+<p><a href="https://projectlombok.org/">Lombok</a> is one of those libraries that plugs several small gaps in fairly basic Java functionality. It covers so many small gaps, in fact, that it’s easy to use it to provide some very useful capabilities for years while overlooking other capabilities it quietly provides just as well.</p>
+</div>
+<div class="paragraph">
+<p>This happened to me recently, as I mentioned in the tweet below. Caveat: I’m for code clarity first and foremost, so I don’t recommend sacrificing readability…​but if there is a way to be more concise, i.e. stating/coding something with less text while retaining full context, I’m for it.</p>
+</div>
+<div class="paragraph">
+<p>Enter JDK 10’s <code>var</code> option for declaring local variables, courtesy of Project Amber &amp; <a href="http://openjdk.java.net/jeps/286">JEP 286</a>. If you’re not using Kotlin (or Groovy, Scala, Javascript, etc.) in your shop, this small detail may hold some appeal for you. But it’s (to date) only available in JDK 10…​are you and your team using JDK 10 yet? Chances are, you aren’t. Ah, but what about Lombok?</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/ValVarTweet.png" alt="val &amp; var in Lombok"/></span></p>
+</div>
+<div class="paragraph">
+<p>Ignoring all the other things it can do, Lombok also enables you to declare local variables as <code>values</code> (immutable) and <code>variables</code> (mutable). Here’s how:</p>
+</div>
+<div class="paragraph">
+<p>To declare local immutable values, just use the <code>val</code> &#34;keyword&#34; (actually a Lombok type of sorts) where you would normally provide the type declaration. Lombok’s <code>var</code> works similarly, except it creates a mutable type.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">@Data
+@AllArgsConstructor
+class MyClass {
+    public void logIt() {
+        val logMessage = &#34;This is my sweet log message&#34;;
+        var logStatus = 909;
+
+        System.out.println(&#34;Log status: &#34; + logStatus + &#34;, message: &#34; + logMessage);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The relevant import statements will likely be suggested by your IDE, but here they are for reference:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">import lombok.experimental.var;
+import lombok.val;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first time you try to compile your class using <code>var</code>, you’ll see this error message:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Error:(37, 13) java: Use of var is disabled by default. Please add &#39;lombok.var.flagUsage = ALLOW&#39; to &#39;lombok.config&#39; if you want to enable is.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is easily resolved by creating a file called <code>lombok.config</code> in your project’s root and adding the single entry <code>lombok.var.flagUsage = ALLOW</code>, as recommended. Subsequent builds should perform as expected.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://twitter.com/mkheck">Click here to follow me on Twitter</a> for more quick tips like this. Happy coding!</p>
+</div>
+<div class="sect1">
+<h2 id="_useful_links">Useful links</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://projectlombok.org/features/all">Lombok features</a></p>
+</div>
+<div class="paragraph">
+<p><a href="http://openjdk.java.net/jeps/286">JEP 286</a></p>
+</div>
+</div>
+</div>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+    
+    <article class="read-next-card">
+        <header class="read-next-card-header">
+            <h3><span>More in</span> <a href="https://thehecklers.com/tags/lombok">Lombok</a></h3>
+        </header>
+        <div class="read-next-card-content">
+            <ul>
+                
+            </ul>
+        </div>
+    </article>
+<article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Un curso intensivo: Como utilizar Spring Cloud Services en PAS"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">Spring</div>
+                    
+
+                    <h2 class="post-card-title">Un curso intensivo: Como utilizar Spring Cloud Services en PAS</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>This article is available in English at Getting Started with Spring Cloud Services on Pivotal Application Service.
+Cuando se trata de crear una arquitectura de microservicios robusta y resistente ubicada en la nube, los componentes de Spring Cloud/Netflix OSS son habilitadores conocidos y respetados. Ciertos modelos y mecanismos se han probado absolutamente esenciales para lograr alta velocidad (en desarollo) y alta disponibilidad (en producción), y Spring Cloud/Netflix OSS tiene unos de los &#34;mejores entre los mejores&#34;.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2018-92-02">20 February 2018</time>
+                            <span class="bull">&bull;</span> 11 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+
+            <article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/register-instances-eureka/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Register Instances Eureka"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/register-instances-eureka/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">Spring</div>
+                    
+
+                    <h2 class="post-card-title">Register Instances Eureka</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>When developing Spring Boot + Spring Cloud microservices, most often we devs run them locally, also running local instances of Spring Cloud Config Server and Spring Cloud Netflix Eureka to provide essential scaffolding for our microservices-in-development and to more closely replicate our test &amp; production environments. Many times, we simply run a single instance of a microservice under development, which works with nearly no effort on our part: provide a desired port number for the service either via internal properties (usually in the project’s application.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2018-86-06">11 June 2018</time>
+                            <span class="bull">&bull;</span> 4 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+        </div>
+    </div>
+</aside>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://thehecklers.com/">Hecklers in Development</a> &copy; 2018</section>
+                <nav class="site-footer-nav">
+                    <a href="https://thehecklers.com/">Latest Posts</a>
+                    <a href="markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Twitter</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Github</a>
+                    <a href="markheckler" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://jonathanjanssens.com" target="_blank" rel="noopener" style="opacity: 0.5;">Hugo Casper3</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>wifi on </title>
+    <title>wifi on Hecklers in Development</title>
     <link>https://thehecklers.com/tags/wifi/</link>
-    <description>Recent content in wifi on </description>
+    <description>Recent content in wifi on Hecklers in Development</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 27 Feb 2015 17:29:35 -0600</lastBuildDate>
-    
-	<atom:link href="https://thehecklers.com/tags/wifi/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 27 Feb 2015 17:29:35 -0600</lastBuildDate><atom:link href="https://thehecklers.com/tags/wifi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Secret Sauce: How to Connect Your Raspberry Pi to a Hidden SSID</title>
-      <link>https://thehecklers.com/post/the-secret-sauce-how-to-connect-your-raspberry-pi-to-a-hidden-ssid/</link>
+      <link>https://thehecklers.com/posts/the-secret-sauce-how-to-connect-your-raspberry-pi-to-a-hidden-ssid/</link>
       <pubDate>Fri, 27 Feb 2015 17:29:35 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/the-secret-sauce-how-to-connect-your-raspberry-pi-to-a-hidden-ssid/</guid>
+      <guid>https://thehecklers.com/posts/the-secret-sauce-how-to-connect-your-raspberry-pi-to-a-hidden-ssid/</guid>
       <description>When I got my first Raspberry Pi Model B (not long after they first became available – remember when they only had 256M?!?), I wanted to configure it to use a wifi adapter. Even with approved, compliant adapters, this wasn’t for the faint of heart; many steps, scripts, and secret incantations were required to get everything to connect, even in the best of circumstances.
- Fast-forward to today, when wifi adapter drivers are included in the base Raspbian build.</description>
+Fast-forward to today, when wifi adapter drivers are included in the base Raspbian build.</description>
     </item>
     
   </channel>

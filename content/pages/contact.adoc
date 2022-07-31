@@ -1,0 +1,16 @@
+---
+title: "Contact"
+date: 2022-07-28T13:37:01-05:00
+draft: false
+tags: []
+---
+
+If you'd like to get in touch, please reach out to me via Twitter DM or at one (or more?) of the following email addresses:
+
+* link:https://www.twitter.com/mkheck[Mark on Twitter]
+* link:mailto:mark@thehecklers.com[mark@thehecklers.com]
+* link:mailto:mark.heckler@gmail.com[mark.heckler@gmail.com]
+
+To email securely using PGP/GPG, please link:/pages/publickeys[visit this page for my public keys].
+
+Looking forward to hearing from you!

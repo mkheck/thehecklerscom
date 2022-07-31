@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+    <title>Register Instances Eureka · Hecklers in Development</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" href="https://thehecklers.com/style.main.min.c34e6915a95f1027dad7b48e5d1ff6e2bbf58b4e72c69d7ec6ac8e7352e961dc.css" />
+
+</head>
+<body class=" post-template ">
+
+    <div class="site-wrapper">
+
+<header class="site-header"><div class="outer site-nav-main">
+    <div class="inner"><nav class="site-nav">
+    <div class="site-nav-left">
+        
+            <a class="site-nav-logo" href="https://thehecklers.com/">Hecklers in Development</a>
+        
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/about">About</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/contact">Contact</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/abstracts">Abstracts</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="https://thehecklers.com/tags/spring">Spring</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">Register Instances Eureka</h1>
+
+                
+
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Mark Heckler</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Mark Heckler</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2018-86-06">11 June 2018</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 4 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            
+            <figure class="post-full-image">
+                <img src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Register Instances Eureka" />
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <div class="paragraph">
+<p>When developing Spring Boot + Spring Cloud microservices, most often we devs run them locally, also running local instances of <a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config Server</a> and <a href="https://cloud.spring.io/spring-cloud-netflix/">Spring Cloud Netflix Eureka</a> to provide essential scaffolding for our microservices-in-development and to more closely replicate our test &amp; production environments. Many times, we simply run a single instance of a microservice under development, which works with nearly no effort on our part: provide a desired port number for the service either via internal properties (usually in the project’s <code>application.properties/.yml</code> configuration file) or more likely, by pointing the application to our local Spring Cloud Config Server. But what happens when you want to run multiple instances of said microservice and register them with Eureka so that they’re accessible to consuming microservices?</p>
+</div>
+<div class="paragraph">
+<p>First, a bit of background for Spring Cloud Netflix Eureka. Eureka is a service registry, providing service registration and discovery functionality for many critical distributed systems around the globe. A service registry provides a way for microservices to <strong>see &amp; be seen</strong>, where consuming microservices can easily locate &#34;backing services&#34;, other microservices that provide capabilities the consuming services use. In an ephemeral environment, i.e. the cloud, when one microservice fails/goes offline/is unreachable, another is quickly spun up to replace it in a different location. A service registry makes it easy for microservice instances to find each other, wherever they may be at that point in time.</p>
+</div>
+<div class="paragraph">
+<p>Now let’s scope things in a bit. Running locally on our dev machine, when a microservice instance contacts Eureka wishing to register itself, Eureka combines the application’s IP address with the port number on which it’s listening to create a unique indentifier/locator for that microservice instance. Manually changing the designated port on which our microservice instance is going to run (if spinning up multiple instances) is tedious. Instead, we can simple designate 0 as our microservice’s target port by setting <code>server.port=0</code> in its properties; doing so results in <a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#howto-user-a-random-unassigned-http-port">Spring Boot assigning a random available port number to each instance we run</a>.</p>
+</div>
+<div class="paragraph">
+<p>But there is a catch. Our microservice instance attempts to register its presence with Eureka <strong>before</strong> this port assignment, resulting in a registration using the local IP address and a port number of zero (0), as does every subsequent instance of that microservice. This effectively restricts us to running a single instance of any local microservice we wish to register with a local Eureka instance. Fortunately, there is an easy fix: assign a unique instance-id, dynamically, to each of the instances for use by Eureka.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/mkheck/AOU">Here is a project</a> in which I demonstrate how to accomplish this, using a Coffee Service (what else?) and the latest snapshot of Spring Cloud (currently <strong>Finchley.BUILD-SNAPSHOT</strong>). I’ve added the following values to the property file served to every instance of coffee-service from the Config Server:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>server:
+  port: ${PORT:0}
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}</pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>I generally prefer to use YAML files for properties, but they can also be represented (in .properties files) as direct property assignments, as follows:</p>
+</div>
+</blockquote>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>server.port=${PORT:0}
+
+eureka.instance.instance-id=${spring.application.name}:${spring.application.instance_id:${random.value}}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first line assigns to <code>server.port</code> the value of variable PORT (if it exists); if not, 0. This prompts Spring Boot to assign a random, unused port.</p>
+</div>
+<div class="paragraph">
+<p>The second line appends the current <code>spring.application.instance_id</code> (if it exists) to the <code>spring.application.name</code>, separated by a colon (:). If the <code>spring.application.instance_id</code> doesn’t exist, it instead appends a random value to create a unique Eureka instance identifier for this instance.</p>
+</div>
+<div class="paragraph">
+<p>To start two instances of our <code>coffee-service</code> from IntelliJ IDEA, we must choose &#34;Edit configurations…​&#34; from the drop down menu at the top right of our edit window:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/EditConfigurations.png" alt="Edit Configurations menu option"/></span></p>
+</div>
+<div class="paragraph">
+<p>In the &#34;Run/Debug Configurations&#34; window, we must de-select the checkbox for &#34;Single instance only&#34;, as indicated in the following graphic. This will create a new instance of our microservice each time we run our application, rather than stopping the existing instance and starting it anew.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/SingleInstanceOnlyMarked.png" alt="De-select Single instance only"/></span></p>
+</div>
+<div class="paragraph">
+<p>Now when we run multiple instances of our <code>coffee-service</code>, we see entries like these appear in our Eureka service’s logs:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/TwoCoffeeServiceInstancesInEurekaLogs.png" alt="Eureka logs showing two Coffee Service instances"/></span></p>
+</div>
+<div class="paragraph">
+<p>And here is how they are displayed in the Eureka Dashboard:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/TwoCoffeeServiceInstancesInEurekaDashboard.png" alt="Eureka Dashboard showing two Coffee Service instances"/></span></p>
+</div>
+<div class="sect1">
+<h2 id="_summary">Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Running multiple instances of a microservice locally - and registering them with Eureka for discoverability - is pretty simple to do with only a few small configuration settings. Using a current Spring Cloud snapshot build (such as <strong>Finchley.BUILD-SNAPSHOT</strong> in these examples) and setting <code>server.port</code> to 0 &amp; the microservice’s <code>eureka.instance.instance-id</code> to a unique value-generating string allows both to be assigned dynamically and uniquely upon instance initialization. Spring Cloud Netflix Eureka handles the rest. :)</p>
+</div>
+<div class="paragraph">
+<p><a href="https://twitter.com/mkheck">Click here to follow me on Twitter</a> for more useful posts like this, to ask questions you might have, or just to say <strong>&#34;Hi&#34;</strong>. Happy coding!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_useful_links">Useful links</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://github.com/mkheck/AOU">Code repository with full example</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://projects.spring.io/spring-cloud/">Spring Cloud main page</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config Server</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.spring.io/spring-cloud-netflix/">Spring Cloud Netflix components</a></p>
+</div>
+</div>
+</div>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+    
+    <article class="read-next-card">
+        <header class="read-next-card-header">
+            <h3><span>More in</span> <a href="https://thehecklers.com/tags/spring">Spring</a></h3>
+        </header>
+        <div class="read-next-card-content">
+            <ul>
+                
+            </ul>
+        </div>
+    </article>
+<article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/why-wait-for-jdk-10/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Why Wait for Jdk 10"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/why-wait-for-jdk-10/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">Lombok</div>
+                    
+
+                    <h2 class="post-card-title">Why Wait for Jdk 10</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>Lombok is one of those libraries that plugs several small gaps in fairly basic Java functionality. It covers so many small gaps, in fact, that it’s easy to use it to provide some very useful capabilities for years while overlooking other capabilities it quietly provides just as well.
+This happened to me recently, as I mentioned in the tweet below. Caveat: I’m for code clarity first and foremost, so I don’t recommend sacrificing readability…​but if there is a way to be more concise, i.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2018-94-04">19 April 2018</time>
+                            <span class="bull">&bull;</span> 2 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+
+            <article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/building-a-developer-workstation/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Building a Developer Workstation"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/building-a-developer-workstation/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">developer workstation</div>
+                    
+
+                    <h2 class="post-card-title">Building a Developer Workstation</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>I recently got a (very nice!) new 2018 MacBook Pro (MBP) with 32G of RAM &amp; a 550GB SSD. It’s fast &amp; sleek, and you could hardly wish for more in a traveling developer’s machine than it provides. Other than a few speedbumps I hit with migration from my old MBP (interesting to resolve but minor on balance) and upgrading MacOS to Mojave (Sentinel’s fault, not Apple’s), I love this machine!</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2018-710-10">13 October 2018</time>
+                            <span class="bull">&bull;</span> 6 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+        </div>
+    </div>
+</aside>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://thehecklers.com/">Hecklers in Development</a> &copy; 2018</section>
+                <nav class="site-footer-nav">
+                    <a href="https://thehecklers.com/">Latest Posts</a>
+                    <a href="markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Twitter</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Github</a>
+                    <a href="markheckler" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://jonathanjanssens.com" target="_blank" rel="noopener" style="opacity: 0.5;">Hugo Casper3</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

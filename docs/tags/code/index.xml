@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>code on </title>
+    <title>code on Hecklers in Development</title>
     <link>https://thehecklers.com/tags/code/</link>
-    <description>Recent content in code on </description>
+    <description>Recent content in code on Hecklers in Development</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 24 Sep 2017 18:27:08 -0600</lastBuildDate>
-    
-	<atom:link href="https://thehecklers.com/tags/code/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 24 Sep 2017 18:27:08 -0600</lastBuildDate><atom:link href="https://thehecklers.com/tags/code/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Comment ça va?</title>
-      <link>https://thehecklers.com/post/comment-%C3%A7a-va/</link>
+      <link>https://thehecklers.com/posts/comment-%C3%A7a-va/</link>
       <pubDate>Sun, 24 Sep 2017 18:27:08 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/comment-%C3%A7a-va/</guid>
-      <description>I had been deep in code for the preceding few days (mine and others&#39;) and had achieved a few insights by poring over actual code (vs. comments and/or commentary) when this quote crossed my radar:
- 
- Being an enthusiastic quote lover, I of course shared it on Twitter, not expecting the various interpretations it solicited. As an aside, this is what happens when you share something without a particular context: people rightfully supply their own.</description>
+      <guid>https://thehecklers.com/posts/comment-%C3%A7a-va/</guid>
+      <description>I had been deep in code for the preceding few days (mine and others&amp;#39;) and had achieved a few insights by poring over actual code (vs. comments and/or commentary) when this quote crossed my radar:
+Being an enthusiastic quote lover, I of course shared it on Twitter, not expecting the various interpretations it solicited. As an aside, this is what happens when you share something without a particular context: people rightfully supply their own.</description>
     </item>
     
   </channel>

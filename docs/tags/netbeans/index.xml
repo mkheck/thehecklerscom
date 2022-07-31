@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>netbeans on </title>
+    <title>netbeans on Hecklers in Development</title>
     <link>https://thehecklers.com/tags/netbeans/</link>
-    <description>Recent content in netbeans on </description>
+    <description>Recent content in netbeans on Hecklers in Development</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 13 Apr 2012 17:43:28 -0600</lastBuildDate>
-    
-	<atom:link href="https://thehecklers.com/tags/netbeans/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 13 Apr 2012 17:43:28 -0600</lastBuildDate><atom:link href="https://thehecklers.com/tags/netbeans/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Netbeans Jsf Mysql Primary Key</title>
-      <link>https://thehecklers.com/post/netbeans-jsf-mysql-primary-key/</link>
+      <link>https://thehecklers.com/posts/netbeans-jsf-mysql-primary-key/</link>
       <pubDate>Fri, 13 Apr 2012 17:43:28 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/netbeans-jsf-mysql-primary-key/</guid>
+      <guid>https://thehecklers.com/posts/netbeans-jsf-mysql-primary-key/</guid>
       <description>Cross-posted from The Java Jungle by Mark Heckler
- I recently had the opportunity to spin up a small web application using JSF and MySQL. Having developed JSF apps with Oracle Database back-ends before and possessing some small familiarity with MySQL (sans JSF), I thought this would be a cakewalk. Things did go pretty smoothly…but there was one little “gotcha” that took more time than the few seconds it really warranted.</description>
+I recently had the opportunity to spin up a small web application using JSF and MySQL. Having developed JSF apps with Oracle Database back-ends before and possessing some small familiarity with MySQL (sans JSF), I thought this would be a cakewalk. Things did go pretty smoothly…but there was one little “gotcha” that took more time than the few seconds it really warranted.</description>
     </item>
     
   </channel>

@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Lombok on </title>
+    <title>Lombok on Hecklers in Development</title>
     <link>https://thehecklers.com/tags/lombok/</link>
-    <description>Recent content in Lombok on </description>
+    <description>Recent content in Lombok on Hecklers in Development</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 19 Apr 2018 21:10:04 -0600</lastBuildDate>
-    
-	<atom:link href="https://thehecklers.com/tags/lombok/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 19 Apr 2018 21:10:04 -0600</lastBuildDate><atom:link href="https://thehecklers.com/tags/lombok/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why Wait for Jdk 10</title>
-      <link>https://thehecklers.com/post/why-wait-for-jdk-10/</link>
+      <link>https://thehecklers.com/posts/why-wait-for-jdk-10/</link>
       <pubDate>Thu, 19 Apr 2018 21:10:04 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/why-wait-for-jdk-10/</guid>
-      <description>Lombok is one of those libraries that plugs several small gaps in fairly basic Java functionality. It covers so many small gaps, in fact, that it&amp;#8217;s easy to use it to provide some very useful capabilities for years while overlooking other capabilities it quietly provides just as well.
- This happened to me recently, as I mentioned in the tweet below. Caveat: I&amp;#8217;m for code clarity first and foremost, so I don&amp;#8217;t recommend sacrificing readability&amp;#8230;&amp;#8203;but if there is a way to be more concise, i.</description>
+      <guid>https://thehecklers.com/posts/why-wait-for-jdk-10/</guid>
+      <description>Lombok is one of those libraries that plugs several small gaps in fairly basic Java functionality. It covers so many small gaps, in fact, that it’s easy to use it to provide some very useful capabilities for years while overlooking other capabilities it quietly provides just as well.
+This happened to me recently, as I mentioned in the tweet below. Caveat: I’m for code clarity first and foremost, so I don’t recommend sacrificing readability…​but if there is a way to be more concise, i.</description>
     </item>
     
   </channel>

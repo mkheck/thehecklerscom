@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+    <title>Building a Developer Workstation · Hecklers in Development</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" href="https://thehecklers.com/style.main.min.c34e6915a95f1027dad7b48e5d1ff6e2bbf58b4e72c69d7ec6ac8e7352e961dc.css" />
+
+</head>
+<body class=" post-template ">
+
+    <div class="site-wrapper">
+
+<header class="site-header"><div class="outer site-nav-main">
+    <div class="inner"><nav class="site-nav">
+    <div class="site-nav-left">
+        
+            <a class="site-nav-logo" href="https://thehecklers.com/">Hecklers in Development</a>
+        
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/about">About</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/contact">Contact</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/abstracts">Abstracts</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="https://thehecklers.com/tags/developer-workstation">developer workstation</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">Building a Developer Workstation</h1>
+
+                
+
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Mark Heckler</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Mark Heckler</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2018-710-10">13 October 2018</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 6 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            
+            <figure class="post-full-image">
+                <img src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Building a Developer Workstation" />
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <div class="paragraph">
+<p>I recently got a (very nice!) new 2018 MacBook Pro (MBP)  with 32G of RAM &amp; a 550GB SSD. It’s fast &amp; sleek, and you could hardly wish for more in a traveling developer’s machine than it provides. Other than a few speedbumps I hit with migration from my old MBP (interesting to resolve but minor on balance) and upgrading MacOS to Mojave (Sentinel’s fault, not Apple’s), I love this machine!</p>
+</div>
+<div class="paragraph">
+<p>Recently however, I was running my full toolchain, plus Docker &amp; a container or four, and trying to capture a screen recording. And the fans were <strong>roaring</strong>! Better that than to overheat, for sure, but it got me thinking about the ideal workstation for development, tossing in the occasional need for recording or doing other fairly mundane things like opening a few dozen browser tabs, running Slack (the horror!), etc. And the inevitable conclusion was that I needed more machine. :D</p>
+</div>
+<div class="paragraph">
+<p>Not wanting to spend a small fortune on this machine - and funding it myself - I got approval from my personal CFO (my wife, thank you Sweetie!) to build a machine that filled the bill. It all came together pretty nicely, and when I posted the first <code>free</code> output on Twitter, I discovered how many other devs really want a similarly configured machine. (I mean, who doesn’t want more power, more memory, more SSD, more…​)</p>
+</div>
+<div class="paragraph">
+<p>Anyway, here is the Bill of Materials for <code>trinity</code> (yes, we’re Matrix fans…​again, who isn’t?):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Case</strong>: Thermaltake Core V21 SPCC Micro ATX, Mini ITX Cube gaming computer case chassis, small form factor</p>
+</li>
+<li>
+<p><strong>Power Supply Unit (PSU)</strong>: EVGA 700 B1, 80+ BRONZE 700W, 3 Year Warranty</p>
+</li>
+<li>
+<p><strong>Motherboard (mobo)</strong>: MSI Arsenal Gaming AMD Ryzen 1st+2nd Gen AM4 M.2 USB3 DDR4 DVI HDMI Micro-ATX (B450M Bazooka)</p>
+</li>
+<li>
+<p><strong>CPU</strong>: AMD Ryzen 5 2600 Processor with Wraith Stealth Cooler</p>
+</li>
+<li>
+<p><strong>Thermal CPU paste</strong>: ARCTIC MX-4 thermal compound paste</p>
+</li>
+<li>
+<p><strong>Memory</strong>: Corsair LPX 32G (2x16G) 3200MHz C16 DDR4 DRAM memory kit (x2, for a total of 4 and 64G RAM)</p>
+</li>
+<li>
+<p><strong>Graphics card</strong>: MSI Gaming GeForce GT 710 2GB GDRR3 64-bit HDCP Support DirectX 12 OpenGL 4.5 single fan low profile</p>
+</li>
+<li>
+<p><strong>SSD</strong>: Crucial MX500 1TB 3D NAND SATA 2.5 inch internal SSD</p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>All of these can be found easily via my Amazon parts list: <a href="https://www.amazon.com/hz/wishlist/ls/I2ZHZ2DCETWC" class="bare">https://www.amazon.com/hz/wishlist/ls/I2ZHZ2DCETWC</a></p>
+</div>
+</blockquote>
+</div>
+<div class="sect1">
+<h2 id="_more_information_about_the_hardware">More information about the hardware</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I can’t say enough nice things about this Thermaltake case. It’s accessible from both sides &amp; top: all panels remove easily by hand with two bolts. One panel is clear plastic so you could light up the insides &amp; show it off (hello gamers!), the other two have nearly full panel ventilation. And there are removable, magnetic mounted fine mesh screens over those vent panels to reduce dust accummulation inside your machine. It’s incredibly well thought out.</p>
+</div>
+<div class="paragraph">
+<p>It also ships with a large (but whisper quiet) fan in the front to help with air circulation and cooling, with mounting positions on the case’s bottom for more (and rails in the top for more too, if you place a mesh panel over them). This thing was designed from the start to keep your machine from heating up &amp; throttling.</p>
+</div>
+<div class="paragraph">
+<p>I sized the PSU using online sizing tools, then rounded up to be sure I wouldn’t tax it if (when) I add in more boards, a beefier graphics card, etc. My two subsequent criteria were reliability &amp; sound level. This unit was said to be both reliable and very quiet, so it won out.</p>
+</div>
+<div class="paragraph">
+<p>I selected this particular motherboard &amp; CPU because they hit the sweet spot of excellent performance and reasonable price. You can effectively spend as much you could ever want on a single chip, depending upon your tastes &amp; budget…​but I was looking for solid performance and a good value besides. The Ryzen 5 2600 came in strong, with 6 cores &amp; 12 threads and decent numbers: GHz and GHz, which should handle containers and build cycles with aplomb. The fact that it shipped with a massive heat sink+quiet fan was icing on the cake.</p>
+</div>
+<div class="paragraph">
+<p>On thermal paste: DO NOT scrimp on heat dissipation. A small tube of quality thermal paste will be more than ample; all you need is a small amount between the CPU &amp; heatsink/fan to help keep your rig cool and performant, reducing throttling due to the chip heating up under load. It’s cheap and absolutely essential.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>PRO TIP: Get the good kind that doesn’t break down over time.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The part I really wanted to max out was memory. This CPU &amp; mobo can handle 64G of DDR4 RAM (4x16G), and I wouldn’t have gone less. Keeping more apps+data in memory was my primary goal to reduce the work the system must do to swap and keep the fans quiet. This Crucial memory was rated extremely well, and price was (for 64G of DDR4) reasonable enough. So far, so great. :D</p>
+</div>
+<div class="paragraph">
+<p>I bought a decent graphics card for the machine’s intended purpose, the MSI GeForce GT 710 with 2G of GDDR3 memory onboard. While it’s possible I could fire up an occasional game on <code>trinity</code>, nearly (if not fully) 100% of its use will be as a developer workstation. IDEs, containers, local cloud environments, pipelines…​and this card should be more than robust enough. The fan on it is quiet as well, which doesn’t hurt its standing.</p>
+</div>
+<div class="paragraph">
+<p>Finally, the SSD is a well-rated and performant Crucial 1TB 3D NAND SATA drive. Not much to say here, it’s quite zippy. :)</p>
+</div>
+<div class="paragraph">
+<p>Rounding out the odds &amp; ends, I’m currently using an existing keyboard, mouse, &amp; HDMI TV/monitor for user I/O and wired ethernet (port on motherboard) for connectivity. I’ll likely upgrade the monitor at some point soon &amp; possibly install a wireless card.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_software">Software</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After toying with the idea of installing Pop_OS!, Debian, or ElementaryOS, I installed Ubuntu 18.04 LTS. Much of this stems from earlier forays into all three, plus Lubuntu, on a Dell XPS 14 and another older tower I have kicking about. As much as each distro has things that recommend it, I’ve found Ubuntu proper to have the best out-of-the-box <strong>and</strong> overall support for devices and software (esp dev tools) of any Linux distro. While I do love to tinker on occasion, my first, last, and most-positions-in-between priorities are to <strong>get stuff done</strong>. If things other than writing code &amp; deploying it chew up more than a small fraction of my time, I need to move to a better setup. Ubuntu provides that nearly out of the box.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_in_conclusion">In conclusion…​</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>That’s all for now! I’ll likely post short updates on Twitter, <a href="https://twitter.com/mkheck">so click here &amp; follow to stay informed</a>.</p>
+</div>
+<div class="paragraph">
+<p>Yours in code,</p>
+</div>
+<div class="paragraph">
+<p>///ark</p>
+</div>
+</div>
+</div>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+    
+    <article class="read-next-card">
+        <header class="read-next-card-header">
+            <h3><span>More in</span> <a href="https://thehecklers.com/tags/developer-workstation">developer workstation</a></h3>
+        </header>
+        <div class="read-next-card-content">
+            <ul>
+                
+            </ul>
+        </div>
+    </article>
+<article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/register-instances-eureka/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Register Instances Eureka"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/register-instances-eureka/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">Spring</div>
+                    
+
+                    <h2 class="post-card-title">Register Instances Eureka</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>When developing Spring Boot + Spring Cloud microservices, most often we devs run them locally, also running local instances of Spring Cloud Config Server and Spring Cloud Netflix Eureka to provide essential scaffolding for our microservices-in-development and to more closely replicate our test &amp; production environments. Many times, we simply run a single instance of a microservice under development, which works with nearly no effort on our part: provide a desired port number for the service either via internal properties (usually in the project’s application.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2018-86-06">11 June 2018</time>
+                            <span class="bull">&bull;</span> 4 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+
+            <article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/three-things-about-me/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Three Things About Me"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/three-things-about-me/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">bio</div>
+                    
+
+                    <h2 class="post-card-title">Three Things About Me</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>I was contacted recently for a Java magazine profile. I was incredibly honored to be asked, as you might imagine! But it got me thinking…​interviews and conversations are short, and to be frank, I think we could all understand and empathize with each other better if we’d just share a little more of ourselves. All of us. And since I wouldn’t expect of anyone else what I wouldn’t be willing to do, I figured it only fair to start the ball rolling.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2019-126-06">1 June 2019</time>
+                            <span class="bull">&bull;</span> 2 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+        </div>
+    </div>
+</aside>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://thehecklers.com/">Hecklers in Development</a> &copy; 2018</section>
+                <nav class="site-footer-nav">
+                    <a href="https://thehecklers.com/">Latest Posts</a>
+                    <a href="markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Twitter</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Github</a>
+                    <a href="markheckler" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://jonathanjanssens.com" target="_blank" rel="noopener" style="opacity: 0.5;">Hugo Casper3</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

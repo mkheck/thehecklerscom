@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+    <title>How to Create an Alexa Skill with Spring Boot &amp; Cloud Foundry · Hecklers in Development</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" href="https://thehecklers.com/style.main.min.c34e6915a95f1027dad7b48e5d1ff6e2bbf58b4e72c69d7ec6ac8e7352e961dc.css" />
+
+</head>
+<body class=" post-template ">
+
+    <div class="site-wrapper">
+
+<header class="site-header"><div class="outer site-nav-main">
+    <div class="inner"><nav class="site-nav">
+    <div class="site-nav-left">
+        
+            <a class="site-nav-logo" href="https://thehecklers.com/">Hecklers in Development</a>
+        
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/about">About</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/contact">Contact</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/abstracts">Abstracts</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="https://thehecklers.com/tags/alexa">alexa</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">How to Create an Alexa Skill with Spring Boot &amp; Cloud Foundry</h1>
+
+                
+
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Mark Heckler</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Mark Heckler</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2017-83-03">6 March 2017</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 6 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            
+            <figure class="post-full-image">
+                <img src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="How to Create an Alexa Skill with Spring Boot &amp; Cloud Foundry" />
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <div class="paragraph">
+<p>I’ve been working with Amazon’s Alexa &amp; the Echo family of devices for the past several months and have created a couple of pretty useful and/or interesting skills. The first one I liked well enough to publish was QOTD, a <strong>Quote of the Day</strong> app that retrieves and reads a random quote per request. The second was Master Control Program, which enabled voice control of my home renewable energy system’s various inputs and controls.</p>
+</div>
+<div class="paragraph">
+<p>I recently tweeted (<a href="https://twitter.com/mkheck">@mkheck</a>) a quote from the QOTD skill and got a bit of inspiration from a friend:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/AlexaTweetMkheck.png" alt="AlexaTweetMkheck"/></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/AlexaTweetDashaun.png" alt="AlexaTweetDashaun"/></span>
+ 
+A bit of explanation may be in order. 🙂</p>
+</div>
+<div class="sect1">
+<h2 id="_inspiration">Inspiration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>DaShaun got me thinking…​there are some people who offer some excellent insights via their public Twitter accounts. He even pointed out one of those: <a href="https://twitter.com/littleidea">Andrew Clay Shafer, a.k.a. “@littleidea”</a>. Full disclaimer: Andrew also happens to lead our advocacy team at Pivotal. He says good things, and if you aren’t already following him, you should. Go. Now. 🙂</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/ferris4.gif" alt="ferris4"/></span></p>
+</div>
+<div class="paragraph">
+<p>As DaShaun noted though, it might also be nice to request a random tweet from someone else. So whatever came of this, it should be flexible.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_develop_an_alexa_skill">How to develop an Alexa skill</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_overview">Overview</h3>
+<div class="paragraph">
+<p>First things first: we can use AWS lambdas or provide our own cloud-based application, provided it responds to the appropriate requests appropriately. What does this mean?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You must implement the Speechlet API. Amazon makes this easy for Python, Node.js, &amp; Java by providing libraries with the required functionality.</p>
+</li>
+<li>
+<p>You must accept requests on an endpoint that you specify and provide correctly-formed responses.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>That’s largely it. Of course, you’ll need an Amazon developer account. <a href="https://developer.amazon.com/">Sign up here</a> to get started.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_more_details_please">More details, please</h3>
+<div class="paragraph">
+<p>This isn’t the only way to build a skill, but I’ve assembled inputs from several others and honed them in ways that make sense to me. Feel free to adapt/adjust as you see fit, and please share! Happy to alter my approach if yours makes life better/easier. 🙂</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a “shell” Spring Boot app at <a href="https://start.spring.io">https://start.spring.io</a>, adding the <strong>Web</strong> dependency (and <strong>Lombok</strong> if you’re so inclined), downloading &amp; unzipping the project and opening it in your favorite IDE</p>
+</li>
+<li>
+<p>Add the following dependency to your <strong>pom.xml</strong> file (you aren’t a Gradle hipster, are you??!?!)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.twitter4j&lt;/groupId&gt;
+    &lt;artifactId&gt;twitter4j-core&lt;/artifactId
+    &lt;version&gt;[4.0,)&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+    &lt;groupId&gt;com.amazon.alexa&lt;/groupId&gt;
+    &lt;artifactId&gt;alexa-skills-kit&lt;/artifactId
+    &lt;version&gt;1.2&lt;/version&gt;
+    &lt;exclusions&gt;
+        &lt;exclusion&gt;
+            &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+            &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
+        &lt;/exclusion&gt;
+    &lt;/exclusions&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Twitter4j included for the Tweet Retriever project, may not apply to yours.</p>
+</div>
+<div class="paragraph">
+<p>The exclusion is currently necessary to avoid conflicts with dependencies included by Spring Boot’s starters.</p>
+</div>
+</blockquote>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a mechanism that will implement your desired “back end” functionality: retrieving a tweet, requesting weather from a public REST API, etc.</p>
+</li>
+<li>
+<p>(Optional, strictly speaking) Create a REST endpoint you can use to test via web browser (old school text)  😉</p>
+</li>
+<li>
+<p>To save yourself a lot of time &amp; potential frustration, do the previous step. Then test. Extensively. Don’t continue until everything works the way you would like as a “plain old web service”. Once that works, <strong>then</strong> proceed to the next step.</p>
+</li>
+<li>
+<p>Create an <strong>Intent Schema</strong> (JSON format) as required by the Alexa service. Within this schema, you’ll want/need to specify what intents your app will recognize and what slots (variables) are allowed or expected for each intent.</p>
+</li>
+<li>
+<p>If you specify a slot, you’ll likely have a list of expected values for that slot (note that this is not a closed list per Amazon, but “more like guidelines”, for better &amp; worse). I find it helpful to specify those slot values in separate files and store them (along with other textual inputs such as the Intent Schema &amp; sample utterances Alexa uses for voice recog) with this project under a <strong>speechAssets</strong> directory in the project’s <strong>resources</strong>. Please refer to the project repo (link at bottom) for more information.</p>
+</li>
+<li>
+<p>Create <strong>Sample Utterances</strong> Alexa will use to help guide its voice recognition, leveraging any slots you’ve defined in your Intent Schema. For example, in my Random Tweet skill, I define the following slot:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+    &#34;intent&#34;: &#34;TweetIntent&#34;,
+    &#34;slots&#34;: [
+        {
+            &#34;name&#34;: &#34;Action&#34;,
+            &#34;type&#34;: &#34;LIST_OF_ACTIONS&#34;
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>I specify valid actions as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>get
+give
+play
+provide
+show
+read</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To tie it together, one of my sample utterances is:</p>
+</div>
+<div class="paragraph">
+<p><code>TweetIntent {Action} a tweet</code></p>
+</div>
+<div class="paragraph">
+<p>The end result is that one way to activate the skill (once all steps are completed and the application is deployed) is with the following syntax:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>&#34;Alexa, ask Tweet Retriever to <strong>{get|give|play|provide|show|read}</strong> a tweet&#34;</p>
+</div>
+</blockquote>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a Speechlet that implements Alexa’s Speechlet interface</p>
+</li>
+<li>
+<p>Register that Speechlet (servlet) with your application, providing an endpoint (see above) with which Alexa will interact</p>
+</li>
+<li>
+<p>Deploy the application to your cloud provider (Cloud Foundry, of course!)</p>
+</li>
+<li>
+<p>Create the skill in the Amazon (Alexa) developer portal and make note of the Application Id Amazon assigns in the <strong>Skill Information</strong> page</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Be sure to include the endpoint address you specified when registering the speechlet in your application
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set your application’s required env vars (including the Application Id above), then restart the application to allow it to incorporate the updated values</p>
+</li>
+<li>
+<p>From the <strong>Test</strong> page of the Skills portal, test the skill by invoking with textually and note the results</p>
+</li>
+<li>
+<p>Next, test using your Echo device. This step is critical because it adds the voice recognition/parsing engine to the mix and often exposes issues that text-based invocations don’t.</p>
+</li>
+<li>
+<p>If everything works as desired and you would like to share your skill with a larger community (Optional), publish your skill. You’ll need to provide a few additional bits of information &amp; a couple icons, and it will need to be tested and verified by Amazon prior to it being published. If it fails, Amazon is quite good about providing feedback over any small items you missed and suggested remedies. Lather, rinse, repeat until successful. 😉</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_caveats">Caveats</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This project is <strong>very</strong> early stage and thus very rough, so please keep the following things in mind:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This is version 0.1. It will change, it will improve. It’s an MBVP, a Minimum Barely Viable Product.</p>
+</li>
+<li>
+<p>Alexa VR is unkind at times. 😉 For this 0.1 release, I incorporated a couple hacks to get more reliable results for certain Twitter handles: - For Andrew Clay Shafer’s Twitter handle (a compound word with two dictionary words, “little” &amp; “idea”)</p>
+</li>
+<li>
+<p>For my Twitter handle (a non-word that is stated as a combination of letters &amp; a “word”, “M K Heck”). Twitter handles consisting of a single dictionary word pose no problem for Alexa/Twitter</p>
+</li>
+<li>
+<p>I included Andrew’s handle per DaShaun’s request (see above)…​and mine because I didn’t want to creep on Andrew by issuing repeated calls to Alexa while testing. 🙂 Feel free to adjust for your circumstances, if so desired.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_for_more_information">For more Information</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Get Tweet Retriever’s <a href="https://github.com/mkheck/ax-random-tweet">ax-random-tweet code here</a>, check it out, and if you’re so inclined, submit a pull request! And thanks for reading.</p>
+</div>
+<div class="paragraph">
+<p>Cheers,</p>
+</div>
+<div class="paragraph">
+<p>Mark</p>
+</div>
+</div>
+</div>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+    
+    <article class="read-next-card">
+        <header class="read-next-card-header">
+            <h3><span>More in</span> <a href="https://thehecklers.com/tags/alexa">alexa</a></h3>
+        </header>
+        <div class="read-next-card-content">
+            <ul>
+                
+                <li>
+                    <h4><a href="https://thehecklers.com/posts/how-to-create-an-alexa-skill-with-spring-boot-cloud-foundry/">How to Create an Alexa Skill with Spring Boot &amp; Cloud Foundry</a></h4>
+                    <div class="read-next-card-meta">
+                            <p><time datetime="2017-83-03">03 Mar 2017</time> 
+                                
+                            </p>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+    </article>
+<article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/building-a-portable-self-powering-cloud-connected-iot-demo/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Building a Portable, Self-powering, Cloud-Connected IoT demo"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/building-a-portable-self-powering-cloud-connected-iot-demo/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">Arduino</div>
+                    
+
+                    <h2 class="post-card-title">Building a Portable, Self-powering, Cloud-Connected IoT demo</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>Or “How to build a portable self-powered, self-licking ice cream cone.” 😀
+Several years ago, I started building what I referred to affectionately as a self-licking ice cream cone: a Renewable Energy (RE) system that powered the same IoT system that monitored it. I’ve given several talks about this system, both its hardware and its software stack, and there are so many useful (and scalable) lessons I’ve learned that I really enjoy sharing.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2016-129-09">11 September 2016</time>
+                            <span class="bull">&bull;</span> 6 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+
+            <article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/t4sd-tips-4-spring-devs-spring-boot-actuator-/actuator-endpoint/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="T4SD (Tips 4 Spring Devs): Spring Boot Actuator /actuator endpoint"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/t4sd-tips-4-spring-devs-spring-boot-actuator-/actuator-endpoint/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">Actuator</div>
+                    
+
+                    <h2 class="post-card-title">T4SD (Tips 4 Spring Devs): Spring Boot Actuator /actuator endpoint</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>Just a quick tip for the Spring fans out there…​
+If you’ve decided to try out Spring Boot Actuator – and if you haven’t you really should! – you may have run into one of two interesting hitches that are easily resolved:
+You are unable to access any of the various Actuator endpoints (/beans, /env, et al)
+You can access those endpoints and yet are unable to access /actuator, the primary (navigable) Actuator endpoint</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2017-86-06">5 June 2017</time>
+                            <span class="bull">&bull;</span> 2 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+        </div>
+    </div>
+</aside>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://thehecklers.com/">Hecklers in Development</a> &copy; 2017</section>
+                <nav class="site-footer-nav">
+                    <a href="https://thehecklers.com/">Latest Posts</a>
+                    <a href="markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Twitter</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Github</a>
+                    <a href="markheckler" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://jonathanjanssens.com" target="_blank" rel="noopener" style="opacity: 0.5;">Hugo Casper3</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+    <title>Netbeans Jsf Mysql Primary Key · Hecklers in Development</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" href="https://thehecklers.com/style.main.min.c34e6915a95f1027dad7b48e5d1ff6e2bbf58b4e72c69d7ec6ac8e7352e961dc.css" />
+
+</head>
+<body class=" post-template ">
+
+    <div class="site-wrapper">
+
+<header class="site-header"><div class="outer site-nav-main">
+    <div class="inner"><nav class="site-nav">
+    <div class="site-nav-left">
+        
+            <a class="site-nav-logo" href="https://thehecklers.com/">Hecklers in Development</a>
+        
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/about">About</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/contact">Contact</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/abstracts">Abstracts</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="https://thehecklers.com/tags/auto_increment">auto_increment</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">Netbeans Jsf Mysql Primary Key</h1>
+
+                
+
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Mark Heckler</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Mark Heckler</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2012-54-04">13 April 2012</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 3 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            
+            <figure class="post-full-image">
+                <img src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Netbeans Jsf Mysql Primary Key" />
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <div class="paragraph">
+<p>Cross-posted from <a href="https://blogs.oracle.com/javajungle/entry/netbeans_jsf_and_mysql_primary">The Java Jungle</a> by Mark Heckler</p>
+</div>
+<div class="paragraph">
+<p>I recently had the opportunity to spin up a small web application using JSF and MySQL. Having developed JSF apps with Oracle Database back-ends before and possessing some small familiarity with MySQL (sans JSF), I thought this would be a cakewalk. Things did go pretty smoothly…but there was one little “gotcha” that took more time than the few seconds it really warranted.</p>
+</div>
+<div class="sect1">
+<h2 id="_the_problem">The Problem</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every DBMS has its own way of automatically generating primary keys, and each has its pros and cons. For the Oracle Database, you use a sequence and point your Java classes to it using annotations that look something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">@GeneratedValue(strategy=GenerationType.SEQUENCE, generator=”POC_ID_SEQ”)
+@SequenceGenerator(name=”POC_ID_SEQ”, sequenceName=”POC_ID_SEQ”, allocationSize=1)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Between creating the actual sequence in the database and making sure you have your annotations right (watch those typos!), it seems a bit cumbersome. But it typically “just works”, without fuss.</p>
+</div>
+<div class="paragraph">
+<p>Enter MySQL. Designating an integer-based field as PRIMARY KEY and using the keyword AUTO_INCREMENT makes the same task seem much simpler. And it is, mostly. But while NetBeans cranks out a superb “first cut” for a basic JSF CRUD app, there are a couple of small things you’ll need to bring to the mix in order to be able to actually (C)reate records. The (RUD) performs fine out of the gate.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_solution">The Solution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Omitting all design considerations and activity (!), here is the basic sequence of events I followed to create, then resolve, the JSF/MySQL “Primary Key Perfect Storm”:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Fire up NetBeans.</p>
+</li>
+<li>
+<p>Create JSF project.</p>
+</li>
+<li>
+<p>Create Entity Classes from Database.</p>
+</li>
+<li>
+<p>Create JSF Pages from Entity Classes.</p>
+</li>
+<li>
+<p>Test run. Try to create record and hit error.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>It’s a simple fix, but one that was fun to find in its completeness. 🙂 Even though you’ve told it what to do for a primary key, a MySQL table requires a gentle nudge to actually <strong>generate</strong> that new key value. Two things are needed to make the magic happen.</p>
+</div>
+<div class="paragraph">
+<p>First, you need to ensure the following annotation is in place in your Java entity classes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>@GeneratedValue(strategy = GenerationType.IDENTITY)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>All well and good, but the real key is this: in your controller class(es), you’ll have a create() function that looks something like this, minus the comment line and the setId() call:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public String create() {
+    try {
+        // Assign 0 to ID for MySQL to properly auto_increment the primary key.
+        current.setId(0);
+        getFacade().create(current);
+        JsfUtil.addSuccessMessage(ResourceBundle.getBundle(“/Bundle”).getString(“CategoryCreated”));
+        return prepareCreate();
+    } catch (Exception e) {
+        JsfUtil.addErrorMessage(e, ResourceBundle.getBundle(“/Bundle”).getString(“PersistenceErrorOccured”));
+        return null;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Setting the current object’s primary key attribute to zero (0) prior to saving it tells MySQL to get the next available value and assign it to that record’s key field. Short and simple…but not inherently obvious if you’ve never used that particular combination of NetBeans/JSF/MySQL before. Hope this helps!</p>
+</div>
+<div class="paragraph">
+<p>All the best,</p>
+</div>
+<div class="paragraph">
+<p>Mark</p>
+</div>
+</div>
+</div>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+    
+    <article class="read-next-card">
+        <header class="read-next-card-header">
+            <h3><span>More in</span> <a href="https://thehecklers.com/tags/auto_increment">auto_increment</a></h3>
+        </header>
+        <div class="read-next-card-content">
+            <ul>
+                
+                <li>
+                    <h4><a href="https://thehecklers.com/posts/netbeans-jsf-mysql-primary-key/">Netbeans Jsf Mysql Primary Key</a></h4>
+                    <div class="read-next-card-meta">
+                            <p><time datetime="2012-54-04">04 Apr 2012</time> 
+                                
+                            </p>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+    </article>
+
+
+            <article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/secure-email-from-java/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Secure Email From Java"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/secure-email-from-java/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">bouncycastle</div>
+                    
+
+                    <h2 class="post-card-title">Secure Email From Java</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>Cross-posted from The Java Jungle by Mark Heckler
+I’ve been working recently with a client to do some rather useful things with notifications, and one of them involved sending a secure email from within a Java program. We encountered some interesting (translation: weird!) challenges, and in overcoming them, I worked out a reasonably straightforward path through the minefield. If you’ve been thinking about secure-email-enabling your Java app but aren’t sure where to start, hopefully this will serve as a fairly quick and mostly painless primer.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2013-71-01">14 January 2013</time>
+                            <span class="bull">&bull;</span> 5 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+        </div>
+    </div>
+</aside>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://thehecklers.com/">Hecklers in Development</a> &copy; 2012</section>
+                <nav class="site-footer-nav">
+                    <a href="https://thehecklers.com/">Latest Posts</a>
+                    <a href="markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Twitter</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Github</a>
+                    <a href="markheckler" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://jonathanjanssens.com" target="_blank" rel="noopener" style="opacity: 0.5;">Hugo Casper3</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

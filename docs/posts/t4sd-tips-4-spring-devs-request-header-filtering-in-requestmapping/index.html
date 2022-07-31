@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+    <title>T4SD (Tips 4 Spring Devs): Request header filtering in @RequestMapping · Hecklers in Development</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" href="https://thehecklers.com/style.main.min.c34e6915a95f1027dad7b48e5d1ff6e2bbf58b4e72c69d7ec6ac8e7352e961dc.css" />
+
+</head>
+<body class=" post-template ">
+
+    <div class="site-wrapper">
+
+<header class="site-header"><div class="outer site-nav-main">
+    <div class="inner"><nav class="site-nav">
+    <div class="site-nav-left">
+        
+            <a class="site-nav-logo" href="https://thehecklers.com/">Hecklers in Development</a>
+        
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/about">About</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/contact">Contact</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/abstracts">Abstracts</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="https://thehecklers.com/tags/content-type">content type</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">T4SD (Tips 4 Spring Devs): Request header filtering in @RequestMapping</h1>
+
+                
+
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Mark Heckler</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Mark Heckler</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2017-86-06">8 June 2017</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 1 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            
+            <figure class="post-full-image">
+                <img src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="T4SD (Tips 4 Spring Devs): Request header filtering in @RequestMapping" />
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <div class="paragraph">
+<p>Just a quick tip for the Spring fans out there…​</p>
+</div>
+<div class="paragraph">
+<p>I was leading a workshop yesterday and this question arose: Is it possible to filter requests by header content using Spring’s various request mapping (@RequestMapping, @GetMapping, @PostMapping, et al) annotations?
+ 
+Not only is it possible, it’s easy, and the implementation is concise &amp; clean! Let’s take a look. </p>
+</div>
+<div class="sect1">
+<h2 id="_the_code">The code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here is a simple example that filters based upon the content-type of the header:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/6351dca5e077c62de8a15eb94d06a997" class="bare">https://gist.github.com/mkheck/6351dca5e077c62de8a15eb94d06a997</a></p>
+</div>
+<div class="paragraph">
+<p>To test this, simply visit the <a href="http://start.spring.io/">Spring Initializr</a>, create a simple Spring Boot app with a single dependency (Web), download &amp; unzip it, and add the code above using your favorite IDE. Then build &amp; run it (of course)! 😉</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_output">The output</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using <a href="https://httpie.org/">httpie</a> (which is quickly becoming my favorite CLI HTTP client), we can verify our results:</p>
+</div>
+<div class="sect2">
+<h3 id="_request_content_type_of_textplain">Request content type of text/plain</h3>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/4be3d727ec6ea6449aef89e5a459e009" class="bare">https://gist.github.com/mkheck/4be3d727ec6ea6449aef89e5a459e009</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_request_content_type_of_applicationjson">Request content type of application/json</h3>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/383403a0b60f2f5b90d7dce445cdef03" class="bare">https://gist.github.com/mkheck/383403a0b60f2f5b90d7dce445cdef03</a></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>The above examples use httpie “shorthand”, which assumes localhost when the base URL is omitted.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That’s all for now, but stay tuned (or <a href="https://twitter.com/mkheck">follow me on Twitter</a>) for more quick (or more lengthy) Spring tips!</p>
+</div>
+<div class="paragraph">
+<p>Cheers,</p>
+</div>
+<div class="paragraph">
+<p>Mark </p>
+</div>
+<div class="paragraph">
+<p><a href="https://jira.spring.io/browse/SPR-5690"><strong>Click here for additional information</strong></a></p>
+</div>
+</div>
+</div>
+</div>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+    
+    <article class="read-next-card">
+        <header class="read-next-card-header">
+            <h3><span>More in</span> <a href="https://thehecklers.com/tags/content-type">content type</a></h3>
+        </header>
+        <div class="read-next-card-content">
+            <ul>
+                
+            </ul>
+        </div>
+    </article>
+<article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/t4sd-tips-4-spring-devs-spring-boot-actuator-/actuator-endpoint/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="T4SD (Tips 4 Spring Devs): Spring Boot Actuator /actuator endpoint"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/t4sd-tips-4-spring-devs-spring-boot-actuator-/actuator-endpoint/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">Actuator</div>
+                    
+
+                    <h2 class="post-card-title">T4SD (Tips 4 Spring Devs): Spring Boot Actuator /actuator endpoint</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>Just a quick tip for the Spring fans out there…​
+If you’ve decided to try out Spring Boot Actuator – and if you haven’t you really should! – you may have run into one of two interesting hitches that are easily resolved:
+You are unable to access any of the various Actuator endpoints (/beans, /env, et al)
+You can access those endpoints and yet are unable to access /actuator, the primary (navigable) Actuator endpoint</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2017-86-06">5 June 2017</time>
+                            <span class="bull">&bull;</span> 2 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+
+            <article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/t4sd-tips-4-spring-devs-how-to-get-spring-boot-rest-endpoints-to-speak-xml/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="T4SD (Tips 4 Spring Devs): How to get Spring Boot REST endpoints to speak XML"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/t4sd-tips-4-spring-devs-how-to-get-spring-boot-rest-endpoints-to-speak-xml/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">dataformat</div>
+                    
+
+                    <h2 class="post-card-title">T4SD (Tips 4 Spring Devs): How to get Spring Boot REST endpoints to speak XML</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>Many of us use JSON almost exclusively now, which is generally a good thing. But what happens when you need to “speak XML” with your Spring Boot REST endpoints?
+XML support in Spring Boot’s REST endpoints is not enabled by default, but adding it isn’t difficult at all. Simply add the following dependency to your POM (or similar entry to your Gradle build file, if that’s the way you roll) and rebuild:</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2017-86-06">20 June 2017</time>
+                            <span class="bull">&bull;</span> 1 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+        </div>
+    </div>
+</aside>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://thehecklers.com/">Hecklers in Development</a> &copy; 2017</section>
+                <nav class="site-footer-nav">
+                    <a href="https://thehecklers.com/">Latest Posts</a>
+                    <a href="markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Twitter</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Github</a>
+                    <a href="markheckler" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://jonathanjanssens.com" target="_blank" rel="noopener" style="opacity: 0.5;">Hugo Casper3</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

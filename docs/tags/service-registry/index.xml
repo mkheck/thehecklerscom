@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>service registry on </title>
+    <title>service registry on Hecklers in Development</title>
     <link>https://thehecklers.com/tags/service-registry/</link>
-    <description>Recent content in service registry on </description>
+    <description>Recent content in service registry on Hecklers in Development</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 20 Feb 2018 21:51:12 -0600</lastBuildDate>
-    
-	<atom:link href="https://thehecklers.com/tags/service-registry/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 20 Feb 2018 21:51:12 -0600</lastBuildDate><atom:link href="https://thehecklers.com/tags/service-registry/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Un curso intensivo: Como utilizar Spring Cloud Services en PAS</title>
-      <link>https://thehecklers.com/post/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/</link>
+      <link>https://thehecklers.com/posts/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/</link>
       <pubDate>Tue, 20 Feb 2018 21:51:12 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/</guid>
+      <guid>https://thehecklers.com/posts/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/</guid>
       <description>This article is available in English at Getting Started with Spring Cloud Services on Pivotal Application Service.
-   Cuando se trata de crear una arquitectura de microservicios robusta y resistente ubicada en la nube, los componentes de Spring Cloud/Netflix OSS son habilitadores conocidos y respetados. Ciertos modelos y mecanismos se han probado absolutamente esenciales para lograr alta velocidad (en desarollo) y alta disponibilidad (en producción), y Spring Cloud/Netflix OSS tiene unos de los &#34;</description>
+Cuando se trata de crear una arquitectura de microservicios robusta y resistente ubicada en la nube, los componentes de Spring Cloud/Netflix OSS son habilitadores conocidos y respetados. Ciertos modelos y mecanismos se han probado absolutamente esenciales para lograr alta velocidad (en desarollo) y alta disponibilidad (en producción), y Spring Cloud/Netflix OSS tiene unos de los &amp;#34;mejores entre los mejores&amp;#34;.</description>
     </item>
     
   </channel>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+    <title>Microservices: The View from 1000 Feet (or 305 Meters If You Prefer) · Hecklers in Development</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" href="https://thehecklers.com/style.main.min.c34e6915a95f1027dad7b48e5d1ff6e2bbf58b4e72c69d7ec6ac8e7352e961dc.css" />
+
+</head>
+<body class=" post-template ">
+
+    <div class="site-wrapper">
+
+<header class="site-header"><div class="outer site-nav-main">
+    <div class="inner"><nav class="site-nav">
+    <div class="site-nav-left">
+        
+            <a class="site-nav-logo" href="https://thehecklers.com/">Hecklers in Development</a>
+        
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/about">About</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/contact">Contact</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/abstracts">Abstracts</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="https://thehecklers.com/tags/architecture">architecture</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">Microservices: The View from 1000 Feet (or 305 Meters If You Prefer)</h1>
+
+                
+
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Mark Heckler</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Mark Heckler</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2015-51-01">12 January 2015</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 8 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            
+            <figure class="post-full-image">
+                <img src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Microservices: The View from 1000 Feet (or 305 Meters If You Prefer)" />
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <div class="sect1">
+<h2 id="_intro">Intro</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I started this post a couple months ago, and between a busy holiday season and constant revisions, I’m only now polishing and posting it. For those who knew it was in the pipeline, thank you for your patience. 🙂</p>
+</div>
+<div class="paragraph">
+<p>I have another article in the works that will delve into more technical aspects of the microservices discussion; hopefully I’ll get that posted by this time next year (!). In this one, though, I’d like to stay as much as possible at the conceptual level, dipping into the details only to reference them for consideration and future discussion. No guarantees, but that’s the plan. 🙂</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_discussion">Discussion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>First, a good-natured poke at our discipline in general…​</p>
+</div>
+<hr/>
+<div class="paragraph">
+<div class="title">The Holy Grail of Software Development</div>
+<p><span class="image"><img src="https://thehecklers.com/img/swissknife-300x221.png" alt="The Holy Grail of Software Development"/></span></p>
+</div>
+<hr/>
+<div class="paragraph">
+<p>Regardless of the new architecture, technique, methodology, framework, language/feature, etc., we (as developers) often fall prey to the temptation to make it a “one size fits all” solution. Regardless of the problem at hand, we break out our new toy, er, <strong>tool</strong> and apply it vigorously, without the benefit of objective consideration of suitability to the task at hand. To paraphrase two Abrahams (Kaplan and Maslow) the way I’ve always heard it:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>“To the man with a hammer, everything looks like a nail.”</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This doesn’t have anything to do with microservices directly…​only with the fawning attitude for the concept that seems to be prevalent at the moment. 🙂</p>
+</div>
+<div class="paragraph">
+<p>Along those same lines, I’d like to issue a couple of disclaimers here. I work for Oracle, so my experiences and worldview may differ from yours. That said, I like to think of myself as a fairly fact-based being; while I have been wrong many times and shall be again (many times), I do my best to analyze and come to conclusions based upon objective measures and reasoned assessments. Really, I do.</p>
+</div>
+<div class="paragraph">
+<p>Secondly, it is incredibly difficult to make statements about microservices or anything else within the dev sphere that are 100% accurate and/or conclusive. I’ve tried to avoid blanket generalizations, but frankly, it’s nearly impossible to discuss anything without making some sweeping statements that one assumes/hopes will be understood as they were intended. If something below puzzles you or doesn’t sound right, please drop me a line and ask.</p>
+</div>
+<div class="paragraph">
+<p>And finally, the views expressed in this post are mine and don’t represent those of Oracle. Or maybe anyone else. They’re just mine. 🙂</p>
+</div>
+<div class="paragraph">
+<p>Now, back to microservices!</p>
+</div>
+<div class="paragraph">
+<p>As with any tool applied indiscriminately to all problems, fit is often imperfect. Let’s take a closer look at what microservices are, what they’re up against, and their particular strengths and weaknesses.</p>
+</div>
+<div class="sect2">
+<h3 id="_definitions">Definitions</h3>
+<div class="sect3">
+<h4 id="_microservices">Microservices</h4>
+<div class="quoteblock">
+<blockquote>
+&#34;…​the microservice architectural style…is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies.&#34;
+</blockquote>
+<div class="attribution">
+— Martin Fowler
+</div>
+</div>
+<div class="paragraph">
+<p>Let’s dissect this a bit.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+&#34;…​the microservice architectural style…is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API.&#34;
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is a good start. Without going overboard trying to explain something that is fairly straightforward, we’re talking about breaking down a large, complex application into small(ish – we’ll get to that a bit later) services that are more granular. Doing so should enable us to focus upon a more specific outcome for each portion of the overall functionality, which should result in better component manageability and quality.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+&#34;These services are built around business capabilities and independently deployable by fully automated deployment machinery.&#34;
+</blockquote>
+</div>
+<div class="paragraph">
+<p>With all respect to Mr. Fowler, this bit of text is not specific to microservices. Capability-driven development approaches are used in many different contexts, and automated deployment is even less useful as a differentiator. For this discussion, we’ll ignore this bit of text entirely.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+&#34;There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies.&#34;
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Unlike the previous statement, this is a very useful description of microservices that, while not entirely unique to them, lays out two key tenets:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Microservices are decentralized. They could be hosted anywhere.</p>
+</li>
+<li>
+<p>Microservices are heterogeneous. They can be written in the developers’ language of choice and deployed on their platform of choice, as long as the “connections” are properly made.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_alternatives">The “Alternative(s)”</h4>
+<div class="paragraph">
+<p>Everything else, of course. 🙂</p>
+</div>
+<div class="paragraph">
+<p>The microservices concept primarily addresses the server side of the equation; the client component is a player only insofar as it is involved in the delivery of the application’s functionality. In the strictest sense, microservices focus upon the delivery of capabilities via (micro)services provided by server(s).</p>
+</div>
+<div class="paragraph">
+<p>Keeping that same specific focus, the alternative is really the “monolithic” application, typically delivered as a single unit containing all functionality for the entire set of targeted use cases. Some means of delivering so-called monolithic applications include (but are not limited to) Java EE, .NET, or any other server-side environment that provides functionality to the user via an application server or an affiliated cluster of app servers.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pros_of_a_microservices_architecture">Pros of a Microservices Architecture</h3>
+<div class="sect3">
+<h4 id="_manageability">Manageability</h4>
+<div class="paragraph">
+<p>Firstly, anyone who has struggled under the weight of a large server-based application can immediately see the appeal of microservices. Monolithic apps can get “too big”, becoming unwieldy to develop and maintain. With so much complexity in a single code base, it becomes difficult to test, debug, etc. without the law of unintended consequences wreaking havoc in novel ways.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_extensibility">Extensibility</h4>
+<div class="paragraph">
+<p>With a microservices architecture, functionality can be “farmed out” and provided by others, often developers/teams who don’t even work for your organization. While this isn’t unique to microservices, the architecture certainly facilitates it; creating and documenting the interfaces within the core app to support various connection points makes developing and integrating external functionality far easier for those outside the core application’s dev team than any monolithic app could be.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_locationscalability">Location/Scalability</h4>
+<div class="paragraph">
+<p>This also allows hosted functionality to be geographically dispersed more readily than typical alternatives, deploying microservices wherever it makes sense to do so (using any criteria). If a development partner on one side of the world decided to provide a microservice that integrates with a core application hosted on the other, this could be done easily by complying with published interface standards and requirements. Adding an external functionality provider is far less disruptive to the core app if it was designed with that end in mind, and that is the core principle of a microservice architecture (see above).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_granularity">Granularity</h4>
+<div class="paragraph">
+<p>Creating an application with microservices in mind also can result in a leaner core application. It’s an imperfect analogy, but composition vs. inheritance applies here. If your architecture embraces the creation of a core set of functionality with numerous extension points, your core app potentially can be more focused and functionally cohesive…as can each microservice.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cons_of_a_microservices_architecture">Cons of a Microservices Architecture</h3>
+<div class="paragraph">
+<p>Any architectural decision has its downside, and a microservices architecture creates new challenges while it’s solving old ones. Here are a few potential hurdles that microservices face.</p>
+</div>
+<div class="sect3">
+<h4 id="_control">Control</h4>
+<div class="paragraph">
+<p>If you thought debugging and testing a monolithic application was a challenge – with all code directly accessible and modifiable (to varying extents) from the comfort of your IDE – you’re probably cringing at the thought of your pending inability to sink your hands into the entire codebase to fix bugs that surface or (more) easily test and diagnose aberrant behavior that is reported in <strong>your app</strong>. End-users will not know (and won’t care) that something breaks due to a partner’s error in implementing an interface, failure to completely debug an edge case, or even an innovative misuse of the app by said user. <strong>Your app is broken, =fail.</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_consistency">Consistency</h4>
+<div class="paragraph">
+<p>If portions of your application’s functionality are provided by other groups or organizations, maintaining consistency becomes more difficult. User interfaces, error handling, text phrasing…these are just a few examples of areas where small differences can make a huge impact on the overall user experience.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_overhead">Overhead</h4>
+<div class="paragraph">
+<p>Say what you will about about monolithic apps, but infrastructure and interfaces are costs that are borne once for the entire (monolithic) application…to say nothing of transactions. When portions of your app’s functionality are provided via microservices hosted on various external platforms, connection security and authentication/authorization must be factored into the most insignificant internal interactions. It’s only a bit of an exaggeration to say that with a microservices architecture, there are no local interfaces. And for those who think “microservices” means “tiny services”, there is no limit to the size/scope of a so-called microservice. Factoring in the overhead, they can involve more code than you might expect, somewhat negating some of the advantages of “leanness” you may have been anticipating.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_fragility">Fragility</h4>
+<div class="paragraph">
+<p>With multiple infrastructures and databases potentially hosted on various platforms in far-flung places, a microservices-based application certainly offers more breakpoints. At best, this introduces latency concerns; at worst, fragility. If any key bits of functionality are delivered via an (external) microservice, the unavailability of that microservice breaks your app. This is less of a concern if the group supporting the failed service is just down the hallway; but if the other organization is in a different building, city, or country, small breakages can quickly result in painful outages and even lost customers. See the note about <strong>Control</strong> above.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_in_conclusion_for_now">In Conclusion (For Now)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A microservices architecture offers another viable approach, another option to deliver more functionality to end-users…but it is not a silver bullet.</p>
+</div>
+<div class="paragraph">
+<p>A microservices architecture can provide greater flexibility and code quality by capability at the possible expense of (overall) application availability and control. It’s a great tool, used wisely and in the right circumstances…but as with any great tool, it doesn’t remove the responsibility to think prior to (and while) employing it.</p>
+</div>
+<div class="paragraph">
+<p>Now, go develop something. 🙂</p>
+</div>
+<div class="paragraph">
+<p>Cheers,<br/>
+Mark</p>
+</div>
+</div>
+</div>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+    
+    <article class="read-next-card">
+        <header class="read-next-card-header">
+            <h3><span>More in</span> <a href="https://thehecklers.com/tags/architecture">architecture</a></h3>
+        </header>
+        <div class="read-next-card-content">
+            <ul>
+                
+                <li>
+                    <h4><a href="https://thehecklers.com/posts/microservices-the-view-from-1000-feet-or-305-meters-if-you-prefer/">Microservices: The View from 1000 Feet (or 305 Meters If You Prefer)</a></h4>
+                    <div class="read-next-card-meta">
+                            <p><time datetime="2015-51-01">01 Jan 2015</time> 
+                                
+                            </p>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+    </article>
+<article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/secure-email-from-java/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Secure Email From Java"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/secure-email-from-java/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">bouncycastle</div>
+                    
+
+                    <h2 class="post-card-title">Secure Email From Java</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>Cross-posted from The Java Jungle by Mark Heckler
+I’ve been working recently with a client to do some rather useful things with notifications, and one of them involved sending a secure email from within a Java program. We encountered some interesting (translation: weird!) challenges, and in overcoming them, I worked out a reasonably straightforward path through the minefield. If you’ve been thinking about secure-email-enabling your Java app but aren’t sure where to start, hopefully this will serve as a fairly quick and mostly painless primer.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2013-71-01">14 January 2013</time>
+                            <span class="bull">&bull;</span> 5 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+
+            <article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/the-secret-sauce-how-to-connect-your-raspberry-pi-to-a-hidden-ssid/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="The Secret Sauce: How to Connect Your Raspberry Pi to a Hidden SSID"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/the-secret-sauce-how-to-connect-your-raspberry-pi-to-a-hidden-ssid/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">hidden</div>
+                    
+
+                    <h2 class="post-card-title">The Secret Sauce: How to Connect Your Raspberry Pi to a Hidden SSID</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>When I got my first Raspberry Pi Model B (not long after they first became available – remember when they only had 256M?!?), I wanted to configure it to use a wifi adapter. Even with approved, compliant adapters, this wasn’t for the faint of heart; many steps, scripts, and secret incantations were required to get everything to connect, even in the best of circumstances.
+Fast-forward to today, when wifi adapter drivers are included in the base Raspbian build.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2015-52-02">27 February 2015</time>
+                            <span class="bull">&bull;</span> 2 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+        </div>
+    </div>
+</aside>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://thehecklers.com/">Hecklers in Development</a> &copy; 2015</section>
+                <nav class="site-footer-nav">
+                    <a href="https://thehecklers.com/">Latest Posts</a>
+                    <a href="markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Twitter</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Github</a>
+                    <a href="markheckler" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://jonathanjanssens.com" target="_blank" rel="noopener" style="opacity: 0.5;">Hugo Casper3</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

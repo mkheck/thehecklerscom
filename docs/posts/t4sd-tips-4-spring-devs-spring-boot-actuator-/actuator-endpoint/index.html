@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+    <title>T4SD (Tips 4 Spring Devs): Spring Boot Actuator /actuator endpoint · Hecklers in Development</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" href="https://thehecklers.com/style.main.min.c34e6915a95f1027dad7b48e5d1ff6e2bbf58b4e72c69d7ec6ac8e7352e961dc.css" />
+
+</head>
+<body class=" post-template ">
+
+    <div class="site-wrapper">
+
+<header class="site-header"><div class="outer site-nav-main">
+    <div class="inner"><nav class="site-nav">
+    <div class="site-nav-left">
+        
+            <a class="site-nav-logo" href="https://thehecklers.com/">Hecklers in Development</a>
+        
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/about">About</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/contact">Contact</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/abstracts">Abstracts</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="https://thehecklers.com/tags/actuator">Actuator</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">T4SD (Tips 4 Spring Devs): Spring Boot Actuator /actuator endpoint</h1>
+
+                
+
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Mark Heckler</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Mark Heckler</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2017-86-06">5 June 2017</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 2 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            
+            <figure class="post-full-image">
+                <img src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="T4SD (Tips 4 Spring Devs): Spring Boot Actuator /actuator endpoint" />
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <div class="paragraph">
+<p>Just a quick tip for the Spring fans out there…​</p>
+</div>
+<div class="paragraph">
+<p>If you’ve decided to try out Spring Boot Actuator – and if you haven’t you really should! – you may have run into one of two interesting hitches that are easily resolved:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>You are unable to access any of the various Actuator endpoints (/beans, /env, et al)</p>
+</li>
+<li>
+<p>You can access those endpoints and yet are unable to access /actuator, the primary (navigable) Actuator endpoint</p>
+</li>
+</ol>
+</div>
+<div class="sect1">
+<h2 id="_unable_to_access_any_actuator_endpoints">Unable to access any Actuator endpoints</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the case of point #1 above, you may see this in your logs:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>s.b.a.e.m.MvcEndpointSecurityInterceptor : <strong>Full authentication is required to access actuator endpoints. Consider adding Spring Security or set ‘management.security.enabled’ to false.</strong></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>For testing, it’s adequate and acceptable to simply add the suggested entry to your app’s <strong>application.properties</strong> file:</p>
+</div>
+<div class="paragraph">
+<p><code>management.security.enabled=false</code></p>
+</div>
+<div class="paragraph">
+<p>This is far less likely to be a suitable solution for production apps, though. 🙂 Enabling Spring Security properly to secure access to your application is a far more production-ready option.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_unable_to_access_actuator">Unable to access /actuator</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you can load successfully the various Spring Boot Actuator endpoints but get a 404 error on /actuator, the primary (navigable) Actuator endpoint, you are hitting a different (yet also easily resolved) snag. The hint is in how I phrased the difficulty: <strong>the primary (navigable) Actuator endpoint</strong>.</p>
+</div>
+<div class="paragraph">
+<p>In order to access /actuator, which uses hypermedia to provide a navigable structure of links to Actuator endpoints, you must include HATEOAS (spring-boot-starter-hateoas) on your classpath. Adding this to your POM will fix that nicely:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-hateoas&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That’s all for now, but stay tuned (or <a href="https://twitter.com/mkheck">follow me on Twitter</a>) for more quick or lengthy Spring tips!</p>
+</div>
+<div class="paragraph">
+<p>Cheers,</p>
+</div>
+<div class="paragraph">
+<p>Mark</p>
+</div>
+<div class="paragraph">
+<p><a href="http://docs.spring.io/spring-boot/docs/1.5.3.RELEASE/reference/htmlsingle/#production-ready"><strong>Click here for more information about Spring Boot Actuator.</strong></a></p>
+</div>
+</div>
+</div>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+    
+    <article class="read-next-card">
+        <header class="read-next-card-header">
+            <h3><span>More in</span> <a href="https://thehecklers.com/tags/actuator">Actuator</a></h3>
+        </header>
+        <div class="read-next-card-content">
+            <ul>
+                
+            </ul>
+        </div>
+    </article>
+<article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/how-to-create-an-alexa-skill-with-spring-boot-cloud-foundry/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="How to Create an Alexa Skill with Spring Boot &amp; Cloud Foundry"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/how-to-create-an-alexa-skill-with-spring-boot-cloud-foundry/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">alexa</div>
+                    
+
+                    <h2 class="post-card-title">How to Create an Alexa Skill with Spring Boot &amp; Cloud Foundry</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>I’ve been working with Amazon’s Alexa &amp; the Echo family of devices for the past several months and have created a couple of pretty useful and/or interesting skills. The first one I liked well enough to publish was QOTD, a Quote of the Day app that retrieves and reads a random quote per request. The second was Master Control Program, which enabled voice control of my home renewable energy system’s various inputs and controls.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2017-83-03">6 March 2017</time>
+                            <span class="bull">&bull;</span> 6 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+
+            <article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/t4sd-tips-4-spring-devs-request-header-filtering-in-requestmapping/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="T4SD (Tips 4 Spring Devs): Request header filtering in @RequestMapping"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/t4sd-tips-4-spring-devs-request-header-filtering-in-requestmapping/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">content type</div>
+                    
+
+                    <h2 class="post-card-title">T4SD (Tips 4 Spring Devs): Request header filtering in @RequestMapping</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>Just a quick tip for the Spring fans out there…​
+I was leading a workshop yesterday and this question arose: Is it possible to filter requests by header content using Spring’s various request mapping (@RequestMapping, @GetMapping, @PostMapping, et al) annotations? Not only is it possible, it’s easy, and the implementation is concise &amp; clean! Let’s take a look. The code Here is a simple example that filters based upon the content-type of the header:</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2017-86-06">8 June 2017</time>
+                            <span class="bull">&bull;</span> 1 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+        </div>
+    </div>
+</aside>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://thehecklers.com/">Hecklers in Development</a> &copy; 2017</section>
+                <nav class="site-footer-nav">
+                    <a href="https://thehecklers.com/">Latest Posts</a>
+                    <a href="markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Twitter</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Github</a>
+                    <a href="markheckler" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://jonathanjanssens.com" target="_blank" rel="noopener" style="opacity: 0.5;">Hugo Casper3</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

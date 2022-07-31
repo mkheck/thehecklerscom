@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PCF on </title>
+    <title>PCF on Hecklers in Development</title>
     <link>https://thehecklers.com/tags/pcf/</link>
-    <description>Recent content in PCF on </description>
+    <description>Recent content in PCF on Hecklers in Development</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 02 Jul 2017 19:10:50 -0600</lastBuildDate>
-    
-	<atom:link href="https://thehecklers.com/tags/pcf/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 02 Jul 2017 19:10:50 -0600</lastBuildDate><atom:link href="https://thehecklers.com/tags/pcf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Spring Boot Actuator integrations with Pivotal Cloud Foundry 1.11</title>
-      <link>https://thehecklers.com/post/using-spring-boot-actuator-integrations-with-pivotal-cloud-foundry-1.11/</link>
+      <link>https://thehecklers.com/posts/using-spring-boot-actuator-integrations-with-pivotal-cloud-foundry-1.11/</link>
       <pubDate>Sun, 02 Jul 2017 19:10:50 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/using-spring-boot-actuator-integrations-with-pivotal-cloud-foundry-1.11/</guid>
-      <description>I recently wrote a tutorial demonstrating how to leverage the integrations between Spring Boot Actuator and Pivotal Cloud Foundry 1.11, posted here in the Pivotal content library: &#34;TUTORIAL: Using Spring Boot Actuator Integrations With Pivotal Cloud Foundry 1.11&#34;).
- Here is a quick summary of the article&amp;#8217;s content:
-  Adding Actuator to your Spring Boot application deployed on Pivotal Cloud Foundry gets you the following production-ready features:
-   Health Check column &amp;amp; expanded information in Instances section</description>
+      <guid>https://thehecklers.com/posts/using-spring-boot-actuator-integrations-with-pivotal-cloud-foundry-1.11/</guid>
+      <description>I recently wrote a tutorial demonstrating how to leverage the integrations between Spring Boot Actuator and Pivotal Cloud Foundry 1.11, posted here in the Pivotal content library: &amp;#34;TUTORIAL: Using Spring Boot Actuator Integrations With Pivotal Cloud Foundry 1.11&amp;#34;).
+Here is a quick summary of the article’s content:
+Adding Actuator to your Spring Boot application deployed on Pivotal Cloud Foundry gets you the following production-ready features:
+Health Check column &amp;amp; expanded information in Instances section</description>
     </item>
     
   </channel>

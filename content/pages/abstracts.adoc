@@ -1,0 +1,12 @@
+---
+title: "Abstracts"
+date: 2022-07-28T13:37:13-05:00
+draft: false
+tags: []
+---
+
+To see current abstracts for sessions, deep dives, & workshops I can deliver upon request, please visit my link:https://github.com/mkheck/current-abstracts[Github repository of current abstracts].
+
+If you have any questions or would like to schedule a talk, please link:mailto:mark@thehecklers.com[contact me via email]. Earlier is better, as the calendar fills up rather more quickly than I would like. :)
+
+I look forward to hearing from you!

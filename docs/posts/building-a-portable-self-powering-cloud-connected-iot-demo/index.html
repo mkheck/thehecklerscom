@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+    <title>Building a Portable, Self-powering, Cloud-Connected IoT demo · Hecklers in Development</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" href="https://thehecklers.com/style.main.min.c34e6915a95f1027dad7b48e5d1ff6e2bbf58b4e72c69d7ec6ac8e7352e961dc.css" />
+
+</head>
+<body class=" post-template ">
+
+    <div class="site-wrapper">
+
+<header class="site-header"><div class="outer site-nav-main">
+    <div class="inner"><nav class="site-nav">
+    <div class="site-nav-left">
+        
+            <a class="site-nav-logo" href="https://thehecklers.com/">Hecklers in Development</a>
+        
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/about">About</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/contact">Contact</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/abstracts">Abstracts</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="https://thehecklers.com/tags/arduino">Arduino</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">Building a Portable, Self-powering, Cloud-Connected IoT demo</h1>
+
+                
+
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Mark Heckler</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Mark Heckler</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2016-129-09">11 September 2016</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 6 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            
+            <figure class="post-full-image">
+                <img src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Building a Portable, Self-powering, Cloud-Connected IoT demo" />
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <div class="paragraph">
+<p>Or <strong>“How to build a <em>portable</em> self-powered, self-licking ice cream cone.”</strong>  😀</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/PortableIoTCloudDemo.jpg" alt="Portable IoT Demo"/></span></p>
+</div>
+<div class="paragraph">
+<p>Several years ago, I started building what I referred to affectionately as a self-licking ice cream cone: a Renewable Energy (RE) system that powered the same IoT system that monitored it. I’ve given several talks about this system, both its hardware and its software stack, and there are so many useful (and scalable) lessons I’ve learned that I really enjoy sharing. Still learning those lessons too, btw.</p>
+</div>
+<div class="paragraph">
+<p>Recently, <a href="https://twitter.com/steveonjava">Stephen Chin</a> asked me if I could put together a portable RE IoT system to demo in the MakerZone at <a href="https://twitter.com/JavaOneConf">JavaOne</a> this year. If a picture is worth a thousand words, a fully-built and on-premises demo must be worth at least a million, right? The idea intrigued me. Could I create a 100% fully-capable representation of a (my) real working system that would be small enough to transport to conferences and meaningful for attendees to see? Yes…yes, I thought I could.  🙂</p>
+</div>
+<div class="paragraph">
+<p>It has been a lot of <sub>~work</sub>~ fun!</p>
+</div>
+<div class="paragraph">
+<p>There is much to tell, but we’ll stick to the high points for this post. More to follow.</p>
+</div>
+<div class="sect1">
+<h2 id="_hardware_list_and_related_observations">Hardware List and Related Observations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For the portable configuration, here is the hardware I used:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>One (1) 50W, 12V photovoltaic (PV) panel, bought via ebay</p>
+</li>
+<li>
+<p>One (1) <a href="http://summerhillwind.com/products.html">Cyber 250 wind turbine</a></p>
+</li>
+<li>
+<p>One (1) 18Ah 12V deep cycle battery for energy storage and IoT system power</p>
+</li>
+<li>
+<p>One (1) sheet of Lexan cut to size and edged, courtesy of Regal Plastics in St. Louis</p>
+</li>
+<li>
+<p>One (1) Raspberry Pi, case, SD card, &amp; wifi plug adapter – this serves as the IoT gateway device</p>
+</li>
+<li>
+<p>One (1) 5V DC voltage regulator, allowing me to step down the 12V battery output to the 5V required by the Pi</p>
+</li>
+<li>
+<p>One (1) Arduino Uno R3, solderless breadboard, combined mounting board – this represents an IoT endpoint</p>
+</li>
+<li>
+<p>One (1) Adafruit INA219 high-side DC current sensor breakout</p>
+</li>
+<li>
+<p>One (1) Virtuabotix DHT11 temperature &amp; humidity sensor</p>
+</li>
+<li>
+<p>One (1) 4 channel DC 5V relay to control physical devices</p>
+</li>
+<li>
+<p>One (1) LED case cooling fan</p>
+</li>
+<li>
+<p>One (1) interior/dome light to represent building interior lighting</p>
+</li>
+<li>
+<p>Two (2) running lights to serve as loads for two RE inputs/charge controllers</p>
+</li>
+<li>
+<p>Two (2) <a href="https://amzn.com/B00L37KZI6)">solar charge controllers</a><sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</li>
+<li>
+<p>One (1) 12 position terminal strip/wiring block</p>
+</li>
+<li>
+<p>Numerous (?) solder joints, wires, and cables </p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This configuration closely follows my permanent installation at my house, albeit at a much smaller scale. For transportability, I’m using only a single 18Ah 12V deep cycle battery instead of several larger-capacity 12V deep cycle batteries wired in parallel to form an energy storage array. And input sensors have been reduced from a full weather station providing temperature, humidity, rainfall, wind speed &amp; direction, ambient lighting, and atmospheric pressure readings to (for the demo system) temperature and humidity. Power readings are comparable for both systems, although I’m using a separate INA219 sensor on the demo system vs. integrated power sensors in the permanent system’s weather circuitry. And my portable system has no actuators to open windows in my power-generation building like my permanent system does. Since the demo system is fully visible to viewers, there was no need to configure a camera for visual observation/checks as I did at home. In actuality, there are few substantive differences between my 24/7/365 production system and this portable demo. 🙂</p>
+</div>
+<div class="paragraph">
+<p>One nice feature of this portable rig: as configured, it produces far more energy than it consumes, even with a fan providing the “wind” and venue lighting providing the “sun”. Power won’t be a problem.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_softwareand_related_observations">Software and Related Observations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The software stack for the demo system is nearly identical to that of the production system, with minor changes being made to accommodate the minor differences in attached sensors and physical devices.</p>
+</div>
+<div class="paragraph">
+<p>I developed software for the Arduino microcontroller to run in <strong>Autonomous Mode</strong> using sensible defaults, turning on heat when ambient temperature inside the power-generation building is too low, turning on a cooling fan when it’s too hot, and opening windows on opposite sides of the building when temps climb and no rain is present (no windows in the demo config, of course). The Arduino represents an IoT endpoint that regularly (1x/second) polls attached sensors, assembles their readings, and sends them “upstream” to the IoT gateway. It also processes any inputs received from the gateway and acts accordingly; if it receives a command to switch to <strong>Manual Override</strong>, the software then accepts and processes any subsequent (validated) commands from the gateway until directed to resume with <strong>Autonomous Mode</strong>.</p>
+</div>
+<div class="paragraph">
+<p>For the IoT gateway, I used Linux and Java SE Embedded to create a secure and standards-based stack. Raspbian Linux allows me to use utilities like ssh and vnc and to set up startup scripts for the demo config…and since it ships with Java SE Embedded, I have easy access to developer tool support and libraries for everything from RESTful web services to Websocket, which I use for system/cloud communication. I used the JSSC (Java Simple Serial Connector) library to create a wired connection from gateway to endpoint, Pi to Arduino, establishing a reliable comm link within the remote IoT system.</p>
+</div>
+<div class="paragraph">
+<p>IoT systems are great! But without a way to communicate with, control, and harvest meaningful data from those systems, their usefulness is severely constrained. To unleash the full value of an IoT system, you need the cloud. I used Java SE, Spring Boot, and Spring Cloud OSS to do the heavy lifting with an HTML5/JS user interface, all running on <a href="https://pivotal.io/platform">Pivotal Cloud Foundry</a>. I’m still tweaking and expanding it (in my copious spare time 😉), but it’s effectively feature-complete…​and with only minor differences (to accommodate the sensor/device differences) between the permanent and demo systems.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_andaction">And…​action!</h2>
+<div class="sectionbody">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ia9Rh8vQczU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_more_tocome">More to Come</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Come see me at JavaOne! This will be up and running in the MakerZone all week, so stop by to see it and chat with the crew there. If you have any questions, comments, or feedback of any kind, please <a href="https://twitter.com/mkheck">ping me on Twitter at @mkheck</a> or leave a comment below. Hope to see you there!</p>
+</div>
+<div class="paragraph">
+<p>Keep coding,<br/>
+Mark</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. I was able to use solar charge controllers for both solar/PV and wind inputs because the wind turbine I selected produces 12V DC power (vs. the AC power output of many turbines) and has a blocking diode to prevent overspeeding, and thus turbine damage. These charge controllers also have load connectors, to which I attached lamps to maintain loads on the inputs, further reducing potential for overspeeding.
+</div>
+</div>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+    
+    <article class="read-next-card">
+        <header class="read-next-card-header">
+            <h3><span>More in</span> <a href="https://thehecklers.com/tags/arduino">Arduino</a></h3>
+        </header>
+        <div class="read-next-card-content">
+            <ul>
+                
+            </ul>
+        </div>
+    </article>
+<article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/t4sd-tips-4-spring-devs-exposing-query-methods-in-spring-data-rest/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="T4SD (Tips 4 Spring Devs): Exposing Query Methods in Spring Data REST"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/t4sd-tips-4-spring-devs-exposing-query-methods-in-spring-data-rest/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">query method</div>
+                    
+
+                    <h2 class="post-card-title">T4SD (Tips 4 Spring Devs): Exposing Query Methods in Spring Data REST</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>Spring Data REST takes an opinionated approach to exposing Spring Data repositories via REST endpoints, covering the 80-90% use case with a minimum of code and fuss. But did you know that it provides a no-lifting-required mechanism for exposing query methods you define on those repositories as well?
+Let’s say you create a method like this:
+Referencing that bit of functionality directly is simple, just append /search/&lt;methodName&gt; to the collection endpoint:</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2016-37-07">26 July 2016</time>
+                            <span class="bull">&bull;</span> 1 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+
+            <article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/how-to-create-an-alexa-skill-with-spring-boot-cloud-foundry/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="How to Create an Alexa Skill with Spring Boot &amp; Cloud Foundry"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/how-to-create-an-alexa-skill-with-spring-boot-cloud-foundry/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">alexa</div>
+                    
+
+                    <h2 class="post-card-title">How to Create an Alexa Skill with Spring Boot &amp; Cloud Foundry</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>I’ve been working with Amazon’s Alexa &amp; the Echo family of devices for the past several months and have created a couple of pretty useful and/or interesting skills. The first one I liked well enough to publish was QOTD, a Quote of the Day app that retrieves and reads a random quote per request. The second was Master Control Program, which enabled voice control of my home renewable energy system’s various inputs and controls.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2017-83-03">6 March 2017</time>
+                            <span class="bull">&bull;</span> 6 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+        </div>
+    </div>
+</aside>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://thehecklers.com/">Hecklers in Development</a> &copy; 2016</section>
+                <nav class="site-footer-nav">
+                    <a href="https://thehecklers.com/">Latest Posts</a>
+                    <a href="markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Twitter</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Github</a>
+                    <a href="markheckler" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://jonathanjanssens.com" target="_blank" rel="noopener" style="opacity: 0.5;">Hugo Casper3</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

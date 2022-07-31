@@ -1,35 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Raspberry Pi on </title>
+    <title>Raspberry Pi on Hecklers in Development</title>
     <link>https://thehecklers.com/tags/raspberry-pi/</link>
-    <description>Recent content in Raspberry Pi on </description>
+    <description>Recent content in Raspberry Pi on Hecklers in Development</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 11 Sep 2016 00:00:21 -0600</lastBuildDate>
-    
-	<atom:link href="https://thehecklers.com/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 11 Sep 2016 00:00:21 -0600</lastBuildDate><atom:link href="https://thehecklers.com/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building a Portable, Self-powering, Cloud-Connected IoT demo</title>
-      <link>https://thehecklers.com/post/building-a-portable-self-powering-cloud-connected-iot-demo/</link>
+      <link>https://thehecklers.com/posts/building-a-portable-self-powering-cloud-connected-iot-demo/</link>
       <pubDate>Sun, 11 Sep 2016 00:00:21 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/building-a-portable-self-powering-cloud-connected-iot-demo/</guid>
+      <guid>https://thehecklers.com/posts/building-a-portable-self-powering-cloud-connected-iot-demo/</guid>
       <description>Or “How to build a portable self-powered, self-licking ice cream cone.” 😀
- 
- Several years ago, I started building what I referred to affectionately as a self-licking ice cream cone: a Renewable Energy (RE) system that powered the same IoT system that monitored it. I’ve given several talks about this system, both its hardware and its software stack, and there are so many useful (and scalable) lessons I’ve learned that I really enjoy sharing.</description>
+Several years ago, I started building what I referred to affectionately as a self-licking ice cream cone: a Renewable Energy (RE) system that powered the same IoT system that monitored it. I’ve given several talks about this system, both its hardware and its software stack, and there are so many useful (and scalable) lessons I’ve learned that I really enjoy sharing.</description>
     </item>
     
     <item>
       <title>The Secret Sauce: How to Connect Your Raspberry Pi to a Hidden SSID</title>
-      <link>https://thehecklers.com/post/the-secret-sauce-how-to-connect-your-raspberry-pi-to-a-hidden-ssid/</link>
+      <link>https://thehecklers.com/posts/the-secret-sauce-how-to-connect-your-raspberry-pi-to-a-hidden-ssid/</link>
       <pubDate>Fri, 27 Feb 2015 17:29:35 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/the-secret-sauce-how-to-connect-your-raspberry-pi-to-a-hidden-ssid/</guid>
+      <guid>https://thehecklers.com/posts/the-secret-sauce-how-to-connect-your-raspberry-pi-to-a-hidden-ssid/</guid>
       <description>When I got my first Raspberry Pi Model B (not long after they first became available – remember when they only had 256M?!?), I wanted to configure it to use a wifi adapter. Even with approved, compliant adapters, this wasn’t for the faint of heart; many steps, scripts, and secret incantations were required to get everything to connect, even in the best of circumstances.
- Fast-forward to today, when wifi adapter drivers are included in the base Raspbian build.</description>
+Fast-forward to today, when wifi adapter drivers are included in the base Raspbian build.</description>
     </item>
     
   </channel>

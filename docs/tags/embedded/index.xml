@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Embedded on </title>
+    <title>Embedded on Hecklers in Development</title>
     <link>https://thehecklers.com/tags/embedded/</link>
-    <description>Recent content in Embedded on </description>
+    <description>Recent content in Embedded on Hecklers in Development</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 12 Feb 2016 16:04:37 -0600</lastBuildDate>
-    
-	<atom:link href="https://thehecklers.com/tags/embedded/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 12 Feb 2016 16:04:37 -0600</lastBuildDate><atom:link href="https://thehecklers.com/tags/embedded/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nighthacking Interview: Jfokus</title>
-      <link>https://thehecklers.com/post/nighthacking-interview-jfokus/</link>
+      <link>https://thehecklers.com/posts/nighthacking-interview-jfokus/</link>
       <pubDate>Fri, 12 Feb 2016 16:04:37 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/nighthacking-interview-jfokus/</guid>
+      <guid>https://thehecklers.com/posts/nighthacking-interview-jfokus/</guid>
       <description>At Jfokus this week, I was honored to be interviewed by Stephen Chin of Nighthacking.com. We discussed the Renewable Energy system I built and developed using industrial Internet of Things (IoT) concepts and Domain Driven Design principles. The core of the system is Java SE Embedded on the IoT Gateway device, Spring Boot + Cloud Foundry (CF) for the backend services, and an HTML5/JavaScript frontend application also delivered via CF…all accessible from any device, anywhere in the world.</description>
     </item>
     

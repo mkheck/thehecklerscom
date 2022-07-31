@@ -1,48 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Spring Boot Actuator on </title>
+    <title>Spring Boot Actuator on Hecklers in Development</title>
     <link>https://thehecklers.com/tags/spring-boot-actuator/</link>
-    <description>Recent content in Spring Boot Actuator on </description>
+    <description>Recent content in Spring Boot Actuator on Hecklers in Development</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 20 Feb 2018 21:51:12 -0600</lastBuildDate>
-    
-	<atom:link href="https://thehecklers.com/tags/spring-boot-actuator/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 20 Feb 2018 21:51:12 -0600</lastBuildDate><atom:link href="https://thehecklers.com/tags/spring-boot-actuator/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Un curso intensivo: Como utilizar Spring Cloud Services en PAS</title>
-      <link>https://thehecklers.com/post/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/</link>
+      <link>https://thehecklers.com/posts/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/</link>
       <pubDate>Tue, 20 Feb 2018 21:51:12 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/</guid>
+      <guid>https://thehecklers.com/posts/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/</guid>
       <description>This article is available in English at Getting Started with Spring Cloud Services on Pivotal Application Service.
-   Cuando se trata de crear una arquitectura de microservicios robusta y resistente ubicada en la nube, los componentes de Spring Cloud/Netflix OSS son habilitadores conocidos y respetados. Ciertos modelos y mecanismos se han probado absolutamente esenciales para lograr alta velocidad (en desarollo) y alta disponibilidad (en producción), y Spring Cloud/Netflix OSS tiene unos de los &#34;</description>
+Cuando se trata de crear una arquitectura de microservicios robusta y resistente ubicada en la nube, los componentes de Spring Cloud/Netflix OSS son habilitadores conocidos y respetados. Ciertos modelos y mecanismos se han probado absolutamente esenciales para lograr alta velocidad (en desarollo) y alta disponibilidad (en producción), y Spring Cloud/Netflix OSS tiene unos de los &amp;#34;mejores entre los mejores&amp;#34;.</description>
     </item>
     
     <item>
       <title>Using Spring Boot Actuator integrations with Pivotal Cloud Foundry 1.11</title>
-      <link>https://thehecklers.com/post/using-spring-boot-actuator-integrations-with-pivotal-cloud-foundry-1.11/</link>
+      <link>https://thehecklers.com/posts/using-spring-boot-actuator-integrations-with-pivotal-cloud-foundry-1.11/</link>
       <pubDate>Sun, 02 Jul 2017 19:10:50 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/using-spring-boot-actuator-integrations-with-pivotal-cloud-foundry-1.11/</guid>
-      <description>I recently wrote a tutorial demonstrating how to leverage the integrations between Spring Boot Actuator and Pivotal Cloud Foundry 1.11, posted here in the Pivotal content library: &#34;TUTORIAL: Using Spring Boot Actuator Integrations With Pivotal Cloud Foundry 1.11&#34;).
- Here is a quick summary of the article&amp;#8217;s content:
-  Adding Actuator to your Spring Boot application deployed on Pivotal Cloud Foundry gets you the following production-ready features:
-   Health Check column &amp;amp; expanded information in Instances section</description>
+      <guid>https://thehecklers.com/posts/using-spring-boot-actuator-integrations-with-pivotal-cloud-foundry-1.11/</guid>
+      <description>I recently wrote a tutorial demonstrating how to leverage the integrations between Spring Boot Actuator and Pivotal Cloud Foundry 1.11, posted here in the Pivotal content library: &amp;#34;TUTORIAL: Using Spring Boot Actuator Integrations With Pivotal Cloud Foundry 1.11&amp;#34;).
+Here is a quick summary of the article’s content:
+Adding Actuator to your Spring Boot application deployed on Pivotal Cloud Foundry gets you the following production-ready features:
+Health Check column &amp;amp; expanded information in Instances section</description>
     </item>
     
     <item>
       <title>T4SD (Tips 4 Spring Devs): Spring Boot Actuator /actuator endpoint</title>
-      <link>https://thehecklers.com/post/t4sd-tips-4-spring-devs-spring-boot-actuator-/actuator-endpoint/</link>
+      <link>https://thehecklers.com/posts/t4sd-tips-4-spring-devs-spring-boot-actuator-/actuator-endpoint/</link>
       <pubDate>Mon, 05 Jun 2017 20:46:17 -0600</pubDate>
       
-      <guid>https://thehecklers.com/post/t4sd-tips-4-spring-devs-spring-boot-actuator-/actuator-endpoint/</guid>
-      <description>Just a quick tip for the Spring fans out there&amp;#8230;&amp;#8203;
- If you’ve decided to try out Spring Boot Actuator – and if you haven’t you really should! – you may have run into one of two interesting hitches that are easily resolved:
-  You are unable to access any of the various Actuator endpoints (/beans, /env, et al)
-  You can access those endpoints and yet are unable to access /actuator, the primary (navigable) Actuator endpoint</description>
+      <guid>https://thehecklers.com/posts/t4sd-tips-4-spring-devs-spring-boot-actuator-/actuator-endpoint/</guid>
+      <description>Just a quick tip for the Spring fans out there…​
+If you’ve decided to try out Spring Boot Actuator – and if you haven’t you really should! – you may have run into one of two interesting hitches that are easily resolved:
+You are unable to access any of the various Actuator endpoints (/beans, /env, et al)
+You can access those endpoints and yet are unable to access /actuator, the primary (navigable) Actuator endpoint</description>
     </item>
     
   </channel>

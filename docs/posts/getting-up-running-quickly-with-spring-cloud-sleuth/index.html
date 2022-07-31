@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+    <title>Getting up &amp; running quickly with Spring Cloud Sleuth · Hecklers in Development</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" href="https://thehecklers.com/style.main.min.c34e6915a95f1027dad7b48e5d1ff6e2bbf58b4e72c69d7ec6ac8e7352e961dc.css" />
+
+</head>
+<body class=" post-template ">
+
+    <div class="site-wrapper">
+
+<header class="site-header"><div class="outer site-nav-main">
+    <div class="inner"><nav class="site-nav">
+    <div class="site-nav-left">
+        
+            <a class="site-nav-logo" href="https://thehecklers.com/">Hecklers in Development</a>
+        
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/about">About</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/contact">Contact</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/abstracts">Abstracts</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="https://thehecklers.com/tags/dapper">Dapper</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">Getting up &amp; running quickly with Spring Cloud Sleuth</h1>
+
+                
+
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Mark Heckler</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Mark Heckler</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2017-76-06">27 June 2017</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 4 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            
+            <figure class="post-full-image">
+                <img src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Getting up &amp; running quickly with Spring Cloud Sleuth" />
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <div class="paragraph">
+<p>As you begin to divide conglomerate functionality into discrete, decoupled microservices, you introduce a number of opportunities and challenges into your system(s). The opportunities are often well-known, including (and especially!) development velocity, fidelity/fit (functionality matches requirements), scalability, and a host of other “ilities”.</p>
+</div>
+<div class="paragraph">
+<p>Challenges also exist of course, including the question of how to gain visibility into end-to-end interactions involving multiple microservices across process and network boundaries. Spring Cloud Sleuth provides a lightweight, configurable, and <strong>easy</strong> way to begin capturing trace information within your distributed system.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/SpringCloudSleuth.png" alt="Spring Cloud Sleuth"/></span></p>
+</div>
+<div class="sect1">
+<h2 id="_distributed_tracing_a_very_high_level_overview">Distributed tracing: a (very) high-level overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In 2010, Google published their seminal paper titled <a href="https://research.google.com/pubs/pub36356.html">Dapper, a Large-Scale Distributed Systems Tracing Infrastructure</a>.</p>
+</div>
+<div class="paragraph">
+<p>In 2012, <a href="https://blog.twitter.com/engineering/en_us/a/2012/distributed-systems-tracing-with-zipkin.html">Twitter created Zipkin</a> during their first Hack Week, based upon the Dapper paper.</p>
+</div>
+<div class="paragraph">
+<p>Briefly, an entire end-to-end interaction that completes a request cycle (regardless of transport/mechanism) is referred to as a “trace”, and each trace consists of multiple “spans” connecting the endpoints of each hop. From the <a href="https://cloud.spring.io/spring-cloud-sleuth/">Spring Cloud Sleuth project page</a>:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A Span is the basic unit of work. For example, sending an RPC is a new span, as is sending a response to an RPC. Span’s are identified by a unique 64-bit ID for the span and another 64-bit ID for the trace the span is a part of. Spans also have other data, such as descriptions, key-value annotations, the ID of the span that caused them, and process ID’s (normally IP address). Spans are started and stopped, and they keep track of their timing information. Once you create a span, you must stop it at some point in the future. A set of spans forming a tree-like structure called a Trace. For example, if you are running a distributed big-data store, a trace might be formed by a put request.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Sometimes within the Spring space, you hear about Sleuth and Zipkin within the same discussion, often within the same breath…which understandably can result in a bit of confusion on the listener’s part. Without diving too far down the rabbit hole, <strong>Sleuth</strong> provides the means to instrument your Spring Boot/Spring Cloud applications; <strong>Zipkin</strong> can take that data and provide a means to monitor and evaluate it. Zipkin provides numerous integrations, but of course, you can also use other log monitoring &amp; management tools to collect and analyze that vital data.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_minimum_viable_product">Minimum Viable Product</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This post focuses upon Sleuth and provides a quick on-ramp to getting started capturing basic information for each span. To do that, I’ve created <a href="https://github.com/mkheck/SpringCloudSleuthQuickstart">these two projects</a> that allow us to quickly add trace &amp; span (&amp; more) information to our interactions and verify it in our logs.</p>
+</div>
+<div class="sect2">
+<h3 id="_creating_a_provider_service">Creating a provider service</h3>
+<div class="paragraph">
+<p>Starting at the <a href="http://start.spring.io/">Spring Initializr</a>, I added the following dependencies to a project and named the artifact <strong>sz-provider-service</strong>:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/SleuthInitializr.png" alt="SleuthInitializr"/></span></p>
+</div>
+<div class="paragraph">
+<p>After generating the project and downloading, extracting, and opening it in our IDE, we see the selected dependencies in our Maven pom:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/9df197803038b12664b982a0c5e7369f" class="bare">https://gist.github.com/mkheck/9df197803038b12664b982a0c5e7369f</a></p>
+</div>
+<div class="paragraph">
+<p>Or if using Gradle, build.gradle:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/7569158f1a9dcb79c660f726fa338653" class="bare">https://gist.github.com/mkheck/7569158f1a9dcb79c660f726fa338653</a></p>
+</div>
+<div class="paragraph">
+<p>To provide better context within our logs for our tracing data, we’ll add the following entry to our <strong>application.properties</strong> file:</p>
+</div>
+<div class="paragraph">
+<p><code>spring.application.name=sz-provider-service</code></p>
+</div>
+<div class="paragraph">
+<p>For this example, we’ll create a very simple RestController so we have something in our provider microservice to contact from a consumer service. Here is the entirety of the relevant code:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/dd6e986daf271857f76a297aee9a68cd" class="bare">https://gist.github.com/mkheck/dd6e986daf271857f76a297aee9a68cd</a></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>The only thing of particular note is the @Log statement. Lombok provides this capability to reduce the usual boilerplate code required to get a logger via LogFactory.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_creating_a_consumer_service">Creating a consumer service</h3>
+<div class="paragraph">
+<p>For the purpose of this introduction, little changes between provider and consumer project configuration &amp; code. Here are the exceptions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Revisiting the <a href="http://start.spring.io/">Spring Initializr</a>, we change the artifact name to <strong>sz-consumer-service</strong>, keeping the same dependencies</p>
+</li>
+<li>
+<p>We add the following entries to our consumer microservice’s <strong>application.properties</strong> file:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>spring.application.name=sz-consumer-service
+server.port=8081</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>NOTE: We’re running the provider on port 8080 (Tomcat’s default port), so we change our consumer service’s port to 8081 to avoid conflict.</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This is the code for our consumer:</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/d70f0fa9d0004e3942deec8b28bf3c7f" class="bare">https://gist.github.com/mkheck/d70f0fa9d0004e3942deec8b28bf3c7f</a></p>
+</div>
+<div class="paragraph">
+<p><strong>The same note about Lombok’s @Log applies here as well, of course.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_results">The results</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Running the two applications, we can now access the consumer’s endpoint from httpie, cURL, or a browser:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/cdbd2dc196f92230c2fcc3a23ab3adc6" class="bare">https://gist.github.com/mkheck/cdbd2dc196f92230c2fcc3a23ab3adc6</a></p>
+</div>
+<div class="paragraph">
+<p>Doing so results in the following log entries from our consumer service:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/b7e144b0aed13cb46aa4820eb70a3f8c" class="bare">https://gist.github.com/mkheck/b7e144b0aed13cb46aa4820eb70a3f8c</a></p>
+</div>
+<div class="paragraph">
+<p>And our provider service:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/mkheck/a30960d3d5eaadd7bfbdcabd363183d8" class="bare">https://gist.github.com/mkheck/a30960d3d5eaadd7bfbdcabd363183d8</a></p>
+</div>
+<div class="paragraph">
+<p>Examining our log entries for both services (above), we see that Spring Cloud Sleuth has placed our <strong>spring.application.name</strong> (as designated in each service’s <strong>application.properties</strong>), the appropriate <strong>trace id</strong>, and the <strong>span id</strong> specific to this hop within the logged information.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary">Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Of course, Sleuth captures much more data and allows for extensive customization (including enabling additional elements you specify to be captured, adjusting sampling rates, &amp; more), and Zipkin remains a topic for another day. But this post should have provided a quick <strong>springboard</strong> (!) into using Spring Cloud Sleuth for better insight into your microservices-based system of systems.</p>
+</div>
+<div class="paragraph">
+<p>Happy Sleuthing!</p>
+</div>
+<div class="paragraph">
+<p>Like this post? <a href="https://twitter.com/mkheck">Follow me on Twitter for more!</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_information">Additional information</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/mkheck/SpringCloudSleuthQuickstart">Github repo with code with code from this post</a></p>
+</li>
+<li>
+<p><a href="https://dzone.com/articles/distributed-tracing-with-spring-cloud-sleuth-and-s">Distributed Tracing with Spring Cloud Sleuth and Spring Cloud Zipkin</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+    
+    <article class="read-next-card">
+        <header class="read-next-card-header">
+            <h3><span>More in</span> <a href="https://thehecklers.com/tags/dapper">Dapper</a></h3>
+        </header>
+        <div class="read-next-card-content">
+            <ul>
+                
+            </ul>
+        </div>
+    </article>
+<article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/t4sd-tips-4-spring-devs-how-to-get-spring-boot-rest-endpoints-to-speak-xml/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="T4SD (Tips 4 Spring Devs): How to get Spring Boot REST endpoints to speak XML"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/t4sd-tips-4-spring-devs-how-to-get-spring-boot-rest-endpoints-to-speak-xml/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">dataformat</div>
+                    
+
+                    <h2 class="post-card-title">T4SD (Tips 4 Spring Devs): How to get Spring Boot REST endpoints to speak XML</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>Many of us use JSON almost exclusively now, which is generally a good thing. But what happens when you need to “speak XML” with your Spring Boot REST endpoints?
+XML support in Spring Boot’s REST endpoints is not enabled by default, but adding it isn’t difficult at all. Simply add the following dependency to your POM (or similar entry to your Gradle build file, if that’s the way you roll) and rebuild:</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2017-86-06">20 June 2017</time>
+                            <span class="bull">&bull;</span> 1 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+
+            <article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/using-spring-boot-actuator-integrations-with-pivotal-cloud-foundry-1.11/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Using Spring Boot Actuator integrations with Pivotal Cloud Foundry 1.11"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/using-spring-boot-actuator-integrations-with-pivotal-cloud-foundry-1.11/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">instrumentation</div>
+                    
+
+                    <h2 class="post-card-title">Using Spring Boot Actuator integrations with Pivotal Cloud Foundry 1.11</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>I recently wrote a tutorial demonstrating how to leverage the integrations between Spring Boot Actuator and Pivotal Cloud Foundry 1.11, posted here in the Pivotal content library: &#34;TUTORIAL: Using Spring Boot Actuator Integrations With Pivotal Cloud Foundry 1.11&#34;).
+Here is a quick summary of the article’s content:
+Adding Actuator to your Spring Boot application deployed on Pivotal Cloud Foundry gets you the following production-ready features:
+Health Check column &amp; expanded information in Instances section</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2017-77-07">2 July 2017</time>
+                            <span class="bull">&bull;</span> 1 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+        </div>
+    </div>
+</aside>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://thehecklers.com/">Hecklers in Development</a> &copy; 2017</section>
+                <nav class="site-footer-nav">
+                    <a href="https://thehecklers.com/">Latest Posts</a>
+                    <a href="markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Twitter</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Github</a>
+                    <a href="markheckler" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://jonathanjanssens.com" target="_blank" rel="noopener" style="opacity: 0.5;">Hugo Casper3</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

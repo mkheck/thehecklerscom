@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+    <title>Spring Boot for IoT Developers: Getting Started · Hecklers in Development</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" href="https://thehecklers.com/style.main.min.c34e6915a95f1027dad7b48e5d1ff6e2bbf58b4e72c69d7ec6ac8e7352e961dc.css" />
+
+</head>
+<body class=" post-template ">
+
+    <div class="site-wrapper">
+
+<header class="site-header"><div class="outer site-nav-main">
+    <div class="inner"><nav class="site-nav">
+    <div class="site-nav-left">
+        
+            <a class="site-nav-logo" href="https://thehecklers.com/">Hecklers in Development</a>
+        
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/about">About</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/contact">Contact</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/abstracts">Abstracts</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="https://thehecklers.com/tags/api">API</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">Spring Boot for IoT Developers: Getting Started</h1>
+
+                
+
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Mark Heckler</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Mark Heckler</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2016-42-02">1 February 2016</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 6 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            
+            <figure class="post-full-image">
+                <img src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Spring Boot for IoT Developers: Getting Started" />
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <div class="paragraph">
+<p>It often surprises other devs when I suggest that Spring Boot is a perfect addition to the IoT developer’s toolbox. If you’re deep into IoT and have the luxury of another group providing all of your back-end and/or cloud platform code, that’s perfectly understandable. However, if you’re a full-stack developer, by choice or necessity, you need to know this! Grab a chair and a cup of coffee; I think you’ll find this interesting (and useful).</p>
+</div>
+<div class="sect1">
+<h2 id="_let_me_just_put_this_out_there">Let Me Just Put This Out There</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here is what most people imagine when they hear “IoT”:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Internet of <strong><em>THINGS</em></strong></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>But this is what they should be thinking:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong><em>INTERNET</em></strong> of Things</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The <strong>things</strong> get most of the attention, mindshare, and “buzz”. Why is that? Well…because gadgets are cool! Most of us chose to be developers because of the fun/interesting/obsessive parts, not because of the dull bits. And while there are usually fun and (ahem) less-fun components to everything, who can resist gadgetry in general?</p>
+</div>
+<div class="paragraph">
+<p>Ah, but without connectivity, without storage, without the ability to monitor, manage, and analyze those often-remote sensors and controls…​what do we have? Truthfully, not much. Something interesting, but barely so; a school science project, perhaps. The real payoff (in money and intrigue) is in what happens when you <strong>connect</strong> those “things”. Without a versatile and reliable platform behind those devices, you just have islands of misfit toys.</p>
+</div>
+<div class="paragraph">
+<p>This is where Spring Boot really shines: helping you to create meaningful software at velocity. Software that is clean, concise, readable, maintainable…​and built <strong><em>Cloud Native</em></strong>. We’ll come back to that last part over the next few installments, but for now, let’s focus upon building a basic platform to enable your IoT to <strong>mean something</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_choose_your_legos">Choose Your Legos™</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Boot integrates several useful capabilities into a single, coherent code framework and approach. In a nutshell, it helps a developer rapidly build stand-alone applications that incorporate and integrate with various third-party libraries that can be deployed anywhere a JAR will run. Anywhere. It’s open source, opinionated (minimal configuration, but flexible to fully accommodate edge cases), and insanely effective. Coming from a more staid environment, I found my first exposure to Spring Boot (and every one since) surprising and refreshing. If so-called enterprise software development sounds boring to you, you probably haven’t taken Boot for a test drive.</p>
+</div>
+<div class="paragraph">
+<p>And that’s it! Kidding, that’s not it. But Spring Boot does bring along several goodies that streamline the effort it takes to build robust back end applications. Remember how I said it’s “opinionated”? Let’s examine a few of its carefully-chosen opinions, step through building a simple cloud-ready application for your IoT system, and then see where that takes us. Shall we?</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_on_your_mark_get_set_go">On Your Mark, Get Set, Go!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong><em>Spring Initializr</em></strong> gets our project off to a running start. There are several ways to accomplish this, but since we’re taking the simplest path possible for this first example, let’s just point our browsers to [start.spring.io](<a href="http://start.spring.io/" class="bare">http://start.spring.io/</a>). Spring Boot gives you options, such as a Gradle-based build, various versions of Boot, Java/Groovy, and packaging (JAR vs. WAR), but we’ll stick to most of the defaults for our example.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong><em>NOTE: To see all of the choices at your disposal, simply click the “Switch to the full version.” link at the bottom of the page.</em></strong></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Here are the choices we’ll make for our example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Maven Project</p>
+</li>
+<li>
+<p>Latest non-snapshot version of Spring Boot</p>
+</li>
+<li>
+<p>Group: org.thehecklers (feel free to use your own)</p>
+</li>
+<li>
+<p>Artifact: iot-service</p>
+</li>
+<li>
+<p>Dependencies: Web, JPA<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>, H2<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>, REST Repositories</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once we’ve made the above selections, simply click the Generate Project button to have the Spring Initializr generate a skeleton project, bundle it into a .zip file, and serve it up for download. Save it locally, unzip it, and open the project in your favorite IDE to get started coding.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_building_your_iot_service">Building your IoT Service</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With just that little bit of effort, we already have the foundation in place for our IoT back end service. You can verify this by running the app and pointing your browser to <a href="localhost:8080">localhost:8080</a>. You should see the following:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/SpringForIoTEmptyProject.png" alt="SpringForIoTEmptyProject"/></span></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>&#34;Large streams from little fountains flow, Tall oaks from little acorns grow.&#34;</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>For this installment, we’ll focus on the MVP (Minimum Viable Product) needed to support our nascent IoT installation. Assuming we’ll need to track readings captured by one or more sensors, let’s define an Entity class for our Readings: </p>
+</div>
+<script src="https://gist.github.com/mkheck/21b0528b287ca9c4d3e2.js"></script>
+<div class="paragraph">
+<p>The annotations @Entity, @Id, and @GeneratedValue are from the Java Persistence API (JPA) standard and identify/describe the class and its Id attribute as a JPA entity and its primary key, respectively. Aside from these annotations, the Reading class is just a straightforward POJO.</p>
+</div>
+<div class="paragraph">
+<p>Next, we face the daunting task of creating the following functionality:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>REST endpoint(s) via which our devices can provide (POST) readings</p>
+</li>
+<li>
+<p>REST endpoint(s) allowing us to retrieve (GET) readings for review, reporting, and analysis</p>
+</li>
+<li>
+<p>Mechanism(s) for storage and retrieval of readings from our chosen data store</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Spring makes this functionality easy to implement. Spring Data REST was one of the dependencies we included when we created this project (REST Repositories), and by simply extending a Spring Data repository interface specifying the Reading class and Id type and annotating our new interface as a RepositoryRestResource, the repository is exposed via a REST API. For now, this meets our needs nicely:</p>
+</div>
+<script src="https://gist.github.com/mkheck/3fcb08c578abc25f73a3.js"></script>
+<div class="paragraph">
+<p>Re-running our application and refreshing our browser page (localhost:8080) confirms that our REST endpoint for readings is now active:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/SpringForIoTRESTReadings.png" alt="SpringForIoTRESTReadings"/></span></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>&#34;Getting there…​&#34;</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Next, let’s test functionality by emulating a device pushing readings to our IoT service. I used curl, but feel free to use whatever means you prefer to POST to a REST endpoint. </p>
+</div>
+<script src="https://gist.github.com/mkheck/0bd3ed62d7679b0db1fd.js"></script>
+<div class="paragraph">
+<p>Then we verify using a vanilla curl GET:</p>
+</div>
+<script src="https://gist.github.com/mkheck/f17501e84ac36ca64200.js"></script>
+<div class="paragraph">
+<p>Here we see the two readings I created in testing, returned via our GET request:</p>
+</div>
+<script src="https://gist.github.com/mkheck/2747f11e2e6418aefb8d.js"></script>
+<div class="paragraph">
+<p>If you’ve been pair-programming with me, congratulations! You have now created your first very basic IoT service…and since we had Spring Boot build a fully self-contained &#34;uberJAR&#34; (bringing its own container with it), it can be deployed wherever Java is installed. Who would have thought it could be this fast (or fun)?!?</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_future_articles_future_enhancements">Future Articles, Future Enhancements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As we proceed, there are several topics we will expand upon, options/adjustments we will explore (WebSocket, SQL &amp; NoSQL persistence,…​), functionality we can add (security, tailored queries, visualizations,…​), and of course, we’ll leverage Spring Boot’s focus upon Cloud Native Java to deploy quickly and easily to the leading open source cloud platform, Cloud Foundry. If you have comments, questions, or suggestions, please leave them below! For updates, please follow me on Twitter at <a href="https://twitter.com/mkheck">@mkheck</a>.</p>
+</div>
+<div class="paragraph">
+<p>Keep coding,</p>
+</div>
+<div class="paragraph">
+<p>Mark</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_information">Additional Information</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://start.spring.io/">Spring Initializr</a></p>
+</li>
+<li>
+<p><a href="http://projects.spring.io/spring-boot/">Spring Boot</a></p>
+</li>
+<li>
+<p><a href="http://projects.spring.io/spring-data-rest/">Spring Data REST</a></p>
+</li>
+<li>
+<p><a href="https://spring.io/guides">Spring Getting Started Guides</a></p>
+</li>
+<li>
+<p><a href="https://www.cloudfoundry.org/">Cloud Foundry</a></p>
+</li>
+<li>
+<p><a href="https://pivotal.io/platform">Pivotal Cloud Foundry</a></p>
+</li>
+<li>
+<p><a href="https://run.pivotal.io/">Pivotal Web Services (for free trial)</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. For this example, we’ll use a JPA data source, but feel free to choose a NoSQL option. Boot gives you many data source options out of the box, and of course, you can &#34;bring your own&#34; with a bit more effort.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. H2 is an in-memory database. While unsuitable for environments in which physical persistence is a requirement, it functions the same from a developer perspective and satisfies our demo requirements nicely for now.
+</div>
+</div>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+    
+    <article class="read-next-card">
+        <header class="read-next-card-header">
+            <h3><span>More in</span> <a href="https://thehecklers.com/tags/api">API</a></h3>
+        </header>
+        <div class="read-next-card-content">
+            <ul>
+                
+            </ul>
+        </div>
+    </article>
+<article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/springing-forward/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Springing Forward"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/springing-forward/">
+    
+                <header class="post-card-header">
+                    
+
+                    <h2 class="post-card-title">Springing Forward</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>At JavaOne last week, several people asked me how my work at Pivotal was going, and it occurred to me: I had been so busy diving into all the new toys that I hadn’t written anything about it! This is a first step toward remedying that. 🙂
+At the risk of this post sounding like a short commercial, I’m deeply impressed with the consistency of vision and the depth and breadth of capabilities Pivotal offers innovative organizations and developers.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2015-511-11">2 November 2015</time>
+                            <span class="bull">&bull;</span> 2 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+
+            <article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/nighthacking-interview-jfokus/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Nighthacking Interview: Jfokus"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/nighthacking-interview-jfokus/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">Cloud</div>
+                    
+
+                    <h2 class="post-card-title">Nighthacking Interview: Jfokus</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>At Jfokus this week, I was honored to be interviewed by Stephen Chin of Nighthacking.com. We discussed the Renewable Energy system I built and developed using industrial Internet of Things (IoT) concepts and Domain Driven Design principles. The core of the system is Java SE Embedded on the IoT Gateway device, Spring Boot + Cloud Foundry (CF) for the backend services, and an HTML5/JavaScript frontend application also delivered via CF…all accessible from any device, anywhere in the world.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2016-42-02">12 February 2016</time>
+                            <span class="bull">&bull;</span> 1 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+        </div>
+    </div>
+</aside>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://thehecklers.com/">Hecklers in Development</a> &copy; 2016</section>
+                <nav class="site-footer-nav">
+                    <a href="https://thehecklers.com/">Latest Posts</a>
+                    <a href="markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Twitter</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Github</a>
+                    <a href="markheckler" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://jonathanjanssens.com" target="_blank" rel="noopener" style="opacity: 0.5;">Hugo Casper3</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

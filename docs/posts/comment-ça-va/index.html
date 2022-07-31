@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+    <title>Comment ça va? · Hecklers in Development</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" href="https://thehecklers.com/style.main.min.c34e6915a95f1027dad7b48e5d1ff6e2bbf58b4e72c69d7ec6ac8e7352e961dc.css" />
+
+</head>
+<body class=" post-template ">
+
+    <div class="site-wrapper">
+
+<header class="site-header"><div class="outer site-nav-main">
+    <div class="inner"><nav class="site-nav">
+    <div class="site-nav-left">
+        
+            <a class="site-nav-logo" href="https://thehecklers.com/">Hecklers in Development</a>
+        
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/about">About</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/contact">Contact</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="https://thehecklers.com/pages/abstracts">Abstracts</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="https://thehecklers.com/tags/code">code</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">Comment ça va?</h1>
+
+                
+
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Mark Heckler</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Mark Heckler</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2017-69-09">24 September 2017</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 5 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            
+            <figure class="post-full-image">
+                <img src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Comment ça va?" />
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <div class="paragraph">
+<p>I had been deep in code for the preceding few days (mine and others&#39;) and had achieved a few insights by poring over actual code (vs. comments and/or commentary) when this quote crossed my radar:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/TorvaldsQuoteTweet.png" alt="Torvalds Quote"/></span></p>
+</div>
+<div class="paragraph">
+<p>Being an enthusiastic quote lover, I of course shared it on Twitter, not expecting the various interpretations it solicited. As an aside, this is what happens when you share something without a particular context: people rightfully supply their own. This is what makes art powerful and words potentially poignant…​or dangerous. Context is key to clear communication, and I had omitted it entirely.</p>
+</div>
+<div class="paragraph">
+<p>The discussion that resulted was wonderful, and it made me really think about comments in general, their utility (or often their lack of, as I initially hinted), and why we developers often stake out inflexible positions regarding their use. Here is what I came up with.</p>
+</div>
+<div class="sect1">
+<h2 id="_comments_can_be_a_code_smell">Comments can be a &#34;code smell&#34;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let’s tackle that term first. I <strong>loathe</strong> that term. It’s a marketing term at its heart, meant to evoke an emotional response rather than logical consideration; after all, who wants smelly code? But the concept it conveys is useful: there is something about your code that may not be technically incorrect, but it is (shall we say) suboptimal. ;) Perhaps it is difficult to read and understand, difficult to maintain, uses old patterns (or no discernible patterns) for accomplishing certain tasks, etc. Whatever it is, it could use some spit and polish, some improvement in some way. Aside from it being descriptive in a very non-descriptive way (bits don’t &#34;smell&#34;, after all), it’s often more than a little subjective. Code I may view as smelly may be your acceptable tradeoff for a very good reason, e.g. performance, reusability in your team/org, etc.</p>
+</div>
+<div class="paragraph">
+<p>All that said, let’s focus upon areas in which most of us can reach agreement for starters.</p>
+</div>
+<div class="paragraph">
+<p>Anyone who has worked in a large, corporate environment has almost certainly seen methods of only a few lines documented with literally pages of comments describing what the method does, who wrote it initially, a modification log, etc. Few would argue that this is desirable.</p>
+</div>
+<div class="paragraph">
+<p>Taken to this extreme, codebases inflate and require inordinate amounts of time to wade through for new developers, or even developers returning to a project after any length of time away. Yes, there is a search function in your IDE, and yes, most times you can safely ignore those reams of comments. But sometimes, once in a great while, an essential bit of information is buried in there. So you find yourself having to read a small book each time you dip back into the code.</p>
+</div>
+<div class="paragraph">
+<p>I haven’t yet mentioned the accompanying maintenance effort that goes into comments of that sort. If you’re required by your organization to maintain that modification log, you must remember to note your changes (usually at least date, name/Id, &amp; description) in each class and method you touch. Yes, of course a good version control system will provide an audit log. But policies are policies. ;)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comments_can_literally_save_you_and_your_organization">Comments can literally save you and your organization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Coming from the other perspective, all comments are not bad, and all comments are not code smells. Let me repeat that:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>&#34;All comments are not bad, and all comments are not code smells.&#34;</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>If you have ever developed software in a highly-regulated industry, you almost certainly have personal examples of this you can reference. For those who haven’t, please allow me to share one.</p>
+</div>
+<div class="paragraph">
+<p>Financial instruments have a very specific way of calculating/deriving values, and oftentimes government regulatory bodies strictly enforce those mechanisms. So-called creative accounting or similar endeavors can result in jail time for the individual offender(s) and punitive fines for the organization(s) who take part.</p>
+</div>
+<div class="paragraph">
+<p>Sometimes, these mandated formulas seem a bit obtuse when rendered in code. And a developer well-versed in both code and financial instruments may be able to provide a cleaner-looking shortcut to calculating these values. Unit tests we’ve created all pass…​why not refactor that formula?</p>
+</div>
+<div class="paragraph">
+<p>For starters, have you ever discovered an unforeseen edge case? Governments and regulatory bodies aren’t very understanding of this, especially when required formulas are published. No one cares how elegant your algorithm is if it costs people their life savings. Implementing the specified formula and attaching a comment indicating this (along with the published formula itself and a reference to the accompanying regulation) serves as a very clear warning to any, including yourself, who may examine the code at a later date and consider streamlining it.</p>
+</div>
+<div class="paragraph">
+<p>The closer that critical information is to the code that implements it, the better your chances are of maintaining accuracy, compliance, and auditability. It also saves a great deal of time trying to locate referenced formulas for verification, should you or another dev need to do so.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_in_conclusion">In conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="https://thehecklers.com/img/CommentsTweets.png" alt="Comments"/></span></p>
+</div>
+<div class="paragraph">
+<p>Comments can be abused by providing too much:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Too much to read, as a practical matter</p>
+</li>
+<li>
+<p>Regurgitating what your code is doing in natural language (whyyyyy?)</p>
+</li>
+<li>
+<p>A modification log that can and should be in your DVCS</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>They can also be abused by providing too little:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Missing context (it’s not just helpful for quotes, after all)</p>
+</li>
+<li>
+<p>Domain details (financial formulas or regulatory requirements, with references)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Failing to provide valuable comments (and <strong>only</strong> valuable comments) is simply shifting responsibilities onto others to figure it out on their own and smacks of elitism. That too is a code smell.</p>
+</div>
+<div class="paragraph">
+<p>Cheers,
+Mark</p>
+</div>
+</div>
+</div>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+    
+    <article class="read-next-card">
+        <header class="read-next-card-header">
+            <h3><span>More in</span> <a href="https://thehecklers.com/tags/code">code</a></h3>
+        </header>
+        <div class="read-next-card-content">
+            <ul>
+                
+                <li>
+                    <h4><a href="https://thehecklers.com/posts/comment-%C3%A7a-va/">Comment ça va?</a></h4>
+                    <div class="read-next-card-meta">
+                            <p><time datetime="2017-69-09">09 Sep 2017</time> 
+                                
+                            </p>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+    </article>
+<article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/using-spring-boot-actuator-integrations-with-pivotal-cloud-foundry-1.11/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Using Spring Boot Actuator integrations with Pivotal Cloud Foundry 1.11"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/using-spring-boot-actuator-integrations-with-pivotal-cloud-foundry-1.11/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">instrumentation</div>
+                    
+
+                    <h2 class="post-card-title">Using Spring Boot Actuator integrations with Pivotal Cloud Foundry 1.11</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>I recently wrote a tutorial demonstrating how to leverage the integrations between Spring Boot Actuator and Pivotal Cloud Foundry 1.11, posted here in the Pivotal content library: &#34;TUTORIAL: Using Spring Boot Actuator Integrations With Pivotal Cloud Foundry 1.11&#34;).
+Here is a quick summary of the article’s content:
+Adding Actuator to your Spring Boot application deployed on Pivotal Cloud Foundry gets you the following production-ready features:
+Health Check column &amp; expanded information in Instances section</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2017-77-07">2 July 2017</time>
+                            <span class="bull">&bull;</span> 1 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+
+            <article class="post-card post
+
+
+ ">
+
+        
+            <a class="post-card-image-link" href="https://thehecklers.com/posts/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/">
+                <img class="post-card-image"src="https://thehecklers.com/images/virtual-keyboard_dark2.jpg" alt="Un curso intensivo: Como utilizar Spring Cloud Services en PAS"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://thehecklers.com/posts/un-curso-intensivo-como-utilizar-spring-cloud-services-en-pas/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">Spring</div>
+                    
+
+                    <h2 class="post-card-title">Un curso intensivo: Como utilizar Spring Cloud Services en PAS</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>This article is available in English at Getting Started with Spring Cloud Services on Pivotal Application Service.
+Cuando se trata de crear una arquitectura de microservicios robusta y resistente ubicada en la nube, los componentes de Spring Cloud/Netflix OSS son habilitadores conocidos y respetados. Ciertos modelos y mecanismos se han probado absolutamente esenciales para lograr alta velocidad (en desarollo) y alta disponibilidad (en producción), y Spring Cloud/Netflix OSS tiene unos de los &#34;mejores entre los mejores&#34;.</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Mark Heckler</div>
+                            <a href="#" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Mark Heckler</span>
+                        <span class="post-card-byline-date"><time datetime="2018-92-02">20 February 2018</time>
+                            <span class="bull">&bull;</span> 11 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    
+        </div>
+    </div>
+</aside>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://thehecklers.com/">Hecklers in Development</a> &copy; 2017</section>
+                <nav class="site-footer-nav">
+                    <a href="https://thehecklers.com/">Latest Posts</a>
+                    <a href="markhecklerdev" target="_blank" rel="noopener">Facebook</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Twitter</a>
+                    <a href="mkheck" target="_blank" rel="noopener">Github</a>
+                    <a href="markheckler" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://jonathanjanssens.com" target="_blank" rel="noopener" style="opacity: 0.5;">Hugo Casper3</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
